@@ -1,0 +1,61 @@
+const LABELS = {
+  elementos: {
+    fuego: "Fuego",
+    agua: "Agua",
+    rayo: "Rayo",
+    hielo: "Hielo",
+    dragon: "Dragón"
+  },
+  estados: {
+    veneno: "Veneno",
+    sueno: "Sueño",
+    paralisis: "Parálisis",
+    nitro: "Nitro",
+    aturdido: "Aturdido",
+    agotamiento: "Agotamiento"
+  },
+  objetos: {
+    eslinga_flash: "Eslinga Flash",
+    bomba_sonica: "Bomba Sónica",
+    trampa_electrica: "Trampa Eléctrica",
+    trampa_escollo: "Trampa Escollo"
+  },
+  intensidad_ataque: {
+    debil: "Débil",
+    fuerte: "Fuerte",
+    temblor_menor: "Temblor Menor",
+    viento_menor: "Viento Menor",
+    viento_dragon: "Viento Dragón"
+  },
+  alteraciones: {
+    llamasblight: "Marca de Fuego",
+    aguablight: "Marca de Agua",
+    truenoblight: "Marca de Trueno",
+    escarchablight: "Marca de Escarcha",
+    dragonblight: "Marca de Dragón",
+    veneno: "Veneno",
+    paralisis: "Parálisis",
+    sueno: "Sueño",
+    sangrado: "Sangrado",
+    explosion: "Explosión",
+    hedor: "Hedor",
+    telarana: "Telaraña",
+    frenes: "Frenesí",
+    reduccion_defensa: "Reducción de Defensa",
+    penalizacion_vida: "Penalización de Vida",
+    alquitranado: "Alquitranado",
+    destello: "Destello"
+  },
+  efectividad_estado: {
+    0: "Inmune",
+    1: "Baja",
+    2: "Normal",
+    3: "Alta"
+  },
+  ataques_especiales: {
+    rugido: "Rugido",
+    temblor_viento: "Temblor / Viento",
+    ataque_elemental: "Ataque Elemental",
+    efecto_estado: "Efecto de Estado"
+  }
+};

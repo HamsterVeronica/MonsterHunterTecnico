@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MH Wilds — Enciclopedia de Monstruos</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Monster Hunter Wilds</h1>
+    <p>Enciclopedia de Monstruos</p>
+  </header>
+
+  <main>
+    <div class="index-topbar">
+      <a href="calculator.html" class="calc-link">🗡 Calculadora de daño</a>
+    </div>
+    <div class="filters">
+      <div class="search-wrap">
+        <input id="search" class="filter-search" type="text" placeholder="Buscar monstruo..." autocomplete="off">
+        <ul id="search-dropdown" class="search-dropdown"></ul>
+      </div>
+      <div class="filter-divider"></div>
+      <span class="filter-label">Débil a</span>
+      <div class="filter-elements">
+        <button class="filter-btn active" data-elem="">Todos</button>
+        <button class="filter-btn" data-elem="fuego">Fuego</button>
+        <button class="filter-btn" data-elem="agua">Agua</button>
+        <button class="filter-btn" data-elem="rayo">Rayo</button>
+        <button class="filter-btn" data-elem="hielo">Hielo</button>
+        <button class="filter-btn" data-elem="dragon">Dragón</button>
+      </div>
+    </div>
+    <div id="monster-grid" class="monster-grid"></div>
+  </main>
+
+  <script src="data/labels.js"></script>
+  <script src="data/monsters.js"></script>
+  <script src="js/app.js"></script>
+
+  <footer class="site-footer">
+    <img src="src/logoV.png" alt="Logo V" class="footer-logo">
+    <div class="footer-text">
+      <span>Creado por <strong>Nausicaä — V</strong></span>
+      <span class="footer-thanks">Gracias a <strong>Jairo</strong> y <strong>Ghydral</strong></span>
+    </div>
+  </footer>
+
+</body>
+</html>

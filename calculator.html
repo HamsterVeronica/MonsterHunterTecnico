@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MH Wilds — Calculadora de Daño</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/calculator.css">
+</head>
+<body>
+
+  <header>
+    <h1>Monster Hunter Wilds</h1>
+    <p>Calculadora de Daño</p>
+  </header>
+
+  <main>
+    <a href="index.html" class="back-link">← Volver al índice</a>
+
+    <!-- Sección explicativa -->
+    <div class="calc-explainer">
+      <details class="explainer-details">
+        <summary class="explainer-summary">¿Cómo funciona esta calculadora?</summary>
+
+        <div class="explainer-body">
+
+          <div class="explainer-formula">
+            <span class="ef-label">Daño Total</span>
+            <span class="ef-eq">=</span>
+            <span class="ef-block ef-raw">Daño Físico</span>
+            <span class="ef-plus">+</span>
+            <span class="ef-block ef-elem">Daño Elemental</span>
+          </div>
+
+          <div class="explainer-cols">
+
+            <div class="explainer-col">
+              <h3 class="explainer-col-title explainer-col-title--raw">Daño Físico</h3>
+              <div class="explainer-formula explainer-formula--sm">
+                <span class="ef-block ef-raw">Daño Real</span>
+                <span class="ef-op">×</span>
+                <span class="ef-block ef-sharp">Filo</span>
+                <span class="ef-op">×</span>
+                <span class="ef-block ef-mv">MV / 100</span>
+                <span class="ef-op">×</span>
+                <span class="ef-block ef-hz">Zona / 100</span>
+              </div>
+
+              <ul class="explainer-list">
+                <li>
+                  <strong>Daño Real</strong> — El ataque del juego está inflado. Se divide por un valor fijo según el arma (el <em>Bloat</em>). Una Gran Espada divide entre 4.8; unas Dagas Dobles entre 1.4. Por eso un arma con menos ataque visible puede hacer más daño real.
+                </li>
+                <li>
+                  <strong>Filo</strong> — El nivel de afilado multiplica el daño: desde ×0.50 (rojo) hasta ×1.39 (morado). Perder filo a mitad de caza puede suponer un 30% menos de daño.
+                </li>
+                <li>
+                  <strong>MV (Motion Value)</strong> — Cada ataque tiene un multiplicador propio. Un golpe básico puede tener MV 20; un finisher cargado, MV 200. La calculadora usa el promedio de todos los ataques del arma y muestra un rango mín–máx para reflejar esa variación.
+                </li>
+                <li>
+                  <strong>Zona Física</strong> — Cada parte del monstruo absorbe el daño de forma diferente (0 = inmune, 100 = sin resistencia). La tabla de resultados muestra este valor en la columna <em>Resist. Física</em>.
+                </li>
+              </ul>
+            </div>
+
+            <div class="explainer-col">
+              <h3 class="explainer-col-title explainer-col-title--elem">Daño Elemental</h3>
+              <div class="explainer-formula explainer-formula--sm">
+                <span class="ef-block ef-elem">Elem / 10</span>
+                <span class="ef-op">×</span>
+                <span class="ef-block ef-sharp">Filo Elem</span>
+                <span class="ef-op">×</span>
+                <span class="ef-block ef-hz">Zona Elem / 100</span>
+              </div>
+
+              <ul class="explainer-list">
+                <li>
+                  <strong>Elem / 10</strong> — El ataque elemental también está inflado. 300 de fuego equivale a 30 en el cálculo real.
+                </li>
+                <li>
+                  <strong>Filo Elemental</strong> — Tiene su propia tabla, más exigente que la física. Con filo rojo el elemental casi desaparece (×0.25); con morado llega a ×1.27.
+                </li>
+                <li>
+                  <strong>Zona Elemental</strong> — Independiente de la zona física. Un monstruo puede ser resistente al corte en la cola pero muy débil al fuego ahí mismo.
+                </li>
+                <li>
+                  El elemental <strong>no usa MV</strong> — se aplica igual en cada golpe. Por eso armas que golpean muy seguido (Dagas Dobles, Ballesta Ligera con Rapid Fire) acumulan elemental mucho más rápido que armas lentas.
+                </li>
+              </ul>
+            </div>
+
+          </div>
+
+          <div class="explainer-example">
+            <h3 class="explainer-example-title">Ejemplo</h3>
+            <p>Gran Espada · 480 ataque · Filo Blanco · True Charged Slash (MV 176) · Cabeza de Arkveld (Zona Corte 65)</p>
+            <div class="explainer-steps">
+              <div class="explainer-step">
+                <span class="estep-label">Daño Real</span>
+                <span class="estep-calc">480 ÷ 4.8</span>
+                <span class="estep-result">= 100</span>
+              </div>
+              <div class="explainer-step">
+                <span class="estep-label">× Filo Blanco</span>
+                <span class="estep-calc">100 × 1.32</span>
+                <span class="estep-result">= 132</span>
+              </div>
+              <div class="explainer-step">
+                <span class="estep-label">× MV</span>
+                <span class="estep-calc">132 × (176 ÷ 100)</span>
+                <span class="estep-result">= 232</span>
+              </div>
+              <div class="explainer-step estep-final">
+                <span class="estep-label">× Zona</span>
+                <span class="estep-calc">232 × (65 ÷ 100)</span>
+                <span class="estep-result">≈ <strong>151</strong> de daño</span>
+              </div>
+            </div>
+            <p class="section-note" style="margin-top:0.6rem">El mismo golpe sin cargar (MV 81) haría ~69 de daño — menos de la mitad. Cargar importa.</p>
+          </div>
+
+        </div>
+      </details>
+    </div>
+
+    <div class="calc-layout">
+
+      <!-- Panel izquierdo: configuración del arma -->
+      <div class="calc-panel">
+
+        <div class="calc-block">
+          <h2 class="calc-title">Tu Arma</h2>
+
+          <div class="calc-field">
+            <label for="weapon-select">Tipo de arma</label>
+            <select id="weapon-select">
+              <option value="">— Selecciona un arma —</option>
+            </select>
+          </div>
+
+          <div class="calc-field">
+            <label for="attack-input">Ataque mostrado</label>
+            <input id="attack-input" type="number" min="0" placeholder="Ej: 480">
+            <span class="calc-hint" id="true-raw-hint"></span>
+          </div>
+
+          <div class="calc-field">
+            <label for="sharpness-select">Filo</label>
+            <select id="sharpness-select">
+              <option value="white" selected>Blanco ×1.32</option>
+              <option value="purple">Morado ×1.39</option>
+              <option value="blue">Azul ×1.20</option>
+              <option value="green">Verde ×1.05</option>
+              <option value="yellow">Amarillo ×1.00</option>
+              <option value="orange">Naranja ×0.75</option>
+              <option value="red">Rojo ×0.50</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="calc-block">
+          <h2 class="calc-title">Elemento <span class="calc-title-optional">(opcional)</span></h2>
+
+          <div class="calc-field">
+            <label for="elem-type">Tipo de elemento</label>
+            <select id="elem-type">
+              <option value="">— Sin elemento —</option>
+              <option value="fuego">Fuego</option>
+              <option value="agua">Agua</option>
+              <option value="rayo">Rayo</option>
+              <option value="hielo">Hielo</option>
+              <option value="dragon">Dragón</option>
+            </select>
+          </div>
+
+          <div class="calc-field">
+            <label for="elem-input">Ataque elemental</label>
+            <input id="elem-input" type="number" min="0" placeholder="Ej: 300" disabled>
+          </div>
+        </div>
+
+        <div class="calc-block">
+          <h2 class="calc-title">Monstruo</h2>
+
+          <div class="calc-field">
+            <label for="monster-select">Selecciona monstruo</label>
+            <select id="monster-select">
+              <option value="">— Selecciona un monstruo —</option>
+            </select>
+          </div>
+
+          <div class="calc-field" id="variant-field" style="display:none">
+            <label for="variant-select">Estado de la parte</label>
+            <select id="variant-select">
+              <option value="normal">Normal</option>
+              <option value="herida">Herida</option>
+              <option value="punto_debil">Punto débil</option>
+            </select>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Panel derecho: resultados -->
+      <div class="calc-panel calc-results-panel">
+        <div class="calc-block calc-results-block">
+          <h2 class="calc-title">Daño por parte del cuerpo</h2>
+          <p class="section-note">Selecciona tu arma y un monstruo para ver los resultados.</p>
+          <div id="results-container"></div>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <script src="data/labels.js"></script>
+  <script src="data/monsters.js"></script>
+  <script src="data/hitzones.js"></script>
+  <script src="data/weapons.js"></script>
+  <script src="data/motion-values.js"></script>
+  <script src="js/calculator.js"></script>
+
+  <footer class="site-footer">
+    <img src="src/logoV.png" alt="Logo V" class="footer-logo">
+    <div class="footer-text">
+      <span>Creado por <strong>Nausicaä — V</strong></span>
+      <span class="footer-thanks">Gracias a <strong>Jairo</strong> y <strong>Ghydral</strong></span>
+    </div>
+  </footer>
+
+</body>
+</html>

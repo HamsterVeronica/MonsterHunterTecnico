@@ -1,0 +1,386 @@
+/* ── Layout ──────────────────────────────────────────── */
+.calc-layout {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.calc-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.calc-block {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 18px 20px;
+}
+
+.calc-results-block {
+  min-height: 200px;
+}
+
+/* ── Títulos ─────────────────────────────────────────── */
+.calc-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+
+.calc-title-optional {
+  font-size: 0.65rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+/* ── Campos ──────────────────────────────────────────── */
+.calc-field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 14px;
+}
+
+.calc-field:last-child { margin-bottom: 0; }
+
+.calc-field label {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.calc-field select,
+.calc-field input {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  color: var(--text);
+  font-size: 0.9rem;
+  padding: 8px 10px;
+  outline: none;
+  transition: border-color 0.15s;
+  width: 100%;
+  font-family: inherit;
+}
+
+.calc-field select:focus,
+.calc-field input:focus  { border-color: var(--gold); }
+
+.calc-field input:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.calc-hint {
+  font-size: 0.75rem;
+  color: var(--gold);
+  font-weight: 600;
+  min-height: 1em;
+}
+
+/* ── Info resumen ────────────────────────────────────── */
+.results-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+.results-info strong { color: var(--text); }
+
+/* ── Tabla de daño ───────────────────────────────────── */
+.dmg-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.dmg-th {
+  background: #0f0f20;
+  color: var(--text-muted);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 9px 12px;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+
+.dmg-th.dmg-part  { text-align: left; }
+.dmg-th.dmg-total { color: var(--gold); }
+
+.dmg-part-cell {
+  padding: 8px 12px;
+  color: var(--text);
+  font-weight: 500;
+  border-bottom: 1px solid var(--border);
+  min-width: 130px;
+}
+
+.dmg-cell {
+  padding: 8px 12px;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-muted);
+}
+
+.dmg-raw  { color: var(--text); font-weight: 600; }
+.dmg-elem { color: var(--rayo); font-weight: 600; }
+
+.dmg-total-cell {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 140px;
+}
+
+.dmg-bar-wrap {
+  flex: 1;
+  height: 6px;
+  background: var(--border);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.dmg-bar {
+  height: 100%;
+  background: var(--gold);
+  border-radius: 3px;
+  transition: width 0.25s ease;
+}
+
+.dmg-total-val {
+  font-weight: 800;
+  font-size: 0.95rem;
+  color: #fff;
+  min-width: 42px;
+  text-align: right;
+}
+
+.dmg-table tbody tr:hover .dmg-part-cell,
+.dmg-table tbody tr:hover .dmg-cell,
+.dmg-table tbody tr:hover .dmg-total-cell {
+  background: var(--surface-hover);
+}
+
+.dmg-row-muted { opacity: 0.4; }
+
+/* ── MV range ────────────────────────────────────────── */
+.mv-range {
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  font-weight: 400;
+  margin-left: 2px;
+}
+
+.dmg-range {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  min-width: 60px;
+}
+
+/* ── Explicador ──────────────────────────────────────────── */
+.calc-explainer {
+  margin-top: 20px;
+  margin-bottom: 28px;
+}
+
+.explainer-details {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.explainer-summary {
+  padding: 16px 20px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  color: var(--text-muted);
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  user-select: none;
+  transition: color 0.15s;
+}
+.explainer-summary::-webkit-details-marker { display: none; }
+.explainer-summary::before {
+  content: '▸';
+  font-size: 0.7rem;
+  transition: transform 0.2s;
+  color: var(--gold);
+}
+.explainer-details[open] .explainer-summary::before { transform: rotate(90deg); }
+.explainer-summary:hover { color: var(--text); }
+
+.explainer-body {
+  padding: 0 20px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Fórmula visual principal */
+.explainer-formula {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.explainer-formula--sm { margin-bottom: 14px; }
+
+.ef-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  margin-right: 4px;
+}
+.ef-eq, .ef-plus, .ef-op {
+  font-size: 1rem;
+  color: var(--text-muted);
+  font-weight: 300;
+}
+
+.ef-block {
+  padding: 5px 11px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+.ef-raw   { background: rgba(200,160,80,0.12);  color: var(--gold);  border: 1px solid rgba(200,160,80,0.25); }
+.ef-elem  { background: rgba(58,143,216,0.12);  color: #5aabf0;      border: 1px solid rgba(58,143,216,0.25); }
+.ef-sharp { background: rgba(160,160,200,0.10); color: #a0a0d0;      border: 1px solid rgba(160,160,200,0.2); }
+.ef-mv    { background: rgba(155,93,229,0.12);  color: #b87ef5;      border: 1px solid rgba(155,93,229,0.25); }
+.ef-hz    { background: rgba(80,200,120,0.10);  color: #5dc88a;      border: 1px solid rgba(80,200,120,0.2);  }
+
+/* Columnas física / elemental */
+.explainer-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.explainer-col {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.explainer-col-title {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.explainer-col-title--raw  { color: var(--gold); }
+.explainer-col-title--elem { color: #5aabf0; }
+
+.explainer-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.explainer-list li {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  padding-left: 12px;
+  border-left: 2px solid var(--border);
+}
+.explainer-list li strong { color: var(--text); }
+
+/* Ejemplo paso a paso */
+.explainer-example {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.explainer-example-title {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.explainer-example > p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+}
+
+.explainer-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.explainer-step {
+  display: grid;
+  grid-template-columns: 160px 1fr auto;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.82rem;
+  padding: 6px 10px;
+  border-radius: 5px;
+  background: var(--surface);
+}
+
+.estep-final {
+  border: 1px solid rgba(200,160,80,0.3);
+  background: rgba(200,160,80,0.06);
+}
+
+.estep-label  { color: var(--text-muted); font-weight: 600; }
+.estep-calc   { color: var(--text-muted); font-family: monospace; font-size: 0.8rem; }
+.estep-result { color: var(--text); font-weight: 700; text-align: right; }
+.estep-final .estep-result { color: var(--gold); font-size: 0.9rem; }
+
+/* ── Responsive ──────────────────────────────────────── */
+@media (max-width: 900px) {
+  .calc-layout { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  .calc-block  { padding: 14px; }
+  .dmg-table   { font-size: 0.78rem; }
+  .dmg-th,
+  .dmg-cell,
+  .dmg-part-cell,
+  .dmg-total-cell { padding: 6px 8px; }
+
+  .explainer-cols       { grid-template-columns: 1fr; }
+  .explainer-step       { grid-template-columns: 1fr 1fr; }
+  .estep-calc           { display: none; }
+}

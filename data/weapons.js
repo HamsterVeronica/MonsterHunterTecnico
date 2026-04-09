@@ -1,0 +1,16 @@
+const WEAPONS = [
+  { id: 'great-sword',    nombre: 'Gran Espada',      bloat: 4.8, tipo_dano: 'corte',     clase: 'melé' },
+  { id: 'long-sword',     nombre: 'Espada Larga',     bloat: 3.3, tipo_dano: 'corte',     clase: 'melé' },
+  { id: 'sword-shield',   nombre: 'Espada y Escudo',  bloat: 1.4, tipo_dano: 'corte',     clase: 'melé' },
+  { id: 'dual-blades',    nombre: 'Dagas Dobles',     bloat: 1.4, tipo_dano: 'corte',     clase: 'melé' },
+  { id: 'hammer',         nombre: 'Martillo',         bloat: 5.2, tipo_dano: 'impacto',   clase: 'melé' },
+  { id: 'hunting-horn',   nombre: 'Cornamusa',        bloat: 4.2, tipo_dano: 'impacto',   clase: 'melé' },
+  { id: 'lance',          nombre: 'Lanza',            bloat: 2.3, tipo_dano: 'corte',     clase: 'melé' },
+  { id: 'gunlance',       nombre: 'Lanza Pistola',    bloat: 2.3, tipo_dano: 'corte',     clase: 'melé' },
+  { id: 'switch-axe',     nombre: 'Hacha Espada',     bloat: 3.5, tipo_dano: 'corte',     clase: 'melé' },
+  { id: 'charge-blade',   nombre: 'Espada Cargada',   bloat: 3.6, tipo_dano: 'corte',     clase: 'melé' },
+  { id: 'insect-glaive',  nombre: 'Glaive Insecto',   bloat: 3.1, tipo_dano: 'corte',     clase: 'melé' },
+  { id: 'bow',            nombre: 'Arco',             bloat: 1.2, tipo_dano: 'proyectil', clase: 'distancia' },
+  { id: 'light-bowgun',   nombre: 'Ballesta Ligera',  bloat: 1.3, tipo_dano: 'proyectil', clase: 'distancia' },
+  { id: 'heavy-bowgun',   nombre: 'Ballesta Pesada',  bloat: 1.5, tipo_dano: 'proyectil', clase: 'distancia' },
+];
