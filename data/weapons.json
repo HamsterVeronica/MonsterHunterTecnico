@@ -22,7 +22,7 @@
   },
   {
     "id": "dual-blades",
-    "nombre": "Dagas Dobles",
+    "nombre": "Espadas Dobles",
     "bloat": 1.4,
     "tipo_dano": "corte",
     "clase": "melé"

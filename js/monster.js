@@ -248,57 +248,120 @@ const HZ_COLS = [
 
 function buildHitzoneTable(monsterId) {
   const data = HITZONES[monsterId];
-  if (!data) return null;
+
+  if (!data) {
+    return el('div', { class: 'section full-width hz-no-data' },
+      el('h3', {}, 'Daño por zona'),
+      el('p', { class: 'section-note' }, 'Los datos de hitzones para este monstruo aún no están disponibles.')
+    );
+  }
 
   const parts = Object.keys(data);
 
   // Detectar qué variantes existen
-  const hasHerida    = parts.some(p => data[p].herida);
+  const hasHerida     = parts.some(p => data[p].herida);
   const hasPuntoDebil = parts.some(p => data[p].punto_debil);
-  const variants     = ['normal'];
+  const variants      = ['normal'];
   if (hasHerida)     variants.push('herida');
   if (hasPuntoDebil) variants.push('punto_debil');
 
   const VARIANT_LABEL = { normal: 'Normal', herida: 'Herida', punto_debil: 'Punto débil' };
 
   let activeVariant = 'normal';
+  let sortCol = null;   // key de columna activa para ordenar
+  let sortDir = 'desc'; // 'asc' | 'desc'
 
-  // Construir thead
+  // ── Construir thead ────────────────────────────────────────────────────────
   const isMobile = () => window.innerWidth <= 600;
 
+  const thParte = el('th', { class: 'hz-th hz-part' }, 'Parte');
+
+  const thCols = HZ_COLS.map(c => {
+    const th = el('th', {
+      class: `hz-th hz-th--sortable${c.elem ? ' hz-elem' : ''}${c.sep ? ' hz-sep' : ''}`,
+      title: `Ordenar por ${c.label}`,
+    });
+    if (c.icon && !isMobile()) {
+      const img = el('img', { src: c.icon, alt: c.label, class: 'hz-col-icon' });
+      th.appendChild(img);
+      if (!c.elem) th.appendChild(document.createTextNode(' ' + c.label));
+    } else {
+      th.textContent = isMobile() ? c.short : c.label;
+    }
+    const arrow = el('span', { class: 'hz-sort-arrow' }, '');
+    th.appendChild(arrow);
+
+    th.addEventListener('click', () => {
+      if (sortCol === c.key) {
+        sortDir = sortDir === 'desc' ? 'asc' : 'desc';
+      } else {
+        sortCol = c.key;
+        sortDir = 'desc';
+      }
+      refreshTable();
+    });
+    return { th, col: c };
+  });
+
   const thead = el('thead', {},
-    el('tr', {},
-      el('th', { class: 'hz-th hz-part' }, 'Parte'),
-      ...HZ_COLS.map(c => {
-        const th = el('th', { class: `hz-th${c.elem ? ' hz-elem' : ''}${c.sep ? ' hz-sep' : ''}` });
-        if (c.icon && !isMobile()) {
-          const img = el('img', { src: c.icon, alt: c.label, class: 'hz-col-icon' });
-          th.appendChild(img);
-          // Elementos: solo icono. Armas: icono + texto
-          if (!c.elem) th.appendChild(document.createTextNode(' ' + c.label));
-        } else {
-          th.textContent = isMobile() ? c.short : c.label;
-        }
-        return th;
-      })
-    )
+    el('tr', {}, thParte, ...thCols.map(x => x.th))
   );
 
-  // Construir tbody
+  // ── Construir filas ────────────────────────────────────────────────────────
+  function getSortedParts(variant) {
+    if (!sortCol) return parts;
+    return [...parts].sort((a, b) => {
+      const vA = (data[a][variant] || data[a].normal || {})[sortCol] ?? 0;
+      const vB = (data[b][variant] || data[b].normal || {})[sortCol] ?? 0;
+      return sortDir === 'desc' ? vB - vA : vA - vB;
+    });
+  }
+
+  function getMaxPerElemCol(variant) {
+    const maxes = {};
+    const ELEM_KEYS = HZ_COLS.filter(c => c.elem).map(c => c.key);
+    ELEM_KEYS.forEach(key => {
+      maxes[key] = Math.max(...parts.map(p => {
+        const d = data[p][variant] || data[p].normal;
+        return d ? (d[key] ?? 0) : 0;
+      }));
+    });
+    return maxes;
+  }
+
   function buildRows(variant) {
-    return parts.map(part => {
+    const sorted = getSortedParts(variant);
+    const maxElem = getMaxPerElemCol(variant);
+
+    return sorted.map(part => {
       const hasVariant = !!data[part][variant];
       const rowData    = hasVariant ? data[part][variant] : data[part].normal;
-      // Si el variant pedido no existe en esta parte, mostrar 0 en todas las celdas
       const showZero   = variant !== 'normal' && !hasVariant;
 
       return el('tr', {},
         el('td', { class: 'hz-part-cell' }, PARTES[part] || part),
         ...HZ_COLS.map(c => {
-          const val = showZero ? 0 : rowData[c.key];
-          return el('td', { class: `hz-cell ${hzClass(val)}${c.elem ? ' hz-elem' : ''}${c.sep ? ' hz-sep' : ''}` }, String(val));
+          const val   = showZero ? 0 : (rowData[c.key] ?? 0);
+          const isBest = c.elem && !showZero && val > 0 && val === maxElem[c.key];
+          const cell  = el('td', {
+            class: `hz-cell ${hzClass(val)}${c.elem ? ' hz-elem' : ''}${c.sep ? ' hz-sep' : ''}${isBest ? ' hz-best' : ''}`,
+          }, String(val));
+          if (isBest) cell.appendChild(el('span', { class: 'hz-best-badge' }, '★'));
+          return cell;
         })
       );
+    });
+  }
+
+  function updateSortArrows() {
+    thCols.forEach(({ th, col }) => {
+      th.classList.toggle('hz-th--sorted', sortCol === col.key);
+      const arrow = th.querySelector('.hz-sort-arrow');
+      if (sortCol === col.key) {
+        arrow.textContent = sortDir === 'desc' ? ' ▼' : ' ▲';
+      } else {
+        arrow.textContent = '';
+      }
     });
   }
 
@@ -307,6 +370,12 @@ function buildHitzoneTable(monsterId) {
   const table = el('table', { class: 'hz-table' }, thead, tbody);
   const wrap  = el('div', { class: 'hz-scroll' }, table);
 
+  function refreshTable() {
+    while (tbody.firstChild) tbody.removeChild(tbody.firstChild);
+    buildRows(activeVariant).forEach(row => tbody.appendChild(row));
+    updateSortArrows();
+  }
+
   // Botones de variante
   let btnGroup = null;
   if (variants.length > 1) {
@@ -314,10 +383,7 @@ function buildHitzoneTable(monsterId) {
       const btn = el('button', { class: `hz-btn${v === 'normal' ? ' active' : ''}` }, VARIANT_LABEL[v]);
       btn.addEventListener('click', () => {
         activeVariant = v;
-        // Limpiar tbody
-        while (tbody.firstChild) tbody.removeChild(tbody.firstChild);
-        buildRows(v).forEach(row => tbody.appendChild(row));
-        // Actualizar botones
+        refreshTable();
         btnGroup.querySelectorAll('.hz-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
       });
@@ -328,6 +394,7 @@ function buildHitzoneTable(monsterId) {
 
   return el('div', { class: 'section full-width' },
     el('h3', {}, 'Daño por zona'),
+    el('p', { class: 'section-note' }, 'Haz clic en el encabezado de una columna para ordenar. ★ indica la mejor zona elemental.'),
     ...(btnGroup ? [btnGroup] : []),
     wrap
   );
@@ -336,7 +403,7 @@ function buildHitzoneTable(monsterId) {
 // ── Render principal ──────────────────────────────────────────────────────────
 
 function render() {
-  const root = document.getElementById('detail-root');
+  const root   = document.getElementById('detail-root');
   const params = new URLSearchParams(window.location.search);
   const id     = params.get('id');
 
@@ -354,13 +421,27 @@ function render() {
 
   const badges = monster.elementos_efectivos.length > 0
     ? monster.elementos_efectivos.map(k => {
-        const i = el('img', { src: ELEM_ICONS[k], alt: LABELS.elementos[k], title: LABELS.elementos[k], class: 'elem-icon elem-icon-lg' });
-        return i;
+        return el('img', { src: ELEM_ICONS[k], alt: LABELS.elementos[k], title: LABELS.elementos[k], class: 'elem-icon elem-icon-lg' });
       })
-    : [el('span', { class: 'badge badge-ninguno' }, 'Debil a todos los elementos')];
+    : [el('span', { class: 'badge badge-ninguno' }, 'Débil a todos los elementos')];
 
   const img = el('img', { src: `src/${monster.id}.png`, alt: monster.nombre, class: 'detail-img' });
   img.onerror = () => { img.style.display = 'none'; };
+
+  // Badge de tipo
+  const TIPO_CLASS = { normal: 'badge-tipo--normal', curtido: 'badge-tipo--curtido', hipercurtido: 'badge-tipo--hipercurtido', colera: 'badge-tipo--colera' };
+  const tipoBadge = monster.tipo.length ? (() => {
+    const wrap = el('div', { class: 'card-info-tipos' });
+    monster.tipo.forEach(t => {
+      wrap.appendChild(el('span', { class: `badge-tipo ${TIPO_CLASS[t] || ''}` }, LABELS.tipos[t] || t));
+    });
+    return wrap;
+  })() : null;
+
+  // Badge de capturabilidad
+  const capturaBadge = el('span', {
+    class: monster.capturable ? 'badge-captura badge-captura--si' : 'badge-captura badge-captura--no'
+  }, monster.capturable ? '✓ Capturable' : '✗ No capturable');
 
   const header = el('div', { class: 'detail-header' },
     el('div', { class: 'detail-header-nav' },
@@ -371,7 +452,8 @@ function render() {
       img,
       el('div', { class: 'detail-hero-info' },
         el('h2', {}, monster.nombre),
-        el('p', { class: 'weakpoint-line' },
+        el('div', { class: 'detail-hero-badges' }, tipoBadge, capturaBadge),
+        el('p', { class: 'weakpoint-line', style: 'margin-top:8px' },
           'Punto débil: ', el('span', {}, monster.punto_debil)
         ),
         el('div', { class: 'element-badges', style: 'margin-top:10px' },
@@ -391,7 +473,7 @@ function render() {
       buildEstados(monster),
       buildObjetos(monster),
       buildAtaques(monster),
-      ...(hitzoneSection ? [hitzoneSection] : [])
+      hitzoneSection
     )
   );
 

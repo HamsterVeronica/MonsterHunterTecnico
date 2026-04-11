@@ -9,6 +9,16 @@
 </head>
 <body>
 
+  <div class="discord-banner">
+    <div class="discord-banner-icon">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057c.002.022.015.043.033.057a19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
+      </svg>
+    </div>
+    <span class="discord-banner-text">¿Actualizaciones de la web o compañeros de caza? <strong>Todo eso y más en el servidor de Discord de DesWolfx</strong></span>
+    <a href="https://discord.gg/5YxgBMPwR9" target="_blank" rel="noopener" class="discord-banner-btn">Unirse</a>
+  </div>
+
   <header>
     <h1>Monster Hunter Wilds</h1>
     <p>Calculadora de Daño</p>
@@ -48,7 +58,7 @@
 
               <ul class="explainer-list">
                 <li>
-                  <strong>Daño Real</strong> — El ataque del juego está inflado. Se divide por un valor fijo según el arma (el <em>Bloat</em>). Una Gran Espada divide entre 4.8; unas Dagas Dobles entre 1.4. Por eso un arma con menos ataque visible puede hacer más daño real.
+                  <strong>Daño Real</strong> — El ataque del juego está inflado. Se divide por un valor fijo según el arma (el <em>Bloat</em>). Una Gran Espada divide entre 4.8; unas Espadas Dobles entre 1.4. Por eso un arma con menos ataque visible puede hacer más daño real.
                 </li>
                 <li>
                   <strong>Filo</strong> — El nivel de afilado multiplica el daño: desde ×0.50 (rojo) hasta ×1.39 (morado). Perder filo a mitad de caza puede suponer un 30% menos de daño.
@@ -83,7 +93,7 @@
                   <strong>Zona Elemental</strong> — Independiente de la zona física. Un monstruo puede ser resistente al corte en la cola pero muy débil al fuego ahí mismo.
                 </li>
                 <li>
-                  El elemental <strong>no usa MV</strong> — se aplica igual en cada golpe. Por eso armas que golpean muy seguido (Dagas Dobles, Ballesta Ligera con Rapid Fire) acumulan elemental mucho más rápido que armas lentas.
+                  El elemental tiene su propio <strong>MV elemental</strong>, independiente del MV físico. Por eso armas que golpean muy seguido (Espadas Dobles, Ballesta Ligera con Rapid Fire) acumulan elemental mucho más rápido que armas lentas.
                 </li>
               </ul>
             </div>
@@ -122,93 +132,120 @@
       </details>
     </div>
 
-    <div class="calc-layout">
+    <!-- Fila de configuración -->
+    <div class="calc-config">
 
-      <!-- Panel izquierdo: configuración del arma -->
-      <div class="calc-panel">
+      <div class="calc-block">
+        <h2 class="calc-title">Tu Arma</h2>
 
-        <div class="calc-block">
-          <h2 class="calc-title">Tu Arma</h2>
-
-          <div class="calc-field">
-            <label for="weapon-select">Tipo de arma</label>
-            <select id="weapon-select">
-              <option value="">— Selecciona un arma —</option>
-            </select>
-          </div>
-
-          <div class="calc-field">
-            <label for="attack-input">Ataque mostrado</label>
-            <input id="attack-input" type="number" min="0" placeholder="Ej: 480">
-            <span class="calc-hint" id="true-raw-hint"></span>
-          </div>
-
-          <div class="calc-field">
-            <label for="sharpness-select">Filo</label>
-            <select id="sharpness-select">
-              <option value="white" selected>Blanco ×1.32</option>
-              <option value="purple">Morado ×1.39</option>
-              <option value="blue">Azul ×1.20</option>
-              <option value="green">Verde ×1.05</option>
-              <option value="yellow">Amarillo ×1.00</option>
-              <option value="orange">Naranja ×0.75</option>
-              <option value="red">Rojo ×0.50</option>
-            </select>
-          </div>
+        <div class="calc-field">
+          <label for="weapon-select">Tipo de arma</label>
+          <select id="weapon-select">
+            <option value="">— Selecciona un arma —</option>
+          </select>
         </div>
 
-        <div class="calc-block">
-          <h2 class="calc-title">Elemento <span class="calc-title-optional">(opcional)</span></h2>
-
-          <div class="calc-field">
-            <label for="elem-type">Tipo de elemento</label>
-            <select id="elem-type">
-              <option value="">— Sin elemento —</option>
-              <option value="fuego">Fuego</option>
-              <option value="agua">Agua</option>
-              <option value="rayo">Rayo</option>
-              <option value="hielo">Hielo</option>
-              <option value="dragon">Dragón</option>
-            </select>
+        <div class="calc-field">
+          <div class="calc-label-row">
+            <label for="attack-input" id="attack-label">Ataque mostrado</label>
+            <div class="attack-mode-toggle">
+              <button class="atk-mode-btn active" data-mode="shown">Mostrado</button>
+              <button class="atk-mode-btn" data-mode="real">Real</button>
+            </div>
           </div>
-
-          <div class="calc-field">
-            <label for="elem-input">Ataque elemental</label>
-            <input id="elem-input" type="number" min="0" placeholder="Ej: 300" disabled>
-          </div>
+          <input id="attack-input" type="number" min="0" placeholder="Ej: 480">
+          <span class="calc-hint" id="true-raw-hint"></span>
         </div>
 
-        <div class="calc-block">
-          <h2 class="calc-title">Monstruo</h2>
+        <div class="calc-field">
+          <label for="sharpness-select">Filo</label>
+          <select id="sharpness-select">
+            <option value="white" selected>Blanco ×1.32</option>
+            <option value="purple">Morado ×1.39</option>
+            <option value="blue">Azul ×1.20</option>
+            <option value="green">Verde ×1.05</option>
+            <option value="yellow">Amarillo ×1.00</option>
+            <option value="orange">Naranja ×0.75</option>
+            <option value="red">Rojo ×0.50</option>
+          </select>
+        </div>
 
-          <div class="calc-field">
-            <label for="monster-select">Selecciona monstruo</label>
-            <select id="monster-select">
-              <option value="">— Selecciona un monstruo —</option>
-            </select>
+        <div class="calc-field">
+          <label for="affinity-input">Afinidad base</label>
+          <div class="calc-input-row">
+            <input id="affinity-input" type="number" min="-100" max="100" placeholder="0" value="0">
+            <span class="calc-hint calc-hint--unit">%</span>
           </div>
+        </div>
+      </div>
 
-          <div class="calc-field" id="variant-field" style="display:none">
-            <label for="variant-select">Estado de la parte</label>
-            <select id="variant-select">
-              <option value="normal">Normal</option>
-              <option value="herida">Herida</option>
-              <option value="punto_debil">Punto débil</option>
-            </select>
+      <div class="calc-block">
+        <h2 class="calc-title">Elemento <span class="calc-title-optional">(opcional)</span></h2>
+
+        <div class="calc-field">
+          <label for="elem-type">Tipo de elemento</label>
+          <select id="elem-type">
+            <option value="">— Sin elemento —</option>
+            <option value="fuego">Fuego</option>
+            <option value="agua">Agua</option>
+            <option value="rayo">Rayo</option>
+            <option value="hielo">Hielo</option>
+            <option value="dragon">Dragón</option>
+          </select>
+        </div>
+
+        <div class="calc-field">
+          <label for="elem-input">Ataque elemental</label>
+          <input id="elem-input" type="number" min="0" placeholder="Ej: 300" disabled>
+        </div>
+
+        <h2 class="calc-title" style="margin-top:20px">Monstruo</h2>
+
+        <div class="calc-field">
+          <label>Selecciona monstruo</label>
+          <select id="monster-select" style="display:none">
+            <option value="">— Selecciona un monstruo —</option>
+          </select>
+          <div class="monster-dd" id="monster-dd">
+            <button class="monster-dd-trigger" id="monster-dd-trigger" type="button">
+              <span class="monster-dd-selected" id="monster-dd-selected">
+                <span class="monster-dd-placeholder">— Selecciona un monstruo —</span>
+              </span>
+              <span class="monster-dd-arrow">▾</span>
+            </button>
+            <div class="monster-dd-panel" id="monster-dd-panel" hidden>
+              <div class="monster-dd-search-wrap">
+                <input type="text" class="monster-dd-search" id="monster-dd-search" placeholder="Buscar monstruo...">
+              </div>
+              <div class="monster-dd-items" id="monster-dd-items"></div>
+            </div>
           </div>
         </div>
 
       </div>
 
-      <!-- Panel derecho: resultados -->
-      <div class="calc-panel calc-results-panel">
-        <div class="calc-block calc-results-block">
-          <h2 class="calc-title">Daño por parte del cuerpo</h2>
-          <p class="section-note">Selecciona tu arma y un monstruo para ver los resultados.</p>
-          <div id="results-container"></div>
+      <div class="calc-block">
+        <h2 class="calc-title">Habilidades <span class="badge-wip">Próximamente</span></h2>
+
+        <div class="skill-search-wrap" id="skill-search-wrap">
+          <input type="text" id="skill-search" class="skill-search-input" placeholder="Buscar habilidad...">
+          <div class="skill-search-panel" id="skill-search-panel" hidden>
+            <div class="skill-search-items" id="skill-search-items"></div>
+          </div>
+        </div>
+
+        <div class="skill-active-list" id="skill-active-list">
+          <p class="skill-empty-note">Añade habilidades con el buscador de arriba.</p>
         </div>
       </div>
 
+    </div>
+
+    <!-- Resultados: ancho completo -->
+    <div class="calc-block calc-results-block">
+      <h2 class="calc-title">Daño por parte del cuerpo</h2>
+      <p class="section-note">Selecciona tu arma y un monstruo para ver los resultados.</p>
+      <div id="results-container"></div>
     </div>
 
   </main>
@@ -218,13 +255,14 @@
   <script src="data/hitzones.js"></script>
   <script src="data/weapons.js"></script>
   <script src="data/motion-values.js"></script>
+  <script src="data/skills.js"></script>
   <script src="js/calculator.js"></script>
 
   <footer class="site-footer">
     <img src="src/logoV.png" alt="Logo V" class="footer-logo">
     <div class="footer-text">
       <span>Creado por <strong>Nausicaä — V</strong></span>
-      <span class="footer-thanks">Gracias a <strong>Jairo</strong> y <strong>Ghydral</strong></span>
+      <span class="footer-thanks">Quiero agradecer los aportes de <strong>Jairo</strong> y <strong>Ghydral</strong></span>
     </div>
   </footer>
 

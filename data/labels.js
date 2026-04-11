@@ -1,4 +1,10 @@
 const LABELS = {
+  tipos: {
+    normal:       "Normal",
+    curtido:      "Curtido",
+    hipercurtido: "Hipercurtido",
+    colera:       "Cólera"
+  },
   elementos: {
     fuego: "Fuego",
     agua: "Agua",

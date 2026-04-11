@@ -2,6 +2,8 @@ const MONSTERS = [
   {
     id: "chatacabra",
     nombre: "Chatacabra",
+    tipo: ["curtido"],
+    capturable: true,
     punto_debil: "Lengua",
     elementos_efectivos: ["rayo"],
     elementos: { fuego: 1, agua: 1, rayo: 2, hielo: 1, dragon: 0 },
@@ -14,6 +16,8 @@ const MONSTERS = [
   {
     id: "quematrice",
     nombre: "Quematrice",
+    tipo: ["curtido"],
+    capturable: true,
     punto_debil: "Cuello",
     elementos_efectivos: ["agua"],
     elementos: { fuego: 0, agua: 2, rayo: 1, hielo: 1, dragon: 1 },
@@ -26,6 +30,8 @@ const MONSTERS = [
   {
     id: "lala-barina",
     nombre: "Lala Barina",
+    tipo: ["curtido"],
+    capturable: true,
     punto_debil: "Cola / Aguijón",
     elementos_efectivos: ["fuego"],
     elementos: { fuego: 2, agua: 0, rayo: 1, hielo: 1, dragon: 0 },
@@ -38,6 +44,8 @@ const MONSTERS = [
   {
     id: "congalala",
     nombre: "Congalala",
+    tipo: ["curtido"],
+    capturable: true,
     punto_debil: "Trasero",
     elementos_efectivos: ["fuego"],
     elementos: { fuego: 1, agua: 1, rayo: 1, hielo: 1, dragon: 1 },
@@ -50,6 +58,8 @@ const MONSTERS = [
   {
     id: "balahara",
     nombre: "Balahara",
+    tipo: ["curtido"],
+    capturable: true,
     punto_debil: "Boca",
     elementos_efectivos: ["rayo"],
     elementos: { fuego: 1, agua: 0, rayo: 1.3, hielo: 1, dragon: 1 },
@@ -62,6 +72,8 @@ const MONSTERS = [
   {
     id: "doshaguma",
     nombre: "Doshaguma",
+    tipo: ["curtido"],
+    capturable: true,
     punto_debil: "Barriga",
     elementos_efectivos: ["fuego"],
     elementos: { fuego: 1.3, agua: 1, rayo: 1.1, hielo: 1, dragon: 0.9 },
@@ -74,6 +86,8 @@ const MONSTERS = [
   {
     id: "uth-duna",
     nombre: "Uth Duna",
+    tipo: ["curtido", "hipercurtido"],
+    capturable: true,
     punto_debil: "Boca",
     elementos_efectivos: ["rayo"],
     elementos: { fuego: 1, agua: 0, rayo: 1.1, hielo: 1, dragon: 1 },
@@ -86,6 +100,8 @@ const MONSTERS = [
   {
     id: "rompopolo",
     nombre: "Rompopolo",
+    tipo: ["curtido"],
+    capturable: true,
     punto_debil: "Lengua",
     elementos_efectivos: ["agua"],
     elementos: { fuego: 1, agua: 1.4, rayo: 1, hielo: 1, dragon: 1 },
@@ -98,6 +114,8 @@ const MONSTERS = [
   {
     id: "rey-dau",
     nombre: "Rey Dau",
+    tipo: ["curtido", "hipercurtido"],
+    capturable: true,
     punto_debil: "Cabeza",
     elementos_efectivos: ["hielo"],
     elementos: { fuego: 1, agua: 1, rayo: 0, hielo: 1.1, dragon: 1 },
@@ -110,6 +128,8 @@ const MONSTERS = [
   {
     id: "nerscylla",
     nombre: "Nerscylla",
+    tipo: ["curtido", "colera"],
+    capturable: true,
     punto_debil: "Pinzas",
     elementos_efectivos: ["fuego"],
     elementos: { fuego: 1.5, agua: 0, rayo: 0, hielo: 1, dragon: 0 },
@@ -122,6 +142,8 @@ const MONSTERS = [
   {
     id: "hirabami",
     nombre: "Hirabami",
+    tipo: ["curtido"],
+    capturable: true,
     punto_debil: "Boca",
     elementos_efectivos: ["fuego", "rayo"],
     elementos: { fuego: 1.4, agua: 1, rayo: 1.3, hielo: 0, dragon: 1 },
@@ -134,6 +156,8 @@ const MONSTERS = [
   {
     id: "ajarakan",
     nombre: "Ajarakan",
+    tipo: ["curtido"],
+    capturable: true,
     punto_debil: "Brazos",
     elementos_efectivos: ["agua"],
     elementos: { fuego: 0, agua: 1.5, rayo: 1, hielo: 1, dragon: 1 },
@@ -146,6 +170,8 @@ const MONSTERS = [
   {
     id: "nu-udra",
     nombre: "Nu Udra",
+    tipo: ["curtido", "hipercurtido"],
+    capturable: true,
     punto_debil: "Boca",
     elementos_efectivos: ["agua"],
     elementos: { fuego: 0, agua: 1.1, rayo: 1, hielo: 1, dragon: 1 },
@@ -158,6 +184,8 @@ const MONSTERS = [
   {
     id: "guardian-doshaguma",
     nombre: "Guardián Doshaguma",
+    tipo: ["curtido"],
+    capturable: true,
     punto_debil: "Patas Delanteras",
     elementos_efectivos: ["hielo", "fuego"],
     elementos: { fuego: 1.6, agua: 1, rayo: 1.1, hielo: 1.7, dragon: 1.3 },
@@ -170,6 +198,8 @@ const MONSTERS = [
   {
     id: "guardian-rathalos",
     nombre: "Guardián Rathalos",
+    tipo: ["curtido"],
+    capturable: true,
     punto_debil: "Boca / Patas",
     elementos_efectivos: ["dragon"],
     elementos: { fuego: 0, agua: 0.9, rayo: 1.3, hielo: 0.9, dragon: 1.9 },
@@ -182,6 +212,8 @@ const MONSTERS = [
   {
     id: "jin-dahaad",
     nombre: "Jin Dahaad",
+    tipo: ["curtido"],
+    capturable: false,
     punto_debil: "Boca / Pecho",
     elementos_efectivos: ["fuego"],
     elementos: { fuego: 1, agua: 0.9, rayo: 0.9, hielo: 0, dragon: 0.9 },
@@ -194,6 +226,8 @@ const MONSTERS = [
   {
     id: "guardian-ebony-odoragon",
     nombre: "Guardián Ebony Odoragon",
+    tipo: ["curtido"],
+    capturable: true,
     punto_debil: "Cola / Patas Delanteras",
     elementos_efectivos: ["agua"],
     elementos: { fuego: 1.6, agua: 2.1, rayo: 1.6, hielo: 1.6, dragon: 1.4 },
@@ -206,6 +240,8 @@ const MONSTERS = [
   {
     id: "xu-wu",
     nombre: "Xu Wu",
+    tipo: ["curtido"],
+    capturable: true,
     punto_debil: "Boca",
     elementos_efectivos: ["hielo"],
     elementos: { fuego: 1, agua: 1, rayo: 1, hielo: 2.1, dragon: 0 },
@@ -218,6 +254,8 @@ const MONSTERS = [
   {
     id: "guardian-arkveld",
     nombre: "Guardián Arkveld",
+    tipo: [],
+    capturable: true,
     punto_debil: "Cadenas",
     elementos_efectivos: [],
     elementos: { fuego: 1, agua: 1, rayo: 1, hielo: 1, dragon: 1 },
@@ -230,6 +268,8 @@ const MONSTERS = [
   {
     id: "zoh-shia",
     nombre: "Zoh Shia",
+    tipo: ["curtido"],
+    capturable: false,
     punto_debil: "Cabeza / Alas",
     elementos_efectivos: ["dragon"],
     elementos: { fuego: 1, agua: 1, rayo: 1, hielo: 1, dragon: 1.3 },
@@ -242,6 +282,8 @@ const MONSTERS = [
   {
     id: "yian-kut-ku",
     nombre: "Yian Kut-Ku",
+    tipo: ["curtido", "colera"],
+    capturable: true,
     punto_debil: "Boca",
     elementos_efectivos: ["rayo", "hielo"],
     elementos: { fuego: 1, agua: 1.1, rayo: 1.5, hielo: 1.5, dragon: 0 },
@@ -254,6 +296,8 @@ const MONSTERS = [
   {
     id: "gypceros",
     nombre: "Gypceros",
+    tipo: ["curtido", "colera"],
+    capturable: true,
     punto_debil: "Cabeza",
     elementos_efectivos: ["fuego"],
     elementos: { fuego: 1.8, agua: 1, rayo: 0, hielo: 1.4, dragon: 1 },
@@ -266,6 +310,8 @@ const MONSTERS = [
   {
     id: "rathian",
     nombre: "Rathian",
+    tipo: ["curtido"],
+    capturable: true,
     punto_debil: "Boca",
     elementos_efectivos: ["dragon"],
     elementos: { fuego: 0, agua: 0.7, rayo: 1.1, hielo: 0.7, dragon: 1.7 },
@@ -278,6 +324,8 @@ const MONSTERS = [
   {
     id: "guardian-fulgur-anjanath",
     nombre: "Guardián Fulgur Anjanath",
+    tipo: ["curtido"],
+    capturable: true,
     punto_debil: "Boca",
     elementos_efectivos: ["hielo", "agua"],
     elementos: { fuego: 1, agua: 1.7, rayo: 0, hielo: 2, dragon: 0.9 },
@@ -290,6 +338,8 @@ const MONSTERS = [
   {
     id: "rathalos",
     nombre: "Rathalos",
+    tipo: ["curtido"],
+    capturable: true,
     punto_debil: "Boca",
     elementos_efectivos: ["dragon"],
     elementos: { fuego: 0, agua: 0.8, rayo: 1, hielo: 0.8, dragon: 1.8 },
@@ -302,6 +352,8 @@ const MONSTERS = [
   {
     id: "gravios",
     nombre: "Gravios",
+    tipo: ["curtido"],
+    capturable: true,
     punto_debil: "Cabeza / Barriga / Espalda / Cola (romper armadura primero)",
     elementos_efectivos: ["agua"],
     elementos: { fuego: 0, agua: 1.9, rayo: 1, hielo: 1, dragon: 1.3 },
@@ -314,6 +366,8 @@ const MONSTERS = [
   {
     id: "blangonga",
     nombre: "Blangonga",
+    tipo: ["curtido", "colera"],
+    capturable: true,
     punto_debil: "Trasero",
     elementos_efectivos: ["fuego"],
     elementos: { fuego: 1.3, agua: 1, rayo: 1, hielo: 0, dragon: 0 },
@@ -326,6 +380,8 @@ const MONSTERS = [
   {
     id: "gore-magala",
     nombre: "Gore Magala",
+    tipo: ["curtido"],
+    capturable: true,
     punto_debil: "Boca",
     elementos_efectivos: ["fuego"],
     elementos: { fuego: 1.2, agua: 0, rayo: 1, hielo: 1, dragon: 1.1 },
@@ -338,6 +394,8 @@ const MONSTERS = [
   {
     id: "arkveld",
     nombre: "Arkveld",
+    tipo: ["curtido", "hipercurtido"],
+    capturable: true,
     punto_debil: "Cadenas",
     elementos_efectivos: [],
     elementos: { fuego: 0.8, agua: 0.8, rayo: 0.8, hielo: 0.8, dragon: 0.8 },
@@ -350,6 +408,8 @@ const MONSTERS = [
   {
     id: "mitzutsune",
     nombre: "Mitzutsune",
+    tipo: ["curtido"],
+    capturable: true,
     punto_debil: "Cabeza / Garras / Espalda",
     elementos_efectivos: ["rayo", "dragon"],
     elementos: { fuego: 1, agua: 0, rayo: 1.4, hielo: 1, dragon: 1.4 },
@@ -362,6 +422,8 @@ const MONSTERS = [
   {
     id: "seregios",
     nombre: "Seregios",
+    tipo: ["curtido"],
+    capturable: true,
     punto_debil: "Patas",
     elementos_efectivos: ["rayo"],
     elementos: { fuego: 0, agua: 1, rayo: 1.8, hielo: 1.3, dragon: 1 },
@@ -374,6 +436,8 @@ const MONSTERS = [
   {
     id: "lagiacrus",
     nombre: "Lagiacrus",
+    tipo: ["curtido"],
+    capturable: true,
     punto_debil: "Cabeza / Espalda",
     elementos_efectivos: ["fuego"],
     elementos: { fuego: 1.6, agua: 0, rayo: 0, hielo: 1.1, dragon: 1.1 },
@@ -386,6 +450,8 @@ const MONSTERS = [
   {
     id: "omega-planetes",
     nombre: "Omega Planetes",
+    tipo: [],
+    capturable: false,
     punto_debil: "Cabeza / Patas / Espalda",
     elementos_efectivos: ["rayo", "dragon"],
     elementos: { fuego: 0, agua: 1, rayo: 2.6, hielo: 0.9, dragon: 2.3 },
@@ -398,6 +464,8 @@ const MONSTERS = [
   {
     id: "gogmazios",
     nombre: "Gogmazios",
+    tipo: [],
+    capturable: false,
     punto_debil: "Cuerno / Garras Alares / Pecho / Cola",
     elementos_efectivos: ["fuego"],
     elementos: { fuego: 1, agua: 0, rayo: 0, hielo: 0, dragon: 0.6 },
