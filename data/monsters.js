@@ -1,478 +1,15779 @@
 const MONSTERS = [
   {
-    id: "chatacabra",
-    nombre: "Chatacabra",
-    tipo: ["curtido"],
-    capturable: true,
-    punto_debil: "Lengua",
-    elementos_efectivos: ["rayo"],
-    elementos: { fuego: 1, agua: 1, rayo: 2, hielo: 1, dragon: 0 },
-    estados: { veneno: 3, sueno: 2, paralisis: 3, nitro: 2, aturdido: 3, agotamiento: 2 },
-    ataques_especiales: { rugido: null, temblor_viento: null, ataque_elemental: [], efecto_estado: [] },
-    objetos: { eslinga_flash: true, bomba_sonica: false, trampa_electrica: true, trampa_escollo: true },
-    inmune_objetos: false,
-    notas: "Bomba Sónica"
+    "id": "chatacabra",
+    "nombre": "Chatacabra",
+    "tipo": [
+      "curtido"
+    ],
+    "capturable": true,
+    "especie": "amphibian",
+    "descripcion": "Anfibios que adhieren rocas a sus extremidades delanteras para potenciar sus ataques. Destrúyelas para poder atacar. Su punto débil es la lengua.",
+    "tamano": {
+      "base": 498.3,
+      "mini": 448.46997,
+      "silver": 573.045,
+      "gold": 612.909
+    },
+    "zonas": [
+      "Llanos Barlovento"
+    ],
+    "punto_debil": "Lengua",
+    "elementos_efectivos": [
+      "rayo"
+    ],
+    "elementos": {
+      "fuego": 1,
+      "agua": 1,
+      "rayo": 2,
+      "hielo": 1,
+      "dragon": 0
+    },
+    "estados": {
+      "veneno": 3,
+      "sueno": 2,
+      "paralisis": 3,
+      "nitro": 2,
+      "aturdido": 3,
+      "agotamiento": 2
+    },
+    "ataques_especiales": {
+      "rugido": null,
+      "temblor_viento": null,
+      "ataque_elemental": [],
+      "efecto_estado": []
+    },
+    "objetos": {
+      "eslinga_flash": true,
+      "bomba_sonica": false,
+      "trampa_electrica": true,
+      "trampa_escollo": true
+    },
+    "inmune_objetos": false,
+    "notas": "Bomba Sónica",
+    "drops": [
+      {
+        "nombre": "Hueso recio",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 30
+          }
+        ]
+      },
+      {
+        "nombre": "Mandíbula de Chatacabra",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 23
+          }
+        ]
+      },
+      {
+        "nombre": "Piel de Chatacabra",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 27
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 50
+          }
+        ]
+      },
+      {
+        "nombre": "Caparazón de Chatacabra",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "left-front-leg"
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "right-front-leg"
+          }
+        ]
+      },
+      {
+        "nombre": "Escama de Chatacabra",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 27
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 35
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 50
+          }
+        ]
+      },
+      {
+        "nombre": "Certificado Chatacabra",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 8
+          }
+        ]
+      },
+      {
+        "nombre": "Escama de Chatacabra+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 27
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 31
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 35
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 50
+          }
+        ]
+      },
+      {
+        "nombre": "Mandíbula de Chatacabra+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 23
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 23
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 60
+          }
+        ]
+      },
+      {
+        "nombre": "Piel de Chatacabra+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 27
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 31
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 50
+          }
+        ]
+      },
+      {
+        "nombre": "Coraza de Chatacabra",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "left-front-leg"
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "right-front-leg"
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 3,
+            "probabilidad": 100
+          }
+        ]
+      },
+      {
+        "nombre": "Certificado Chatacabra S",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 8
+          }
+        ]
+      },
+      {
+        "nombre": "Hueso robusto",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          }
+        ]
+      },
+      {
+        "nombre": "Esq. hematita wyveriana",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 50
+          }
+        ]
+      },
+      {
+        "nombre": "Hematita wyveriana (P)",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 35
+          }
+        ]
+      },
+      {
+        "nombre": "Hematita wyveriana",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 15
+          }
+        ]
+      }
+    ]
   },
   {
-    id: "quematrice",
-    nombre: "Quematrice",
-    tipo: ["curtido"],
-    capturable: true,
-    punto_debil: "Cuello",
-    elementos_efectivos: ["agua"],
-    elementos: { fuego: 0, agua: 2, rayo: 1, hielo: 1, dragon: 1 },
-    estados: { veneno: 3, sueno: 2, paralisis: 3, nitro: 2, aturdido: 2, agotamiento: 2 },
-    ataques_especiales: { rugido: null, temblor_viento: null, ataque_elemental: ["llamasblight"], efecto_estado: [] },
-    objetos: { eslinga_flash: true, bomba_sonica: false, trampa_electrica: true, trampa_escollo: true },
-    inmune_objetos: false,
-    notas: "Bomba Sónica"
+    "id": "quematrice",
+    "nombre": "Quematrice",
+    "tipo": [
+      "curtido"
+    ],
+    "capturable": true,
+    "especie": "brute-wyvern",
+    "descripcion": "Wyverns brutales que propagan vapores inflamables a los que prenden fuego con la cola. Se alimentan de presas sustraídas a otros depredadores.",
+    "tamano": {
+      "base": 1244.165,
+      "mini": 1119.7485,
+      "silver": 1430.7898,
+      "gold": 1530.323
+    },
+    "zonas": [
+      "Llanos Barlovento",
+      "Ruinas de Wyveria"
+    ],
+    "punto_debil": "Cuello",
+    "elementos_efectivos": [
+      "agua"
+    ],
+    "elementos": {
+      "fuego": 0,
+      "agua": 2,
+      "rayo": 1,
+      "hielo": 1,
+      "dragon": 1
+    },
+    "estados": {
+      "veneno": 3,
+      "sueno": 2,
+      "paralisis": 3,
+      "nitro": 2,
+      "aturdido": 2,
+      "agotamiento": 2
+    },
+    "ataques_especiales": {
+      "rugido": null,
+      "temblor_viento": null,
+      "ataque_elemental": [
+        "llamasblight"
+      ],
+      "efecto_estado": []
+    },
+    "objetos": {
+      "eslinga_flash": true,
+      "bomba_sonica": false,
+      "trampa_electrica": true,
+      "trampa_escollo": true
+    },
+    "inmune_objetos": false,
+    "notas": "Bomba Sónica",
+    "drops": [
+      {
+        "nombre": "Escama de Quematrice",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 25
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 33
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 45
+          },
+          {
+            "tipo": "talla_cola_podrida",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 60
+          }
+        ]
+      },
+      {
+        "nombre": "Piel de Quematrice",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 23
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 25
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 43
+          }
+        ]
+      },
+      {
+        "nombre": "Cresta de Quematrice",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 14
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "head"
+          }
+        ]
+      },
+      {
+        "nombre": "Cola de Quematrice",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 8
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 8
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 11
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 13
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 13
+          },
+          {
+            "tipo": "talla_cola_podrida",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "talla_cola_podrida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "talla_cola",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 93
+          },
+          {
+            "tipo": "talla_cola",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 100
+          }
+        ]
+      },
+      {
+        "nombre": "Gema de wyvern",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 3
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 3
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 5
+          },
+          {
+            "tipo": "talla_cola",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 7
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 7
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100
+          }
+        ]
+      },
+      {
+        "nombre": "Combustible Quematrice",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "herida_destruida",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 12
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 18
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 30
+          }
+        ]
+      },
+      {
+        "nombre": "Certificado Quematrice",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 8
+          }
+        ]
+      },
+      {
+        "nombre": "Escama de Quematrice+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 25
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 26
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 45
+          },
+          {
+            "tipo": "talla_cola_podrida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 60
+          }
+        ]
+      },
+      {
+        "nombre": "Piel de Quematrice+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 23
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 25
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 26
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 43
+          }
+        ]
+      },
+      {
+        "nombre": "Combustible Quematrice+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 12
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 13
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 18
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 55
+          }
+        ]
+      },
+      {
+        "nombre": "Cresta de Quematrice+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 11
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 11
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 19
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 38
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "head"
+          }
+        ]
+      },
+      {
+        "nombre": "Certificado Quematrice S",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 8
+          }
+        ]
+      },
+      {
+        "nombre": "Esq. hematita wyveriana",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 50
+          }
+        ]
+      },
+      {
+        "nombre": "Hematita wyveriana (P)",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 35
+          }
+        ]
+      },
+      {
+        "nombre": "Hematita wyveriana",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 15
+          }
+        ]
+      }
+    ]
   },
   {
-    id: "lala-barina",
-    nombre: "Lala Barina",
-    tipo: ["curtido"],
-    capturable: true,
-    punto_debil: "Cola / Aguijón",
-    elementos_efectivos: ["fuego"],
-    elementos: { fuego: 2, agua: 0, rayo: 1, hielo: 1, dragon: 0 },
-    estados: { veneno: 2, sueno: 2, paralisis: 1, nitro: 2, aturdido: 3, agotamiento: 2 },
-    ataques_especiales: { rugido: null, temblor_viento: null, ataque_elemental: [], efecto_estado: ["paralisis"] },
-    objetos: { eslinga_flash: true, bomba_sonica: false, trampa_electrica: true, trampa_escollo: true },
-    inmune_objetos: false,
-    notas: "Bomba Sónica"
+    "id": "lala-barina",
+    "nombre": "Lala Barina",
+    "tipo": [
+      "curtido"
+    ],
+    "capturable": true,
+    "especie": "temnoceran",
+    "descripcion": "Temnoceran autóctonos del Bosque Escarlata. Realizan piruetas características y arrojan flósculos con efectos paralizantes.",
+    "tamano": {
+      "base": 698.7456,
+      "mini": 628.87103,
+      "silver": 803.55743,
+      "gold": 859.4571
+    },
+    "zonas": [
+      "Bosque Escarlata",
+      "Ruinas de Wyveria"
+    ],
+    "punto_debil": "Cola / Aguijón",
+    "elementos_efectivos": [
+      "fuego"
+    ],
+    "elementos": {
+      "fuego": 2,
+      "agua": 0,
+      "rayo": 1,
+      "hielo": 1,
+      "dragon": 0
+    },
+    "estados": {
+      "veneno": 2,
+      "sueno": 2,
+      "paralisis": 1,
+      "nitro": 2,
+      "aturdido": 3,
+      "agotamiento": 2
+    },
+    "ataques_especiales": {
+      "rugido": null,
+      "temblor_viento": null,
+      "ataque_elemental": [],
+      "efecto_estado": [
+        "paralisis"
+      ]
+    },
+    "objetos": {
+      "eslinga_flash": true,
+      "bomba_sonica": false,
+      "trampa_electrica": true,
+      "trampa_escollo": true
+    },
+    "inmune_objetos": false,
+    "notas": "Bomba Sónica",
+    "drops": [
+      {
+        "nombre": "Caparazón de Lala Barina",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 23
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 43
+          }
+        ]
+      },
+      {
+        "nombre": "Garra de Lala Barina",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 11
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "left-nail"
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "right-nail"
+          }
+        ]
+      },
+      {
+        "nombre": "Aguijón de Lala Barina",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 8
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 11
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "petal"
+          }
+        ]
+      },
+      {
+        "nombre": "Certificado Lala Barina",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 8
+          }
+        ]
+      },
+      {
+        "nombre": "Flósculo de Lala Barina",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 33
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 45
+          }
+        ]
+      },
+      {
+        "nombre": "Flósculo de Lala Barina+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 23
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 33
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 45
+          }
+        ]
+      },
+      {
+        "nombre": "Coraza de Lala Barina",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 23
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 23
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 43
+          }
+        ]
+      },
+      {
+        "nombre": "Garra de Lala Barina+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 11
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 13
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 24
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "left-nail"
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "right-nail"
+          }
+        ]
+      },
+      {
+        "nombre": "Aguijón de Lala Barina+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 8
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 10
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 11
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 24
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "petal"
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 3,
+            "probabilidad": 100
+          }
+        ]
+      },
+      {
+        "nombre": "Certificado Lala Barina S",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 8
+          }
+        ]
+      },
+      {
+        "nombre": "Fluido de monstruo",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 18
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 30
+          }
+        ]
+      },
+      {
+        "nombre": "Caldo de monstruo",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 2,
+            "probabilidad": 18
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 18
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          }
+        ]
+      },
+      {
+        "nombre": "Mucosa de Lala Barina",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "herida_destruida",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 12
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 18
+          }
+        ]
+      },
+      {
+        "nombre": "Mucosa de Lala Barina+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 12
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 16
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 18
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 34
+          }
+        ]
+      },
+      {
+        "nombre": "Esq. hematita wyveriana",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 50
+          }
+        ]
+      },
+      {
+        "nombre": "Hematita wyveriana (P)",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 35
+          }
+        ]
+      },
+      {
+        "nombre": "Hematita wyveriana",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 15
+          }
+        ]
+      }
+    ]
   },
   {
-    id: "congalala",
-    nombre: "Congalala",
-    tipo: ["curtido"],
-    capturable: true,
-    punto_debil: "Trasero",
-    elementos_efectivos: ["fuego"],
-    elementos: { fuego: 1, agua: 1, rayo: 1, hielo: 1, dragon: 1 },
-    estados: { veneno: 2, sueno: 2, paralisis: 2, nitro: 2, aturdido: 2, agotamiento: 2 },
-    ataques_especiales: { rugido: null, temblor_viento: "temblor_menor", ataque_elemental: [], efecto_estado: ["veneno", "paralisis", "explosion", "hedor"] },
-    objetos: { eslinga_flash: true, bomba_sonica: false, trampa_electrica: true, trampa_escollo: true },
-    inmune_objetos: false,
-    notas: "Bomba Sónica"
+    "id": "congalala",
+    "nombre": "Congalala",
+    "tipo": [
+      "curtido"
+    ],
+    "capturable": true,
+    "especie": "fanged-beast",
+    "descripcion": "Enormes bestias rosadas y de colmillos. Mucho ojo a su aliento, que varía en función de las setas que ingiere. Y al hedor, que impide usar objetos.",
+    "tamano": {
+      "base": 1051.15,
+      "mini": 946.035,
+      "silver": 1208.8225,
+      "gold": 1292.9146
+    },
+    "zonas": [
+      "Bosque Escarlata",
+      "Ruinas de Wyveria"
+    ],
+    "punto_debil": "Trasero",
+    "elementos_efectivos": [
+      "fuego"
+    ],
+    "elementos": {
+      "fuego": 1,
+      "agua": 1,
+      "rayo": 1,
+      "hielo": 1,
+      "dragon": 1
+    },
+    "estados": {
+      "veneno": 2,
+      "sueno": 2,
+      "paralisis": 2,
+      "nitro": 2,
+      "aturdido": 2,
+      "agotamiento": 2
+    },
+    "ataques_especiales": {
+      "rugido": null,
+      "temblor_viento": "temblor_menor",
+      "ataque_elemental": [],
+      "efecto_estado": [
+        "veneno",
+        "paralisis",
+        "explosion",
+        "hedor"
+      ]
+    },
+    "objetos": {
+      "eslinga_flash": true,
+      "bomba_sonica": false,
+      "trampa_electrica": true,
+      "trampa_escollo": true
+    },
+    "inmune_objetos": false,
+    "notas": "Bomba Sónica",
+    "drops": [
+      {
+        "nombre": "Gema bestial",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 3
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 3
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 5
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 7
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100
+          }
+        ]
+      },
+      {
+        "nombre": "Hueso bruto",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 30
+          }
+        ]
+      },
+      {
+        "nombre": "Piel de Congalala",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 27
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 35
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "tail"
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 100
+          }
+        ]
+      },
+      {
+        "nombre": "Garra de Congalala",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 23
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "left-front-leg"
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "right-front-leg"
+          }
+        ]
+      },
+      {
+        "nombre": "Colmillo de Congalala",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 27
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 30
+          }
+        ]
+      },
+      {
+        "nombre": "Piel vibrante",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "head"
+          }
+        ]
+      },
+      {
+        "nombre": "Certificado Congalala",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 8
+          }
+        ]
+      },
+      {
+        "nombre": "Piel de Congalala+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 27
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 31
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 33
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "tail"
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100
+          }
+        ]
+      },
+      {
+        "nombre": "Garra de Congalala+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 54
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "left-front-leg"
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "right-front-leg"
+          }
+        ]
+      },
+      {
+        "nombre": "Colmillo de Congalala+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 27
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 27
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 31
+          }
+        ]
+      },
+      {
+        "nombre": "Piel vibrante+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 39
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "head"
+          }
+        ]
+      },
+      {
+        "nombre": "Certificado Congalala S",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 8
+          }
+        ]
+      },
+      {
+        "nombre": "Hueso robusto",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          }
+        ]
+      },
+      {
+        "nombre": "Esq. hematita wyveriana",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 50
+          }
+        ]
+      },
+      {
+        "nombre": "Hematita wyveriana (P)",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 35
+          }
+        ]
+      },
+      {
+        "nombre": "Hematita wyveriana",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 15
+          }
+        ]
+      }
+    ]
   },
   {
-    id: "balahara",
-    nombre: "Balahara",
-    tipo: ["curtido"],
-    capturable: true,
-    punto_debil: "Boca",
-    elementos_efectivos: ["rayo"],
-    elementos: { fuego: 1, agua: 0, rayo: 1.3, hielo: 1, dragon: 1 },
-    estados: { veneno: 2, sueno: 2, paralisis: 3, nitro: 2, aturdido: 2, agotamiento: 2 },
-    ataques_especiales: { rugido: null, temblor_viento: null, ataque_elemental: ["aguablight"], efecto_estado: [] },
-    objetos: { eslinga_flash: true, bomba_sonica: true, trampa_electrica: true, trampa_escollo: true },
-    inmune_objetos: false,
-    notas: ""
+    "id": "balahara",
+    "nombre": "Balahara",
+    "tipo": [
+      "curtido"
+    ],
+    "capturable": true,
+    "especie": "leviathan",
+    "descripcion": "Leviatanes moradores del desierto que emplean sus ágiles y serpenteantes cuerpos para crear arenas movedizas. Usa bombas sónicas si se sumergen.",
+    "tamano": {
+      "base": 1912.616,
+      "mini": 1721.3544,
+      "silver": 2199.5083,
+      "gold": 2352.5176
+    },
+    "zonas": [
+      "Llanos Barlovento"
+    ],
+    "punto_debil": "Boca",
+    "elementos_efectivos": [
+      "rayo"
+    ],
+    "elementos": {
+      "fuego": 1,
+      "agua": 0,
+      "rayo": 1.3,
+      "hielo": 1,
+      "dragon": 1
+    },
+    "estados": {
+      "veneno": 2,
+      "sueno": 2,
+      "paralisis": 3,
+      "nitro": 2,
+      "aturdido": 2,
+      "agotamiento": 2
+    },
+    "ataques_especiales": {
+      "rugido": null,
+      "temblor_viento": null,
+      "ataque_elemental": [
+        "aguablight"
+      ],
+      "efecto_estado": []
+    },
+    "objetos": {
+      "eslinga_flash": true,
+      "bomba_sonica": true,
+      "trampa_electrica": true,
+      "trampa_escollo": true
+    },
+    "inmune_objetos": false,
+    "notas": "",
+    "drops": [
+      {
+        "nombre": "Hueso recio",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 30
+          }
+        ]
+      },
+      {
+        "nombre": "Caparazón de Balahara",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 25
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 47
+          }
+        ]
+      },
+      {
+        "nombre": "Escama de Balahara",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 33
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 48
+          },
+          {
+            "tipo": "talla_cola_podrida",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 60
+          }
+        ]
+      },
+      {
+        "nombre": "Cráneo de Balahara",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 18
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 80,
+            "parte": "head"
+          }
+        ]
+      },
+      {
+        "nombre": "Cola de Balahara",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 7
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 11
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 11
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 13
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 16
+          },
+          {
+            "tipo": "talla_cola_podrida",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "talla_cola_podrida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "talla_cola",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 93
+          },
+          {
+            "tipo": "talla_cola",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 100
+          }
+        ]
+      },
+      {
+        "nombre": "Gema de wyvern",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 3
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 3
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 5
+          },
+          {
+            "tipo": "talla_cola",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 7
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 7
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100
+          }
+        ]
+      },
+      {
+        "nombre": "Certificado Balahara",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 8
+          }
+        ]
+      },
+      {
+        "nombre": "Escama de Balahara+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 23
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 48
+          },
+          {
+            "tipo": "talla_cola_podrida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 60
+          }
+        ]
+      },
+      {
+        "nombre": "Coraza de Balahara",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 23
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 23
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 47
+          }
+        ]
+      },
+      {
+        "nombre": "Cráneo de Balahara+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 10
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 13
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 17
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 45
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 80,
+            "parte": "head"
+          }
+        ]
+      },
+      {
+        "nombre": "Certificado Balahara S",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 8
+          }
+        ]
+      },
+      {
+        "nombre": "Vesícula acuosa",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 18
+          }
+        ]
+      },
+      {
+        "nombre": "Vesícula torrencial",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 18
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 2,
+            "probabilidad": 24
+          }
+        ]
+      },
+      {
+        "nombre": "Hueso afilado",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          }
+        ]
+      },
+      {
+        "nombre": "Hematita wyveriana (P)",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 65
+          }
+        ]
+      },
+      {
+        "nombre": "Hematita wyveriana",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 35
+          }
+        ]
+      },
+      {
+        "nombre": "Perla negra de Balahara",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "herida_destruida",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 5
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 5
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 8
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 10
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 11
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 11
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 14
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 20,
+            "parte": "head"
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 20,
+            "parte": "head"
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 24
+          }
+        ]
+      }
+    ]
   },
   {
-    id: "doshaguma",
-    nombre: "Doshaguma",
-    tipo: ["curtido"],
-    capturable: true,
-    punto_debil: "Barriga",
-    elementos_efectivos: ["fuego"],
-    elementos: { fuego: 1.3, agua: 1, rayo: 1.1, hielo: 1, dragon: 0.9 },
-    estados: { veneno: 2, sueno: 2, paralisis: 2, nitro: 2, aturdido: 2, agotamiento: 2 },
-    ataques_especiales: { rugido: "debil", temblor_viento: "temblor_menor", ataque_elemental: [], efecto_estado: [] },
-    objetos: { eslinga_flash: true, bomba_sonica: false, trampa_electrica: true, trampa_escollo: true },
-    inmune_objetos: false,
-    notas: "Bomba Sónica"
+    "id": "doshaguma",
+    "nombre": "Doshaguma",
+    "tipo": [
+      "curtido"
+    ],
+    "capturable": true,
+    "especie": "fanged-beast",
+    "descripcion": "Bestias de colmillos fuertes y territoriales con un marcado carácter agresivo y un gran radio de acción. Suelen ir en manadas.",
+    "tamano": {
+      "base": 1390.47,
+      "mini": 1251.423,
+      "silver": 1599.0404,
+      "gold": 1710.2781
+    },
+    "zonas": [
+      "Llanos Barlovento",
+      "Bosque Escarlata",
+      "Ruinas de Wyveria"
+    ],
+    "punto_debil": "Barriga",
+    "elementos_efectivos": [
+      "fuego"
+    ],
+    "elementos": {
+      "fuego": 1.3,
+      "agua": 1,
+      "rayo": 1.1,
+      "hielo": 1,
+      "dragon": 0.9
+    },
+    "estados": {
+      "veneno": 2,
+      "sueno": 2,
+      "paralisis": 2,
+      "nitro": 2,
+      "aturdido": 2,
+      "agotamiento": 2
+    },
+    "ataques_especiales": {
+      "rugido": "debil",
+      "temblor_viento": "temblor_menor",
+      "ataque_elemental": [],
+      "efecto_estado": []
+    },
+    "objetos": {
+      "eslinga_flash": true,
+      "bomba_sonica": false,
+      "trampa_electrica": true,
+      "trampa_escollo": true
+    },
+    "inmune_objetos": false,
+    "notas": "Bomba Sónica",
+    "drops": [
+      {
+        "nombre": "Piel Doshaguma",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 27
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 35
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 50
+          }
+        ]
+      },
+      {
+        "nombre": "Pelaje Doshaguma",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 27
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 50
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "tail-hair"
+          }
+        ]
+      },
+      {
+        "nombre": "Garra Doshaguma",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "right-front-leg"
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "left-front-leg"
+          }
+        ]
+      },
+      {
+        "nombre": "Colmillo Doshaguma",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 20
+          }
+        ]
+      },
+      {
+        "nombre": "Gema bestial",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 3
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 3
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 5
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 7
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100
+          }
+        ]
+      },
+      {
+        "nombre": "Hueso recio",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 30
+          }
+        ]
+      },
+      {
+        "nombre": "Certificado Doshaguma",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 11
+          }
+        ]
+      },
+      {
+        "nombre": "Pelaje Doshaguma+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 27
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 27
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 31
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 50
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "tail-hair"
+          }
+        ]
+      },
+      {
+        "nombre": "Piel Doshaguma+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 27
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 31
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 33
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 50
+          }
+        ]
+      },
+      {
+        "nombre": "Garra Doshaguma+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 54
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "right-front-leg"
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "left-front-leg"
+          }
+        ]
+      },
+      {
+        "nombre": "Colmillo Doshaguma+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 39
+          }
+        ]
+      },
+      {
+        "nombre": "Certificado Doshaguma S",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 8
+          }
+        ]
+      },
+      {
+        "nombre": "Hueso robusto gigante",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          }
+        ]
+      },
+      {
+        "nombre": "Hematita wyveriana (P)",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 45
+          }
+        ]
+      },
+      {
+        "nombre": "Hematita wyveriana",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 35
+          }
+        ]
+      },
+      {
+        "nombre": "Hematita wyveriana (G)",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 20
+          }
+        ]
+      }
+    ]
   },
   {
-    id: "uth-duna",
-    nombre: "Uth Duna",
-    tipo: ["curtido", "hipercurtido"],
-    capturable: true,
-    punto_debil: "Boca",
-    elementos_efectivos: ["rayo"],
-    elementos: { fuego: 1, agua: 0, rayo: 1.1, hielo: 1, dragon: 1 },
-    estados: { veneno: 2, sueno: 2, paralisis: 2, nitro: 2, aturdido: 1, agotamiento: 2 },
-    ataques_especiales: { rugido: "debil", temblor_viento: null, ataque_elemental: ["aguablight"], efecto_estado: [] },
-    objetos: { eslinga_flash: true, bomba_sonica: false, trampa_electrica: true, trampa_escollo: true },
-    inmune_objetos: false,
-    notas: "Bomba Sónica"
+    "id": "uth-duna",
+    "nombre": "Uth Duna",
+    "tipo": [
+      "curtido",
+      "hipercurtido"
+    ],
+    "capturable": true,
+    "especie": "leviathan",
+    "descripcion": "Leviatán que ejerce su supremacía en el ecosistema del Bosque Escarlata. Su velo protector puede generar una onda que mantiene a raya al enemigo.",
+    "tamano": {
+      "base": 2979.2935,
+      "mini": 2681.364,
+      "silver": 3247.43,
+      "gold": 3366.6016
+    },
+    "zonas": [
+      "Bosque Escarlata"
+    ],
+    "punto_debil": "Boca",
+    "elementos_efectivos": [
+      "rayo"
+    ],
+    "elementos": {
+      "fuego": 1,
+      "agua": 0,
+      "rayo": 1.1,
+      "hielo": 1,
+      "dragon": 1
+    },
+    "estados": {
+      "veneno": 2,
+      "sueno": 2,
+      "paralisis": 2,
+      "nitro": 2,
+      "aturdido": 1,
+      "agotamiento": 2
+    },
+    "ataques_especiales": {
+      "rugido": "debil",
+      "temblor_viento": null,
+      "ataque_elemental": [
+        "aguablight"
+      ],
+      "efecto_estado": []
+    },
+    "objetos": {
+      "eslinga_flash": true,
+      "bomba_sonica": false,
+      "trampa_electrica": true,
+      "trampa_escollo": true
+    },
+    "inmune_objetos": false,
+    "notas": "Bomba Sónica",
+    "drops": [
+      {
+        "nombre": "Escama de Uth Duna",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 28
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 45
+          }
+        ]
+      },
+      {
+        "nombre": "Piel de Uth Duna",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 23
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 43
+          }
+        ]
+      },
+      {
+        "nombre": "Cilio de Uth Duna",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "herida_destruida",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 12
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 18
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 88,
+            "parte": "tail"
+          }
+        ]
+      },
+      {
+        "nombre": "Tentáculo de Uth Duna",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 8
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 11
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "head"
+          }
+        ]
+      },
+      {
+        "nombre": "Garra de Uth Duna",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 8
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 13
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "right-front-leg"
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "left-front-leg"
+          }
+        ]
+      },
+      {
+        "nombre": "Placa de Uth Duna",
+        "rareza": 5,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 5
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 7
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 7
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 7
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 12,
+            "parte": "tail"
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 21
+          }
+        ]
+      },
+      {
+        "nombre": "Certificado Uth Duna",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 8
+          }
+        ]
+      },
+      {
+        "nombre": "Escama de Uth Duna+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 18
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 45
+          }
+        ]
+      },
+      {
+        "nombre": "Piel de Uth Duna+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 18
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 23
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 43
+          }
+        ]
+      },
+      {
+        "nombre": "Cilio de Uth Duna+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 12
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 14
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 18
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 24
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 93,
+            "parte": "tail"
+          }
+        ]
+      },
+      {
+        "nombre": "Tentáculo de Uth Duna+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 8
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 10
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 11
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 24
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "head"
+          }
+        ]
+      },
+      {
+        "nombre": "Garra de Uth Duna+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 8
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 10
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 13
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 24
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "right-front-leg"
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "left-front-leg"
+          }
+        ]
+      },
+      {
+        "nombre": "Gema acuática de Uth Duna",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 3
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 3
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 5
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 7,
+            "parte": "tail"
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 7
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100
+          }
+        ]
+      },
+      {
+        "nombre": "Certificado Uth Duna S",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 8
+          }
+        ]
+      },
+      {
+        "nombre": "Vesícula acuosa",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 16
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 30
+          }
+        ]
+      },
+      {
+        "nombre": "Vesícula torrencial",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 16
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          }
+        ]
+      },
+      {
+        "nombre": "Hematita wyveriana",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 70
+          }
+        ]
+      },
+      {
+        "nombre": "Hematita wyveriana (G)",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 23
+          }
+        ]
+      },
+      {
+        "nombre": "Trozo hematita wyveriana",
+        "rareza": 8,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 7
+          }
+        ]
+      }
+    ]
   },
   {
-    id: "rompopolo",
-    nombre: "Rompopolo",
-    tipo: ["curtido"],
-    capturable: true,
-    punto_debil: "Lengua",
-    elementos_efectivos: ["agua"],
-    elementos: { fuego: 1, agua: 1.4, rayo: 1, hielo: 1, dragon: 1 },
-    estados: { veneno: 1, sueno: 2, paralisis: 2, nitro: 2, aturdido: 2, agotamiento: 2 },
-    ataques_especiales: { rugido: "debil", temblor_viento: null, ataque_elemental: [], efecto_estado: ["veneno"] },
-    objetos: { eslinga_flash: true, bomba_sonica: false, trampa_electrica: true, trampa_escollo: true },
-    inmune_objetos: false,
-    notas: "Bomba Sónica"
+    "id": "rompopolo",
+    "nombre": "Rompopolo",
+    "tipo": [
+      "curtido"
+    ],
+    "capturable": true,
+    "especie": "brute-wyvern",
+    "descripcion": "Wyverns brutales moteados oriundos de la Cuenca Oleosa. El gas de sus lenguas es tóxico, mientras que el de la cola puede provocar explosiones.",
+    "tamano": {
+      "base": 1197.82,
+      "mini": 1078.038,
+      "silver": 1377.4929,
+      "gold": 1473.3186
+    },
+    "zonas": [
+      "Cuenca Oleosa"
+    ],
+    "punto_debil": "Lengua",
+    "elementos_efectivos": [
+      "agua"
+    ],
+    "elementos": {
+      "fuego": 1,
+      "agua": 1.4,
+      "rayo": 1,
+      "hielo": 1,
+      "dragon": 1
+    },
+    "estados": {
+      "veneno": 1,
+      "sueno": 2,
+      "paralisis": 2,
+      "nitro": 2,
+      "aturdido": 2,
+      "agotamiento": 2
+    },
+    "ataques_especiales": {
+      "rugido": "debil",
+      "temblor_viento": null,
+      "ataque_elemental": [],
+      "efecto_estado": [
+        "veneno"
+      ]
+    },
+    "objetos": {
+      "eslinga_flash": true,
+      "bomba_sonica": false,
+      "trampa_electrica": true,
+      "trampa_escollo": true
+    },
+    "inmune_objetos": false,
+    "notas": "Bomba Sónica",
+    "drops": [
+      {
+        "nombre": "Gema de wyvern",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 3
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 3
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 5
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 7
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100
+          }
+        ]
+      },
+      {
+        "nombre": "Piel de Rompopolo",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 25
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 35
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 80
+          }
+        ]
+      },
+      {
+        "nombre": "Garra de Rompopolo",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "right-front-leg"
+          }
+        ]
+      },
+      {
+        "nombre": "Piel venenosa moteada",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 10
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 60,
+            "parte": "head"
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 60,
+            "parte": "back"
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 60,
+            "parte": "tail"
+          }
+        ]
+      },
+      {
+        "nombre": "Pico de Rompopolo",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 22
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 40,
+            "parte": "head"
+          }
+        ]
+      },
+      {
+        "nombre": "Certificado Rompopolo",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 8
+          }
+        ]
+      },
+      {
+        "nombre": "Piel de Rompopolo+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 22
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 26
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 33
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 80
+          }
+        ]
+      },
+      {
+        "nombre": "Garra de Rompopolo+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 38
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "right-front-leg"
+          }
+        ]
+      },
+      {
+        "nombre": "Piel venenosa moteada+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 10
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 10
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 60,
+            "parte": "head"
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 60,
+            "parte": "back"
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 60,
+            "parte": "tail"
+          }
+        ]
+      },
+      {
+        "nombre": "Pico de Rompopolo+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 22
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 26
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 27
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 40,
+            "parte": "head"
+          }
+        ]
+      },
+      {
+        "nombre": "Certificado Rompopolo S",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 8
+          }
+        ]
+      },
+      {
+        "nombre": "Vesícula de veneno",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 40,
+            "parte": "back"
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 40,
+            "parte": "tail"
+          }
+        ]
+      },
+      {
+        "nombre": "Vesícula tóxica",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 2,
+            "probabilidad": 25
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 40,
+            "parte": "back"
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 40,
+            "parte": "tail"
+          }
+        ]
+      },
+      {
+        "nombre": "Esq. hematita wyveriana",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 50
+          }
+        ]
+      },
+      {
+        "nombre": "Hematita wyveriana (P)",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 35
+          }
+        ]
+      },
+      {
+        "nombre": "Hematita wyveriana",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 15
+          }
+        ]
+      }
+    ]
   },
   {
-    id: "rey-dau",
-    nombre: "Rey Dau",
-    tipo: ["curtido", "hipercurtido"],
-    capturable: true,
-    punto_debil: "Cabeza",
-    elementos_efectivos: ["hielo"],
-    elementos: { fuego: 1, agua: 1, rayo: 0, hielo: 1.1, dragon: 1 },
-    estados: { veneno: 2, sueno: 2, paralisis: 1, nitro: 2, aturdido: 1, agotamiento: 2 },
-    ataques_especiales: { rugido: "debil", temblor_viento: null, ataque_elemental: ["truenoblight"], efecto_estado: [] },
-    objetos: { eslinga_flash: true, bomba_sonica: false, trampa_electrica: false, trampa_escollo: true },
-    inmune_objetos: false,
-    notas: "Bomba Sónica / Trampa Eléctrica"
+    "id": "rey-dau",
+    "nombre": "Rey Dau",
+    "tipo": [
+      "curtido",
+      "hipercurtido"
+    ],
+    "capturable": true,
+    "especie": "flying-wyvern",
+    "descripcion": "Wyvern volador que ejerce su supremacía en el ecosistema de los Llanos Barlovento. Almacena, amplifica y descarga rayos de la marea de arena.",
+    "tamano": {
+      "base": 2057.0854,
+      "mini": 1851.3768,
+      "silver": 2365.6482,
+      "gold": 2530.215
+    },
+    "zonas": [
+      "Llanos Barlovento"
+    ],
+    "punto_debil": "Cabeza",
+    "elementos_efectivos": [
+      "hielo"
+    ],
+    "elementos": {
+      "fuego": 1,
+      "agua": 1,
+      "rayo": 0,
+      "hielo": 1.1,
+      "dragon": 1
+    },
+    "estados": {
+      "veneno": 2,
+      "sueno": 2,
+      "paralisis": 1,
+      "nitro": 2,
+      "aturdido": 1,
+      "agotamiento": 2
+    },
+    "ataques_especiales": {
+      "rugido": "debil",
+      "temblor_viento": null,
+      "ataque_elemental": [
+        "truenoblight"
+      ],
+      "efecto_estado": []
+    },
+    "objetos": {
+      "eslinga_flash": true,
+      "bomba_sonica": false,
+      "trampa_electrica": false,
+      "trampa_escollo": true
+    },
+    "inmune_objetos": false,
+    "notas": "Bomba Sónica / Trampa Eléctrica",
+    "drops": [
+      {
+        "nombre": "Escama de Rey Dau",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 25
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 28
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 50
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 60
+          },
+          {
+            "tipo": "talla_cola_podrida",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 60
+          }
+        ]
+      },
+      {
+        "nombre": "Caparazón de Rey Dau",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 23
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 25
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 50
+          }
+        ]
+      },
+      {
+        "nombre": "Cuerno atronador Rey Dau",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 11
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 13
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "head"
+          }
+        ]
+      },
+      {
+        "nombre": "Garra de Rey Dau",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 18
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "hide"
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "hide"
+          }
+        ]
+      },
+      {
+        "nombre": "Cola de Rey Dau",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 11
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 11
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 11
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 11
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 11
+          },
+          {
+            "tipo": "talla_cola_podrida",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "talla_cola_podrida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "talla_cola",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 88
+          },
+          {
+            "tipo": "talla_cola",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 93
+          }
+        ]
+      },
+      {
+        "nombre": "Placa de Rey Dau",
+        "rareza": 5,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 5
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 7
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 7
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 7
+          },
+          {
+            "tipo": "talla_cola",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 12
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 21
+          }
+        ]
+      },
+      {
+        "nombre": "Certificado Rey Dau",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 8
+          }
+        ]
+      },
+      {
+        "nombre": "Escama de Rey Dau+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 22
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 26
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 50
+          },
+          {
+            "tipo": "talla_cola_podrida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 60
+          }
+        ]
+      },
+      {
+        "nombre": "Coraza de Rey Dau",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 22
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 23
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 26
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 50
+          }
+        ]
+      },
+      {
+        "nombre": "Cuerno relámpago Rey Dau",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 11
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 11
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 13
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 36
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "head"
+          }
+        ]
+      },
+      {
+        "nombre": "Espolón fulgúreo Rey Dau",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 16
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 16
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 18
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 36
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "hide"
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "hide"
+          }
+        ]
+      },
+      {
+        "nombre": "Gema de rayo de Rey Dau",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 3
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 3
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 5
+          },
+          {
+            "tipo": "talla_cola",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 7
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 7
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100
+          }
+        ]
+      },
+      {
+        "nombre": "Certificado Rey Dau S",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 8
+          }
+        ]
+      },
+      {
+        "nombre": "Hueso escudo",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          }
+        ]
+      },
+      {
+        "nombre": "Hematita wyveriana",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 70
+          }
+        ]
+      },
+      {
+        "nombre": "Hematita wyveriana (G)",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 23
+          }
+        ]
+      },
+      {
+        "nombre": "Trozo hematita wyveriana",
+        "rareza": 8,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 7
+          }
+        ]
+      }
+    ]
   },
   {
-    id: "nerscylla",
-    nombre: "Nerscylla",
-    tipo: ["curtido", "colera"],
-    capturable: true,
-    punto_debil: "Pinzas",
-    elementos_efectivos: ["fuego"],
-    elementos: { fuego: 1.5, agua: 0, rayo: 0, hielo: 1, dragon: 0 },
-    estados: { veneno: 2, sueno: 1, paralisis: 3, nitro: 2, aturdido: 2, agotamiento: 2 },
-    ataques_especiales: { rugido: null, temblor_viento: null, ataque_elemental: [], efecto_estado: ["veneno", "sueno", "telarana"] },
-    objetos: { eslinga_flash: true, bomba_sonica: false, trampa_electrica: true, trampa_escollo: true },
-    inmune_objetos: false,
-    notas: "Bomba Sónica"
+    "id": "nerscylla",
+    "nombre": "Nerscylla",
+    "tipo": [
+      "curtido",
+      "colera"
+    ],
+    "capturable": true,
+    "especie": "temnoceran",
+    "descripcion": "Temnoceran que con su telaraña enmarañan, envenenan y duermen a su presa. Ya indefensa, le dan caza con sus mandíbulas como pinzas.",
+    "tamano": {
+      "base": 731.9625,
+      "mini": 658.76624,
+      "silver": 841.7569,
+      "gold": 900.3139
+    },
+    "zonas": [
+      "Cuenca Oleosa",
+      "Ruinas de Wyveria",
+      "Acantilados del Témpano"
+    ],
+    "punto_debil": "Pinzas",
+    "elementos_efectivos": [
+      "fuego"
+    ],
+    "elementos": {
+      "fuego": 1.5,
+      "agua": 0,
+      "rayo": 0,
+      "hielo": 1,
+      "dragon": 0
+    },
+    "estados": {
+      "veneno": 2,
+      "sueno": 1,
+      "paralisis": 3,
+      "nitro": 2,
+      "aturdido": 2,
+      "agotamiento": 2
+    },
+    "ataques_especiales": {
+      "rugido": null,
+      "temblor_viento": null,
+      "ataque_elemental": [],
+      "efecto_estado": [
+        "veneno",
+        "sueno",
+        "telarana"
+      ]
+    },
+    "objetos": {
+      "eslinga_flash": true,
+      "bomba_sonica": false,
+      "trampa_electrica": true,
+      "trampa_escollo": true
+    },
+    "inmune_objetos": false,
+    "notas": "Bomba Sónica",
+    "drops": [
+      {
+        "nombre": "Cizalla de Nerscylla",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 23
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          }
+        ]
+      },
+      {
+        "nombre": "Caparazón de Nerscylla",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 35
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 50
+          }
+        ]
+      },
+      {
+        "nombre": "Tenaza de Nerscylla",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 30
+          }
+        ]
+      },
+      {
+        "nombre": "Garra de Nerscylla",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "left-nail"
+          }
+        ]
+      },
+      {
+        "nombre": "Púa de Nerscylla",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 8
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 12
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "hide"
+          }
+        ]
+      },
+      {
+        "nombre": "Certificado Nerscylla",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 8
+          }
+        ]
+      },
+      {
+        "nombre": "Coraza de Nerscylla",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 23
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 35
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 63
+          }
+        ]
+      },
+      {
+        "nombre": "Garra de Nerscylla+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 18
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 41
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "left-nail"
+          }
+        ]
+      },
+      {
+        "nombre": "Púa de Nerscylla+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 8
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 11
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 25
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 33
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "hide"
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 3,
+            "probabilidad": 100
+          }
+        ]
+      },
+      {
+        "nombre": "Certificado Nerscylla S",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 8
+          }
+        ]
+      },
+      {
+        "nombre": "Piel elástica",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 8
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 38
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "hide"
+          }
+        ]
+      },
+      {
+        "nombre": "Piel elástica+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 8
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 12
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "hide"
+          }
+        ]
+      },
+      {
+        "nombre": "Vesícula somnífera",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 21
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 30
+          }
+        ]
+      },
+      {
+        "nombre": "Vesícula de coma",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 21
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 25
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 2,
+            "probabilidad": 26
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          }
+        ]
+      },
+      {
+        "nombre": "Hematita wyveriana (P)",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 65
+          }
+        ]
+      },
+      {
+        "nombre": "Hematita wyveriana",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 35
+          }
+        ]
+      }
+    ]
   },
   {
-    id: "hirabami",
-    nombre: "Hirabami",
-    tipo: ["curtido"],
-    capturable: true,
-    punto_debil: "Boca",
-    elementos_efectivos: ["fuego", "rayo"],
-    elementos: { fuego: 1.4, agua: 1, rayo: 1.3, hielo: 0, dragon: 1 },
-    estados: { veneno: 3, sueno: 3, paralisis: 2, nitro: 2, aturdido: 2, agotamiento: 2 },
-    ataques_especiales: { rugido: "debil", temblor_viento: null, ataque_elemental: ["escarchablight"], efecto_estado: [] },
-    objetos: { eslinga_flash: true, bomba_sonica: false, trampa_electrica: true, trampa_escollo: true },
-    inmune_objetos: false,
-    notas: "Bomba Sónica"
+    "id": "hirabami",
+    "nombre": "Hirabami",
+    "tipo": [
+      "curtido"
+    ],
+    "capturable": true,
+    "especie": "leviathan",
+    "descripcion": "Leviatanes de los Acantilados del Témpano. Tienen colas afiladas como pinzas, y membranas en el cuello por las que cogen aire para flotar.",
+    "tamano": {
+      "base": 1659.3395,
+      "mini": 1493.4055,
+      "silver": 1808.68,
+      "gold": 1875.0536
+    },
+    "zonas": [
+      "Ruinas de Wyveria",
+      "Acantilados del Témpano"
+    ],
+    "punto_debil": "Boca",
+    "elementos_efectivos": [
+      "fuego",
+      "rayo"
+    ],
+    "elementos": {
+      "fuego": 1.4,
+      "agua": 1,
+      "rayo": 1.3,
+      "hielo": 0,
+      "dragon": 1
+    },
+    "estados": {
+      "veneno": 3,
+      "sueno": 3,
+      "paralisis": 2,
+      "nitro": 2,
+      "aturdido": 2,
+      "agotamiento": 2
+    },
+    "ataques_especiales": {
+      "rugido": "debil",
+      "temblor_viento": null,
+      "ataque_elemental": [
+        "escarchablight"
+      ],
+      "efecto_estado": []
+    },
+    "objetos": {
+      "eslinga_flash": true,
+      "bomba_sonica": false,
+      "trampa_electrica": true,
+      "trampa_escollo": true
+    },
+    "inmune_objetos": false,
+    "notas": "Bomba Sónica",
+    "drops": [
+      {
+        "nombre": "Gema de wyvern",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 3
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 3
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 5
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 7
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100
+          }
+        ]
+      },
+      {
+        "nombre": "Escama de Hirabami",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 22
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 35
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 45
+          }
+        ]
+      },
+      {
+        "nombre": "Piel de Hirabami",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 22
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 43
+          }
+        ]
+      },
+      {
+        "nombre": "Membrana de Hirabami",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "herida_destruida",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 12
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "head"
+          }
+        ]
+      },
+      {
+        "nombre": "Garra cola de Hirabami",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 10
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "tail"
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "tail"
+          }
+        ]
+      },
+      {
+        "nombre": "Certificado Hirabami",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 8
+          }
+        ]
+      },
+      {
+        "nombre": "Escama de Hirabami+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 22
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 26
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 33
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 45
+          }
+        ]
+      },
+      {
+        "nombre": "Piel de Hirabami+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 22
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 26
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 27
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 43
+          }
+        ]
+      },
+      {
+        "nombre": "Membrana de Hirabami+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 12
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 38
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "head"
+          }
+        ]
+      },
+      {
+        "nombre": "Garra cola de Hirabami+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 10
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 10
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "tail"
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "tail"
+          }
+        ]
+      },
+      {
+        "nombre": "Certificado Hirabami S",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 8
+          }
+        ]
+      },
+      {
+        "nombre": "Vesícula de nieve",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 23
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 30
+          }
+        ]
+      },
+      {
+        "nombre": "Vesícula congelante",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 2,
+            "probabilidad": 25
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          }
+        ]
+      },
+      {
+        "nombre": "Hematita wyveriana (P)",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 65
+          }
+        ]
+      },
+      {
+        "nombre": "Hematita wyveriana",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 35
+          }
+        ]
+      }
+    ]
   },
   {
-    id: "ajarakan",
-    nombre: "Ajarakan",
-    tipo: ["curtido"],
-    capturable: true,
-    punto_debil: "Brazos",
-    elementos_efectivos: ["agua"],
-    elementos: { fuego: 0, agua: 1.5, rayo: 1, hielo: 1, dragon: 1 },
-    estados: { veneno: 2, sueno: 2, paralisis: 2, nitro: 2, aturdido: 2, agotamiento: 2 },
-    ataques_especiales: { rugido: "debil", temblor_viento: "temblor_menor", ataque_elemental: ["llamasblight"], efecto_estado: ["explosion"] },
-    objetos: { eslinga_flash: true, bomba_sonica: false, trampa_electrica: true, trampa_escollo: true },
-    inmune_objetos: false,
-    notas: "Bomba Sónica"
+    "id": "ajarakan",
+    "nombre": "Ajarakan",
+    "tipo": [
+      "curtido"
+    ],
+    "capturable": true,
+    "especie": "fanged-beast",
+    "descripcion": "Bestias de colmillos que adhieren metal a sus cuerpos y emplean la fricción para calentarse y explotar. Al brotar la Fuente van en grupo.",
+    "tamano": {
+      "base": 1164.36,
+      "mini": 1047.924,
+      "silver": 1339.0139,
+      "gold": 1432.1628
+    },
+    "zonas": [
+      "Cuenca Oleosa",
+      "Ruinas de Wyveria"
+    ],
+    "punto_debil": "Brazos",
+    "elementos_efectivos": [
+      "agua"
+    ],
+    "elementos": {
+      "fuego": 0,
+      "agua": 1.5,
+      "rayo": 1,
+      "hielo": 1,
+      "dragon": 1
+    },
+    "estados": {
+      "veneno": 2,
+      "sueno": 2,
+      "paralisis": 2,
+      "nitro": 2,
+      "aturdido": 2,
+      "agotamiento": 2
+    },
+    "ataques_especiales": {
+      "rugido": "debil",
+      "temblor_viento": "temblor_menor",
+      "ataque_elemental": [
+        "llamasblight"
+      ],
+      "efecto_estado": [
+        "explosion"
+      ]
+    },
+    "objetos": {
+      "eslinga_flash": true,
+      "bomba_sonica": false,
+      "trampa_electrica": true,
+      "trampa_escollo": true
+    },
+    "inmune_objetos": false,
+    "notas": "Bomba Sónica",
+    "drops": [
+      {
+        "nombre": "Escama de Ajarakan",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 25
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 28
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 45
+          },
+          {
+            "tipo": "talla_cola_podrida",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 60
+          }
+        ]
+      },
+      {
+        "nombre": "Caparazón de Ajarakan",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 23
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 25
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 43
+          }
+        ]
+      },
+      {
+        "nombre": "Cresta de Ajarakan",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 11
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 13
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "back"
+          }
+        ]
+      },
+      {
+        "nombre": "Cola de Ajarakan",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 11
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 11
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 11
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 11
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 11
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 24
+          },
+          {
+            "tipo": "talla_cola_podrida",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "talla_cola_podrida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "talla_cola",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 88
+          },
+          {
+            "tipo": "talla_cola",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 93
+          }
+        ]
+      },
+      {
+        "nombre": "Joya de Ajarakan",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "herida_destruida",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 12
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 18
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 30
+          }
+        ]
+      },
+      {
+        "nombre": "Tuétano de Ajarakan",
+        "rareza": 5,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 5
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 7
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 7
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 7
+          },
+          {
+            "tipo": "talla_cola",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 12
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 21
+          }
+        ]
+      },
+      {
+        "nombre": "Certificado Ajarakan",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 8
+          }
+        ]
+      },
+      {
+        "nombre": "Escama de Ajarakan+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 22
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 26
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 45
+          },
+          {
+            "tipo": "talla_cola_podrida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 60
+          }
+        ]
+      },
+      {
+        "nombre": "Coraza de Ajarakan",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 22
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 23
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 26
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 43
+          }
+        ]
+      },
+      {
+        "nombre": "Cresta de Ajarakan+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 11
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 11
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 13
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 24
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "back"
+          }
+        ]
+      },
+      {
+        "nombre": "Joya de Ajarakan+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 12
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 16
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 16
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 18
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 24
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          }
+        ]
+      },
+      {
+        "nombre": "Médula de Ajarakan",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 3
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 3
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 5
+          },
+          {
+            "tipo": "talla_cola",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 7
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 7
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100
+          }
+        ]
+      },
+      {
+        "nombre": "Certificado Ajarakan S",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 8
+          }
+        ]
+      },
+      {
+        "nombre": "Hematita wyveriana (P)",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 45
+          }
+        ]
+      },
+      {
+        "nombre": "Hematita wyveriana",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 35
+          }
+        ]
+      },
+      {
+        "nombre": "Hematita wyveriana (G)",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 20
+          }
+        ]
+      }
+    ]
   },
   {
-    id: "nu-udra",
-    nombre: "Nu Udra",
-    tipo: ["curtido", "hipercurtido"],
-    capturable: true,
-    punto_debil: "Boca",
-    elementos_efectivos: ["agua"],
-    elementos: { fuego: 0, agua: 1.1, rayo: 1, hielo: 1, dragon: 1 },
-    estados: { veneno: 2, sueno: 2, paralisis: 1, nitro: 1, aturdido: 2, agotamiento: 2 },
-    ataques_especiales: { rugido: "debil", temblor_viento: null, ataque_elemental: ["llamasblight"], efecto_estado: [] },
-    objetos: { eslinga_flash: false, bomba_sonica: false, trampa_electrica: true, trampa_escollo: true },
-    inmune_objetos: false,
-    notas: "Eslinga Flash / Bomba Sónica"
+    "id": "nu-udra",
+    "nombre": "Nu Udra",
+    "tipo": [
+      "curtido",
+      "hipercurtido"
+    ],
+    "capturable": true,
+    "especie": "cephalopod",
+    "descripcion": "Cefalópodo que ejerce su supremacía en el ecosistema de la Cuenca Oleosa. Tiene un aspecto infernal y ataca con tentáculos y fango en llamas.",
+    "tamano": {
+      "base": 2093.7,
+      "mini": 1884.33,
+      "silver": 2282.133,
+      "gold": 2365.8809
+    },
+    "zonas": [
+      "Cuenca Oleosa"
+    ],
+    "punto_debil": "Boca",
+    "elementos_efectivos": [
+      "agua"
+    ],
+    "elementos": {
+      "fuego": 0,
+      "agua": 1.1,
+      "rayo": 1,
+      "hielo": 1,
+      "dragon": 1
+    },
+    "estados": {
+      "veneno": 2,
+      "sueno": 2,
+      "paralisis": 1,
+      "nitro": 1,
+      "aturdido": 2,
+      "agotamiento": 2
+    },
+    "ataques_especiales": {
+      "rugido": "debil",
+      "temblor_viento": null,
+      "ataque_elemental": [
+        "llamasblight"
+      ],
+      "efecto_estado": []
+    },
+    "objetos": {
+      "eslinga_flash": false,
+      "bomba_sonica": false,
+      "trampa_electrica": true,
+      "trampa_escollo": true
+    },
+    "inmune_objetos": false,
+    "notas": "Eslinga Flash / Bomba Sónica",
+    "drops": [
+      {
+        "nombre": "Piel de Nu Udra",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 25
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 28
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 45
+          },
+          {
+            "tipo": "talla_cola_podrida",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 60
+          }
+        ]
+      },
+      {
+        "nombre": "Pincho de Nu Udra",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "herida_destruida",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 12
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 18
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "talla_cola",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 35
+          }
+        ]
+      },
+      {
+        "nombre": "Cuerno de Nu Udra",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 11
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 11
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "head"
+          }
+        ]
+      },
+      {
+        "nombre": "Tentáculo de Nu Udra",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 11
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 13
+          },
+          {
+            "tipo": "talla_cola_podrida",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "talla_cola",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 60
+          }
+        ]
+      },
+      {
+        "nombre": "Mucoleosa de Nu Udra",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 23
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 25
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 43
+          }
+        ]
+      },
+      {
+        "nombre": "Fluido cerebral Nu Udra",
+        "rareza": 5,
+        "condiciones": [
+          {
+            "tipo": "talla_cola",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 5
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 5
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 7
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 7
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 7
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 21
+          }
+        ]
+      },
+      {
+        "nombre": "Certificado Nu Udra",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 8
+          }
+        ]
+      },
+      {
+        "nombre": "Piel de Nu Udra+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 22
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 26
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 45
+          },
+          {
+            "tipo": "talla_cola_podrida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 60
+          }
+        ]
+      },
+      {
+        "nombre": "Pincho de Nu Udra+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 12
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 16
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 16
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 18
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 24
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "talla_cola",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 38
+          }
+        ]
+      },
+      {
+        "nombre": "Cuerno de Nu Udra+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 11
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 11
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 11
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 24
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "head"
+          }
+        ]
+      },
+      {
+        "nombre": "Tentáculo de Nu Udra+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 11
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 11
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 13
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 24
+          },
+          {
+            "tipo": "talla_cola_podrida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "talla_cola",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 60
+          }
+        ]
+      },
+      {
+        "nombre": "Mucoleosa de Nu Udra+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 22
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 23
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 26
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 43
+          }
+        ]
+      },
+      {
+        "nombre": "Gema ígnea de Nu Udra",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "talla_cola",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 2
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 3
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 3
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 5
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 7
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100
+          }
+        ]
+      },
+      {
+        "nombre": "Certificado Nu Udra S",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 8
+          }
+        ]
+      },
+      {
+        "nombre": "Hematita wyveriana",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 70
+          }
+        ]
+      },
+      {
+        "nombre": "Hematita wyveriana (G)",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 23
+          }
+        ]
+      },
+      {
+        "nombre": "Trozo hematita wyveriana",
+        "rareza": 8,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 7
+          }
+        ]
+      }
+    ]
   },
   {
-    id: "guardian-doshaguma",
-    nombre: "Guardián Doshaguma",
-    tipo: ["curtido"],
-    capturable: true,
-    punto_debil: "Patas Delanteras",
-    elementos_efectivos: ["hielo", "fuego"],
-    elementos: { fuego: 1.6, agua: 1, rayo: 1.1, hielo: 1.7, dragon: 1.3 },
-    estados: { veneno: 2, sueno: 2, paralisis: 2, nitro: 2, aturdido: 2, agotamiento: 0 },
-    ataques_especiales: { rugido: "debil", temblor_viento: "temblor_menor", ataque_elemental: [], efecto_estado: ["reduccion_defensa"] },
-    objetos: { eslinga_flash: true, bomba_sonica: false, trampa_electrica: true, trampa_escollo: true },
-    inmune_objetos: false,
-    notas: "Bomba Sónica"
+    "id": "guardian-doshaguma",
+    "nombre": "Guardián Doshaguma",
+    "tipo": [
+      "curtido"
+    ],
+    "capturable": true,
+    "especie": "construct",
+    "descripcion": "Una especie artificial creada por una civilización ancestral con la energía de un Doshaguma. Son muy robustos y pueden escupir ácido.",
+    "tamano": {
+      "base": 1390.47,
+      "mini": 1251.423,
+      "silver": 1599.0404,
+      "gold": 1710.2781
+    },
+    "zonas": [
+      "Ruinas de Wyveria"
+    ],
+    "punto_debil": "Patas Delanteras",
+    "elementos_efectivos": [
+      "hielo",
+      "fuego"
+    ],
+    "elementos": {
+      "fuego": 1.6,
+      "agua": 1,
+      "rayo": 1.1,
+      "hielo": 1.7,
+      "dragon": 1.3
+    },
+    "estados": {
+      "veneno": 2,
+      "sueno": 2,
+      "paralisis": 2,
+      "nitro": 2,
+      "aturdido": 2,
+      "agotamiento": 0
+    },
+    "ataques_especiales": {
+      "rugido": "debil",
+      "temblor_viento": "temblor_menor",
+      "ataque_elemental": [],
+      "efecto_estado": [
+        "reduccion_defensa"
+      ]
+    },
+    "objetos": {
+      "eslinga_flash": true,
+      "bomba_sonica": false,
+      "trampa_electrica": true,
+      "trampa_escollo": true
+    },
+    "inmune_objetos": false,
+    "notas": "Bomba Sónica",
+    "drops": [
+      {
+        "nombre": "Gema bestial",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 3
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 3
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 5
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 7
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100
+          }
+        ]
+      },
+      {
+        "nombre": "Pelaje Doshaguma G.",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 22
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 35
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "tail-hair"
+          }
+        ]
+      },
+      {
+        "nombre": "Piel Doshaguma G.",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 22
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 35
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 45
+          }
+        ]
+      },
+      {
+        "nombre": "Garra Doshaguma G.",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 13
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "right-front-leg"
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "left-front-leg"
+          }
+        ]
+      },
+      {
+        "nombre": "Colmillo Doshaguma G.",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 20
+          }
+        ]
+      },
+      {
+        "nombre": "Certificado Doshaguma G.",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 8
+          }
+        ]
+      },
+      {
+        "nombre": "Pelaje Doshaguma G.+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 22
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 26
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 27
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 35
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "tail-hair"
+          }
+        ]
+      },
+      {
+        "nombre": "Piel Doshaguma G.+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 22
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 26
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 33
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 45
+          }
+        ]
+      },
+      {
+        "nombre": "Garra Doshaguma G.+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 10
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 10
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "right-front-leg"
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "left-front-leg"
+          }
+        ]
+      },
+      {
+        "nombre": "Colmillo Doshaguma G.+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 38
+          }
+        ]
+      },
+      {
+        "nombre": "Certificado Doshaguma G. S",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 8
+          }
+        ]
+      },
+      {
+        "nombre": "Extracto nutritivo",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 2,
+            "probabilidad": 25
+          }
+        ]
+      },
+      {
+        "nombre": "Hueso duro de G.",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 30
+          }
+        ]
+      },
+      {
+        "nombre": "Cristal aplastado",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "carve-crystallized",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 75
+          }
+        ]
+      },
+      {
+        "nombre": "Cristal nublado",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "carve-crystallized",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 25
+          },
+          {
+            "tipo": "carve-crystallized",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 83
+          }
+        ]
+      },
+      {
+        "nombre": "Cristal chispeante",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "carve-crystallized",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 17
+          }
+        ]
+      },
+      {
+        "nombre": "Sangre de Guardián",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "herida_destruida",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 8
+          }
+        ]
+      },
+      {
+        "nombre": "Sangre de Guardián+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 8
+          }
+        ]
+      },
+      {
+        "nombre": "Hueso robusto gigante",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          }
+        ]
+      },
+      {
+        "nombre": "Pelaje de Guardián",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "herida_destruida",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 12
+          }
+        ]
+      },
+      {
+        "nombre": "Pelaje de Guardián+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 12
+          }
+        ]
+      },
+      {
+        "nombre": "Hematita wyveriana (P)",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 45
+          }
+        ]
+      },
+      {
+        "nombre": "Hematita wyveriana",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 35
+          }
+        ]
+      },
+      {
+        "nombre": "Hematita wyveriana (G)",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 20
+          }
+        ]
+      }
+    ]
   },
   {
-    id: "guardian-rathalos",
-    nombre: "Guardián Rathalos",
-    tipo: ["curtido"],
-    capturable: true,
-    punto_debil: "Boca / Patas",
-    elementos_efectivos: ["dragon"],
-    elementos: { fuego: 0, agua: 0.9, rayo: 1.3, hielo: 0.9, dragon: 1.9 },
-    estados: { veneno: 1, sueno: 2, paralisis: 2, nitro: 2, aturdido: 2, agotamiento: 0 },
-    ataques_especiales: { rugido: "debil", temblor_viento: "viento_menor", ataque_elemental: ["llamasblight"], efecto_estado: ["veneno"] },
-    objetos: { eslinga_flash: true, bomba_sonica: false, trampa_electrica: true, trampa_escollo: true },
-    inmune_objetos: false,
-    notas: "Bomba Sónica"
+    "id": "guardian-rathalos",
+    "nombre": "Guardián Rathalos",
+    "tipo": [
+      "curtido"
+    ],
+    "capturable": true,
+    "especie": "construct",
+    "descripcion": "Una especie artificial creada por una civilización ancestral con la energía de un Rathalos. Cuidado con la energía de sus garras.",
+    "tamano": {
+      "base": 1704.22,
+      "mini": 1533.798,
+      "silver": 1959.8529,
+      "gold": 2096.1907
+    },
+    "zonas": [
+      "Ruinas de Wyveria"
+    ],
+    "punto_debil": "Boca / Patas",
+    "elementos_efectivos": [
+      "dragon"
+    ],
+    "elementos": {
+      "fuego": 0,
+      "agua": 0.9,
+      "rayo": 1.3,
+      "hielo": 0.9,
+      "dragon": 1.9
+    },
+    "estados": {
+      "veneno": 1,
+      "sueno": 2,
+      "paralisis": 2,
+      "nitro": 2,
+      "aturdido": 2,
+      "agotamiento": 0
+    },
+    "ataques_especiales": {
+      "rugido": "debil",
+      "temblor_viento": "viento_menor",
+      "ataque_elemental": [
+        "llamasblight"
+      ],
+      "efecto_estado": [
+        "veneno"
+      ]
+    },
+    "objetos": {
+      "eslinga_flash": true,
+      "bomba_sonica": false,
+      "trampa_electrica": true,
+      "trampa_escollo": true
+    },
+    "inmune_objetos": false,
+    "notas": "Bomba Sónica",
+    "drops": [
+      {
+        "nombre": "Escama de Rathalos G.",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 22
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 33
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 45
+          },
+          {
+            "tipo": "talla_cola_podrida",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 60
+          }
+        ]
+      },
+      {
+        "nombre": "Caparazón de Rathalos G.",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 22
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 27
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 35
+          }
+        ]
+      },
+      {
+        "nombre": "Membrana de Rathalos G.",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 22
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "left-wing"
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "right-wing"
+          }
+        ]
+      },
+      {
+        "nombre": "Cola de Rathalos G.",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 9
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 10
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 10
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 11
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 13
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 27
+          },
+          {
+            "tipo": "talla_cola_podrida",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "talla_cola_podrida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "talla_cola",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 93
+          },
+          {
+            "tipo": "talla_cola",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 93
+          }
+        ]
+      },
+      {
+        "nombre": "Certificado Rathalos G.",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 8
+          }
+        ]
+      },
+      {
+        "nombre": "Escama de Rathalos G.+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 23
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 33
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 45
+          },
+          {
+            "tipo": "talla_cola_podrida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 60
+          }
+        ]
+      },
+      {
+        "nombre": "Coraza de Rathalos G.",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 23
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 27
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 35
+          }
+        ]
+      },
+      {
+        "nombre": "Ala de Rathalos G.",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 24
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "left-wing"
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "right-wing"
+          }
+        ]
+      },
+      {
+        "nombre": "Certificado Rathalos G. S",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 8
+          }
+        ]
+      },
+      {
+        "nombre": "Escama de Guardián",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "herida_destruida",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 12
+          }
+        ]
+      },
+      {
+        "nombre": "Escama de Guardián+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 12
+          }
+        ]
+      },
+      {
+        "nombre": "Cristal aplastado",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "carve-crystallized",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 75
+          }
+        ]
+      },
+      {
+        "nombre": "Cristal nublado",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "carve-crystallized",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 25
+          },
+          {
+            "tipo": "carve-crystallized",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 83
+          }
+        ]
+      },
+      {
+        "nombre": "Cristal chispeante",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "carve-crystallized",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 17
+          }
+        ]
+      },
+      {
+        "nombre": "Vesícula flamígera",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 30
+          }
+        ]
+      },
+      {
+        "nombre": "Vesícula infernal",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 2,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 17
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          }
+        ]
+      },
+      {
+        "nombre": "Sangre de Guardián",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "herida_destruida",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 8
+          }
+        ]
+      },
+      {
+        "nombre": "Sangre de Guardián+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 8
+          }
+        ]
+      },
+      {
+        "nombre": "Hematita wyveriana (P)",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 45
+          }
+        ]
+      },
+      {
+        "nombre": "Hematita wyveriana",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 35
+          }
+        ]
+      },
+      {
+        "nombre": "Hematita wyveriana (G)",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 20
+          }
+        ]
+      },
+      {
+        "nombre": "Rubí de Rathalos G.",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 3
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 3
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 5
+          },
+          {
+            "tipo": "talla_cola",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 7
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 7
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100
+          }
+        ]
+      },
+      {
+        "nombre": "Placa de Rathalos G.",
+        "rareza": 5,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 3
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 5
+          },
+          {
+            "tipo": "talla_cola",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 7
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 7
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 7
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 21
+          }
+        ]
+      }
+    ]
   },
   {
-    id: "jin-dahaad",
-    nombre: "Jin Dahaad",
-    tipo: ["curtido"],
-    capturable: false,
-    punto_debil: "Boca / Pecho",
-    elementos_efectivos: ["fuego"],
-    elementos: { fuego: 1, agua: 0.9, rayo: 0.9, hielo: 0, dragon: 0.9 },
-    estados: { veneno: 1, sueno: 1, paralisis: 1, nitro: 2, aturdido: 1, agotamiento: 2 },
-    ataques_especiales: { rugido: "fuerte", temblor_viento: null, ataque_elemental: ["escarchablight"], efecto_estado: [] },
-    objetos: { eslinga_flash: true, bomba_sonica: false, trampa_electrica: true, trampa_escollo: false },
-    inmune_objetos: false,
-    notas: "Bomba Sónica / Trampa Escollo"
+    "id": "jin-dahaad",
+    "nombre": "Jin Dahaad",
+    "tipo": [
+      "curtido"
+    ],
+    "capturable": false,
+    "especie": "leviathan",
+    "descripcion": "Un leviatán que está en la cima del ecosistema de los Acantilados del Témpano. Genera aire frío a través de sus órganos refrigerantes.",
+    "tamano": {
+      "base": 4560.894,
+      "mini": 4104.8047,
+      "silver": 5245.028,
+      "gold": 5609.9
+    },
+    "zonas": [
+      "Acantilados del Témpano"
+    ],
+    "punto_debil": "Boca / Pecho",
+    "elementos_efectivos": [
+      "fuego"
+    ],
+    "elementos": {
+      "fuego": 1,
+      "agua": 0.9,
+      "rayo": 0.9,
+      "hielo": 0,
+      "dragon": 0.9
+    },
+    "estados": {
+      "veneno": 1,
+      "sueno": 1,
+      "paralisis": 1,
+      "nitro": 2,
+      "aturdido": 1,
+      "agotamiento": 2
+    },
+    "ataques_especiales": {
+      "rugido": "fuerte",
+      "temblor_viento": null,
+      "ataque_elemental": [
+        "escarchablight"
+      ],
+      "efecto_estado": []
+    },
+    "objetos": {
+      "eslinga_flash": true,
+      "bomba_sonica": false,
+      "trampa_electrica": true,
+      "trampa_escollo": false
+    },
+    "inmune_objetos": false,
+    "notas": "Bomba Sónica / Trampa Escollo",
+    "drops": [
+      {
+        "nombre": "Machalita",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 2,
+            "probabilidad": 15
+          }
+        ]
+      },
+      {
+        "nombre": "Dragonita",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 23
+          }
+        ]
+      },
+      {
+        "nombre": "Hueso recio",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 2,
+            "probabilidad": 10
+          }
+        ]
+      },
+      {
+        "nombre": "Escama de Jin Dahaad+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 23
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 50
+          },
+          {
+            "tipo": "talla_cola_podrida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 60
+          }
+        ]
+      },
+      {
+        "nombre": "Coraza de Jin Dahaad",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 23
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 23
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 38
+          }
+        ]
+      },
+      {
+        "nombre": "Placa helada Jin Dahaad",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 12
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 18
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 88,
+            "parte": "frozen-bigcore-after"
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "tail"
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "frozen-core-waist"
+          }
+        ]
+      },
+      {
+        "nombre": "Garra de Jin Dahaad+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 18
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 18
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 33
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "right-front-leg"
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "left-front-leg"
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "right-hind-leg"
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "left-hind-leg"
+          }
+        ]
+      },
+      {
+        "nombre": "Cuerno de Jin Dahaad",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 8
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 11
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 13
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 21
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "head"
+          }
+        ]
+      },
+      {
+        "nombre": "Gema gélida de Jin Dahaad",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 3
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 3
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 5
+          },
+          {
+            "tipo": "talla_cola",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 7
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 7
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 12,
+            "parte": "frozen-bigcore-after"
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100
+          }
+        ]
+      },
+      {
+        "nombre": "Certificado Jin Dahaad S",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 8
+          }
+        ]
+      },
+      {
+        "nombre": "Carambanio",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 22
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 60
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 100
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "low",
+            "cantidad": 2,
+            "probabilidad": 100,
+            "parte": "tail"
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "head"
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "right-front-leg"
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "left-front-leg"
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "right-hind-leg"
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "left-hind-leg"
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "low",
+            "cantidad": 2,
+            "probabilidad": 100,
+            "parte": "frozen-core-waist"
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 100
+          }
+        ]
+      },
+      {
+        "nombre": "Vesícula de nieve",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 22
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "talla_cola",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 100
+          },
+          {
+            "tipo": "talla_cola_podrida",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 100
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "frozen-bigcore-after"
+          }
+        ]
+      },
+      {
+        "nombre": "Vesícula congelante",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 11
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 18
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          }
+        ]
+      },
+      {
+        "nombre": "Esfera armadura+",
+        "rareza": 5,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 8
+          }
+        ]
+      },
+      {
+        "nombre": "Hematita wyveriana",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 70
+          }
+        ]
+      },
+      {
+        "nombre": "Hematita wyveriana (G)",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 23
+          }
+        ]
+      },
+      {
+        "nombre": "Trozo hematita wyveriana",
+        "rareza": 8,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 7
+          }
+        ]
+      },
+      {
+        "nombre": "Cola de Jin Dahaad",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 8
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 11
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 11
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 21
+          },
+          {
+            "tipo": "talla_cola_podrida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "talla_cola",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 93
+          }
+        ]
+      }
+    ]
   },
   {
-    id: "guardian-ebony-odoragon",
-    nombre: "Guardián Ebony Odoragon",
-    tipo: ["curtido"],
-    capturable: true,
-    punto_debil: "Cola / Patas Delanteras",
-    elementos_efectivos: ["agua"],
-    elementos: { fuego: 1.6, agua: 2.1, rayo: 1.6, hielo: 1.6, dragon: 1.4 },
-    estados: { veneno: 2, sueno: 2, paralisis: 3, nitro: 2, aturdido: 2, agotamiento: 0 },
-    ataques_especiales: { rugido: "debil", temblor_viento: null, ataque_elemental: ["dragonblight"], efecto_estado: ["sangrado"] },
-    objetos: { eslinga_flash: true, bomba_sonica: false, trampa_electrica: true, trampa_escollo: true },
-    inmune_objetos: false,
-    notas: "Bomba Sónica"
+    "id": "guardian-ebony-odogaron",
+    "nombre": "Guardián Ebony Odogaron",
+    "tipo": [
+      "curtido"
+    ],
+    "capturable": true,
+    "especie": "construct",
+    "descripcion": "Una especie artificial creada por una civilización ancestral con potencia de Odogaron Ébano. Sus garras delanteras son un peligro.",
+    "tamano": {
+      "base": 1388.7515,
+      "mini": 1249.8763,
+      "silver": 1597.0642,
+      "gold": 1708.1643
+    },
+    "zonas": [
+      "Ruinas de Wyveria"
+    ],
+    "punto_debil": "Cola / Patas Delanteras",
+    "elementos_efectivos": [
+      "agua"
+    ],
+    "elementos": {
+      "fuego": 1.6,
+      "agua": 2.1,
+      "rayo": 1.6,
+      "hielo": 1.6,
+      "dragon": 1.4
+    },
+    "estados": {
+      "veneno": 2,
+      "sueno": 2,
+      "paralisis": 3,
+      "nitro": 2,
+      "aturdido": 2,
+      "agotamiento": 0
+    },
+    "ataques_especiales": {
+      "rugido": "debil",
+      "temblor_viento": null,
+      "ataque_elemental": [
+        "dragonblight"
+      ],
+      "efecto_estado": [
+        "sangrado"
+      ]
+    },
+    "objetos": {
+      "eslinga_flash": true,
+      "bomba_sonica": false,
+      "trampa_electrica": true,
+      "trampa_escollo": true
+    },
+    "inmune_objetos": false,
+    "notas": "Bomba Sónica",
+    "drops": [
+      {
+        "nombre": "Escama de Ébano G.",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 45
+          },
+          {
+            "tipo": "talla_cola_podrida",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 60
+          }
+        ]
+      },
+      {
+        "nombre": "Tendón de Ébano G.",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 23
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 35
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "tail-tip"
+          }
+        ]
+      },
+      {
+        "nombre": "Garra de Ébano G.",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 18
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "right-front-leg"
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "right-hind-leg"
+          }
+        ]
+      },
+      {
+        "nombre": "Colmillo de Ébano G.",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 8
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 13
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "head"
+          }
+        ]
+      },
+      {
+        "nombre": "Cola de Ébano G.",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 8
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 8
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 10
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 11
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 11
+          },
+          {
+            "tipo": "talla_cola_podrida",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "talla_cola_podrida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "talla_cola",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 93
+          },
+          {
+            "tipo": "talla_cola",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 93
+          }
+        ]
+      },
+      {
+        "nombre": "Placa de Ébano G.",
+        "rareza": 5,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 3
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 5
+          },
+          {
+            "tipo": "talla_cola",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 7
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 7
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 7
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 21
+          }
+        ]
+      },
+      {
+        "nombre": "Certificado Ébano G.",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 8
+          }
+        ]
+      },
+      {
+        "nombre": "Escama de Ébano G.+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 18
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 45
+          },
+          {
+            "tipo": "talla_cola_podrida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 60
+          }
+        ]
+      },
+      {
+        "nombre": "Tendón de Ébano G.+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 18
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 23
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 35
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "tail-tip"
+          }
+        ]
+      },
+      {
+        "nombre": "Garra de Ébano G.+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 14
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 18
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 27
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "right-front-leg"
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "right-hind-leg"
+          }
+        ]
+      },
+      {
+        "nombre": "Colmillo de Ébano G.+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 8
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 10
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 13
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 24
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "head"
+          }
+        ]
+      },
+      {
+        "nombre": "Gema de Ébano G.",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 3
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 3
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 5
+          },
+          {
+            "tipo": "talla_cola",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 7
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 7
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100
+          }
+        ]
+      },
+      {
+        "nombre": "Certificado Ébano G. S",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 8
+          }
+        ]
+      },
+      {
+        "nombre": "Extracto nutritivo",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 16
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 18
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 2,
+            "probabilidad": 21
+          }
+        ]
+      },
+      {
+        "nombre": "Escama de Guardián",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "herida_destruida",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 12
+          }
+        ]
+      },
+      {
+        "nombre": "Escama de Guardián+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 12
+          }
+        ]
+      },
+      {
+        "nombre": "Hueso duro de G.",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 30
+          }
+        ]
+      },
+      {
+        "nombre": "Cristal aplastado",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "carve-crystallized",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 75
+          }
+        ]
+      },
+      {
+        "nombre": "Cristal nublado",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "carve-crystallized",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 25
+          },
+          {
+            "tipo": "carve-crystallized",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 83
+          }
+        ]
+      },
+      {
+        "nombre": "Cristal chispeante",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "carve-crystallized",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 17
+          }
+        ]
+      },
+      {
+        "nombre": "Sangre de Guardián",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "herida_destruida",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 8
+          }
+        ]
+      },
+      {
+        "nombre": "Sangre de Guardián+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 8
+          }
+        ]
+      },
+      {
+        "nombre": "Hueso afilado",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          }
+        ]
+      },
+      {
+        "nombre": "Hematita wyveriana (P)",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 45
+          }
+        ]
+      },
+      {
+        "nombre": "Hematita wyveriana",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 35
+          }
+        ]
+      },
+      {
+        "nombre": "Hematita wyveriana (G)",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 20
+          }
+        ]
+      }
+    ]
   },
   {
-    id: "xu-wu",
-    nombre: "Xu Wu",
-    tipo: ["curtido"],
-    capturable: true,
-    punto_debil: "Boca",
-    elementos_efectivos: ["hielo"],
-    elementos: { fuego: 1, agua: 1, rayo: 1, hielo: 2.1, dragon: 0 },
-    estados: { veneno: 3, sueno: 1, paralisis: 2, nitro: 2, aturdido: 2, agotamiento: 2 },
-    ataques_especiales: { rugido: null, temblor_viento: null, ataque_elemental: [], efecto_estado: [] },
-    objetos: { eslinga_flash: false, bomba_sonica: false, trampa_electrica: true, trampa_escollo: true },
-    inmune_objetos: false,
-    notas: "Eslinga Flash / Bomba Sónica"
+    "id": "xu-wu",
+    "nombre": "Xu Wu",
+    "tipo": [
+      "curtido"
+    ],
+    "capturable": true,
+    "especie": "cephalopod",
+    "descripcion": "Cefalópodos que deambulan por las Ruinas de Wyveria atacando a los Guardianes. Esto suele dar lugar a enfrentamientos entre los monstruos.",
+    "tamano": {
+      "base": 1396.3015,
+      "mini": 1256.6714,
+      "silver": 1605.7467,
+      "gold": 1717.4509
+    },
+    "zonas": [
+      "Ruinas de Wyveria"
+    ],
+    "punto_debil": "Boca",
+    "elementos_efectivos": [
+      "hielo"
+    ],
+    "elementos": {
+      "fuego": 1,
+      "agua": 1,
+      "rayo": 1,
+      "hielo": 2.1,
+      "dragon": 0
+    },
+    "estados": {
+      "veneno": 3,
+      "sueno": 1,
+      "paralisis": 2,
+      "nitro": 2,
+      "aturdido": 2,
+      "agotamiento": 2
+    },
+    "ataques_especiales": {
+      "rugido": null,
+      "temblor_viento": null,
+      "ataque_elemental": [],
+      "efecto_estado": []
+    },
+    "objetos": {
+      "eslinga_flash": false,
+      "bomba_sonica": false,
+      "trampa_electrica": true,
+      "trampa_escollo": true
+    },
+    "inmune_objetos": false,
+    "notas": "Eslinga Flash / Bomba Sónica",
+    "drops": [
+      {
+        "nombre": "Certificado Xu Wu S",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 8
+          }
+        ]
+      },
+      {
+        "nombre": "Piel de Xu Wu",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 25
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 28
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 50
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 60
+          },
+          {
+            "tipo": "talla_cola_podrida",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 60
+          }
+        ]
+      },
+      {
+        "nombre": "Estrato córneo dorado",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 23
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 25
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 50
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 88,
+            "parte": "head"
+          }
+        ]
+      },
+      {
+        "nombre": "Tentáculo de Xu Wu",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 11
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 11
+          },
+          {
+            "tipo": "talla_cola_podrida",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "talla_cola",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 93
+          }
+        ]
+      },
+      {
+        "nombre": "Garra de Xu Wu",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 18
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "left-front-arm"
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "right-front-arm"
+          }
+        ]
+      },
+      {
+        "nombre": "Colmillo de Xu Wu",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 11
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 13
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "mouth"
+          }
+        ]
+      },
+      {
+        "nombre": "Fluido cerebral Xu Wu",
+        "rareza": 5,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 5
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 7
+          },
+          {
+            "tipo": "talla_cola",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 7
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 7
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 7
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 12,
+            "parte": "head"
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 21
+          }
+        ]
+      },
+      {
+        "nombre": "Certificado Xu Wu",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 8
+          }
+        ]
+      },
+      {
+        "nombre": "Piel de Xu Wu+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 22
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 26
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 50
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 60
+          },
+          {
+            "tipo": "talla_cola_podrida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 60
+          }
+        ]
+      },
+      {
+        "nombre": "Estrato córneo dorado+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 22
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 23
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 26
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 50
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 93,
+            "parte": "head"
+          }
+        ]
+      },
+      {
+        "nombre": "Tentáculo de Xu Wu+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 11
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 11
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 11
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 24
+          },
+          {
+            "tipo": "talla_cola_podrida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "talla_cola",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 95
+          }
+        ]
+      },
+      {
+        "nombre": "Garra de Xu Wu+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 16
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 16
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 18
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 24
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "left-front-arm"
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "right-front-arm"
+          }
+        ]
+      },
+      {
+        "nombre": "Colmillo de Xu Wu+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 11
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 11
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 13
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 24
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "mouth"
+          }
+        ]
+      },
+      {
+        "nombre": "Gema umbría de Xu Wu",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 3
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 3
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 5
+          },
+          {
+            "tipo": "talla_cola",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 5
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 7,
+            "parte": "head"
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 7
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100
+          }
+        ]
+      },
+      {
+        "nombre": "Hematita wyveriana (P)",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 45
+          }
+        ]
+      },
+      {
+        "nombre": "Hematita wyveriana",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 35
+          }
+        ]
+      },
+      {
+        "nombre": "Hematita wyveriana (G)",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 20
+          }
+        ]
+      }
+    ]
   },
   {
-    id: "guardian-arkveld",
-    nombre: "Guardián Arkveld",
-    tipo: [],
-    capturable: true,
-    punto_debil: "Cadenas",
-    elementos_efectivos: [],
-    elementos: { fuego: 1, agua: 1, rayo: 1, hielo: 1, dragon: 1 },
-    estados: { veneno: 2, sueno: 2, paralisis: 2, nitro: 2, aturdido: 2, agotamiento: 0 },
-    ataques_especiales: { rugido: "debil", temblor_viento: "viento_menor", ataque_elemental: ["dragonblight"], efecto_estado: [] },
-    objetos: { eslinga_flash: true, bomba_sonica: false, trampa_electrica: true, trampa_escollo: true },
-    inmune_objetos: false,
-    notas: "Bomba Sónica / Eslinga Flash / Ataques Elementales de las Espadas Duales"
+    "id": "guardian-arkveld",
+    "nombre": "Guardián Arkveld",
+    "tipo": [],
+    "capturable": true,
+    "especie": "construct",
+    "descripcion": "Una especie artificial creada por una civilización ancestral a imagen de un monstruo llamado Arkveld, supuestamente extinto.",
+    "tamano": {
+      "base": 1666.54,
+      "mini": 1499.886,
+      "silver": 1916.521,
+      "gold": 2049.8442
+    },
+    "zonas": [
+      "Ruinas de Wyveria"
+    ],
+    "punto_debil": "Cadenas",
+    "elementos_efectivos": [],
+    "elementos": {
+      "fuego": 1,
+      "agua": 1,
+      "rayo": 1,
+      "hielo": 1,
+      "dragon": 1
+    },
+    "estados": {
+      "veneno": 2,
+      "sueno": 2,
+      "paralisis": 2,
+      "nitro": 2,
+      "aturdido": 2,
+      "agotamiento": 0
+    },
+    "ataques_especiales": {
+      "rugido": "debil",
+      "temblor_viento": "viento_menor",
+      "ataque_elemental": [
+        "dragonblight"
+      ],
+      "efecto_estado": []
+    },
+    "objetos": {
+      "eslinga_flash": true,
+      "bomba_sonica": false,
+      "trampa_electrica": true,
+      "trampa_escollo": true
+    },
+    "inmune_objetos": false,
+    "notas": "Bomba Sónica / Eslinga Flash / Ataques Elementales de las Espadas Duales",
+    "drops": [
+      {
+        "nombre": "Extracto nutritivo",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 30
+          }
+        ]
+      },
+      {
+        "nombre": "Escama de Guardián",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 45
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 50
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 50
+          },
+          {
+            "tipo": "talla_cola_podrida",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 100
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "head"
+          }
+        ]
+      },
+      {
+        "nombre": "Hueso duro de G.",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 20
+          }
+        ]
+      },
+      {
+        "nombre": "Sangre de Guardián",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 10
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 12
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "talla_cola",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 100
+          }
+        ]
+      },
+      {
+        "nombre": "Pelaje de Guardián",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 43
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 50
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "left-wing-blade"
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "right-wing-blade"
+          }
+        ]
+      }
+    ]
   },
   {
-    id: "zoh-shia",
-    nombre: "Zoh Shia",
-    tipo: ["curtido"],
-    capturable: false,
-    punto_debil: "Cabeza / Alas",
-    elementos_efectivos: ["dragon"],
-    elementos: { fuego: 1, agua: 1, rayo: 1, hielo: 1, dragon: 1.3 },
-    estados: { veneno: 2, sueno: 2, paralisis: 2, nitro: 2, aturdido: 1, agotamiento: 0 },
-    ataques_especiales: { rugido: "fuerte", temblor_viento: "viento_dragon", ataque_elemental: ["llamasblight", "truenoblight"], efecto_estado: [] },
-    objetos: { eslinga_flash: false, bomba_sonica: false, trampa_electrica: false, trampa_escollo: false },
-    inmune_objetos: true,
-    notas: "Inmune a todos los objetos"
+    "id": "zoh-shia",
+    "nombre": "Zoh Shia",
+    "tipo": [
+      "curtido"
+    ],
+    "capturable": false,
+    "especie": "construct",
+    "descripcion": "Un Guardián creado para salvar a Wyveria. Se alimentaba de la Tea Dracónida y absorbía las grandes reservas de energía mientras dormía.",
+    "tamano": {
+      "base": 4623.598,
+      "mini": 4161.2383,
+      "silver": 5317.1377,
+      "gold": 5687.026
+    },
+    "zonas": [
+      "Ruinas de Wyveria"
+    ],
+    "punto_debil": "Cabeza / Alas",
+    "elementos_efectivos": [
+      "dragon"
+    ],
+    "elementos": {
+      "fuego": 1,
+      "agua": 1,
+      "rayo": 1,
+      "hielo": 1,
+      "dragon": 1.3
+    },
+    "estados": {
+      "veneno": 2,
+      "sueno": 2,
+      "paralisis": 2,
+      "nitro": 2,
+      "aturdido": 1,
+      "agotamiento": 0
+    },
+    "ataques_especiales": {
+      "rugido": "fuerte",
+      "temblor_viento": "viento_dragon",
+      "ataque_elemental": [
+        "llamasblight",
+        "truenoblight"
+      ],
+      "efecto_estado": []
+    },
+    "objetos": {
+      "eslinga_flash": false,
+      "bomba_sonica": false,
+      "trampa_electrica": false,
+      "trampa_escollo": false
+    },
+    "inmune_objetos": true,
+    "notas": "Inmune a todos los objetos",
+    "drops": [
+      {
+        "nombre": "Extracto nutritivo",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 30
+          }
+        ]
+      },
+      {
+        "nombre": "Escama de Guardián",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 50
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 50
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 50
+          },
+          {
+            "tipo": "talla_cola_podrida",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 100
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "left-front-leg"
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "right-front-leg"
+          }
+        ]
+      },
+      {
+        "nombre": "Hueso duro de G.",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 20
+          }
+        ]
+      },
+      {
+        "nombre": "Sangre de Guardián",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 50
+          },
+          {
+            "tipo": "talla_cola",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 100
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "head-hide"
+          }
+        ]
+      },
+      {
+        "nombre": "Sangre de Guardián+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          }
+        ]
+      },
+      {
+        "nombre": "Pelaje de Guardián",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 50
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "left-wing-arm-hide"
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "right-wing-arm-hide"
+          }
+        ]
+      },
+      {
+        "nombre": "Certificado Zoh Shia S",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 8
+          }
+        ]
+      },
+      {
+        "nombre": "Escama cristalizada de Zoh Shia",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 24
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 24
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "talla_cola_podrida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 60
+          }
+        ]
+      },
+      {
+        "nombre": "Caparazón laminado de Zoh Shia",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 22
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 24
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 35
+          }
+        ]
+      },
+      {
+        "nombre": "Garra estaca de Zoh Shia",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 16
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 18
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 18
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 25
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 25
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "left-front-leg"
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "right-front-leg"
+          }
+        ]
+      },
+      {
+        "nombre": "Cuerno cristalino de Zoh Shia",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 8
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 8
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 11
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 25
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "head-hide"
+          }
+        ]
+      },
+      {
+        "nombre": "Cola cristalina de Zoh Shia",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 8
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 8
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 11
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 18
+          },
+          {
+            "tipo": "talla_cola_podrida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "talla_cola",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 93
+          }
+        ]
+      },
+      {
+        "nombre": "Orbe brilloblanco falso",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 3
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 3
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 3
+          },
+          {
+            "tipo": "talla_cola",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 7
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 7
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100
+          }
+        ]
+      },
+      {
+        "nombre": "Trozo de ascuasombra",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 13
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 25
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "left-wing-arm-hide"
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "right-wing-arm-hide"
+          }
+        ]
+      }
+    ]
   },
   {
-    id: "yian-kut-ku",
-    nombre: "Yian Kut-Ku",
-    tipo: ["curtido", "colera"],
-    capturable: true,
-    punto_debil: "Boca",
-    elementos_efectivos: ["rayo", "hielo"],
-    elementos: { fuego: 1, agua: 1.1, rayo: 1.5, hielo: 1.5, dragon: 0 },
-    estados: { veneno: 2, sueno: 2, paralisis: 2, nitro: 2, aturdido: 2, agotamiento: 2 },
-    ataques_especiales: { rugido: null, temblor_viento: "viento_menor", ataque_elemental: [], efecto_estado: ["llamasblight"] },
-    objetos: { eslinga_flash: true, bomba_sonica: true, trampa_electrica: true, trampa_escollo: true },
-    inmune_objetos: false,
-    notas: ""
+    "id": "yian-kut-ku",
+    "nombre": "Yian Kut-Ku",
+    "tipo": [
+      "curtido",
+      "colera"
+    ],
+    "capturable": true,
+    "especie": "bird-wyvern",
+    "descripcion": "Wyvern pájaro con un pico imponente, orejas enormes y un apetito voraz por los insectos. Son asustadizos, pero no rehúyen ninguna pelea.",
+    "tamano": {
+      "base": 994.5472,
+      "mini": 895.09247,
+      "silver": 1143.7292,
+      "gold": 1223.2931
+    },
+    "zonas": [
+      "Bosque Escarlata",
+      "Acantilados del Témpano"
+    ],
+    "punto_debil": "Boca",
+    "elementos_efectivos": [
+      "rayo",
+      "hielo"
+    ],
+    "elementos": {
+      "fuego": 1,
+      "agua": 1.1,
+      "rayo": 1.5,
+      "hielo": 1.5,
+      "dragon": 0
+    },
+    "estados": {
+      "veneno": 2,
+      "sueno": 2,
+      "paralisis": 2,
+      "nitro": 2,
+      "aturdido": 2,
+      "agotamiento": 2
+    },
+    "ataques_especiales": {
+      "rugido": null,
+      "temblor_viento": "viento_menor",
+      "ataque_elemental": [],
+      "efecto_estado": [
+        "llamasblight"
+      ]
+    },
+    "objetos": {
+      "eslinga_flash": true,
+      "bomba_sonica": true,
+      "trampa_electrica": true,
+      "trampa_escollo": true
+    },
+    "inmune_objetos": false,
+    "notas": "",
+    "drops": [
+      {
+        "nombre": "Escama de Kut-Ku+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 23
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 50
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 50
+          }
+        ]
+      },
+      {
+        "nombre": "Coraza de Kut-Ku",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 23
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 23
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 23
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 50
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 50
+          }
+        ]
+      },
+      {
+        "nombre": "Oreja de Kut-Ku",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 8
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 8
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 10
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 13
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 13
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 21
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "head"
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "head"
+          }
+        ]
+      },
+      {
+        "nombre": "Pico gigante",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 8
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 8
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 10
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 11
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 11
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 21
+          }
+        ]
+      },
+      {
+        "nombre": "Ala Kut-Ku",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 16
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 18
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 18
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 33
+          }
+        ]
+      },
+      {
+        "nombre": "Certificado Yian Kut-Ku S",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 8
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 8
+          }
+        ]
+      },
+      {
+        "nombre": "Gema de wyvern pájaro",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 3
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 3
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 3
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 5
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 5
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 7
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100
+          }
+        ]
+      },
+      {
+        "nombre": "Vesícula infernal",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 2,
+            "probabilidad": 18
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 18
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 18
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          }
+        ]
+      },
+      {
+        "nombre": "Esq. hematita wyveriana",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 50
+          }
+        ]
+      },
+      {
+        "nombre": "Hematita wyveriana (P)",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 35
+          }
+        ]
+      },
+      {
+        "nombre": "Hematita wyveriana",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 15
+          }
+        ]
+      }
+    ]
   },
   {
-    id: "gypceros",
-    nombre: "Gypceros",
-    tipo: ["curtido", "colera"],
-    capturable: true,
-    punto_debil: "Cabeza",
-    elementos_efectivos: ["fuego"],
-    elementos: { fuego: 1.8, agua: 1, rayo: 0, hielo: 1.4, dragon: 1 },
-    estados: { veneno: 1, sueno: 2, paralisis: 2, nitro: 2, aturdido: 2, agotamiento: 2 },
-    ataques_especiales: { rugido: null, temblor_viento: "viento_menor", ataque_elemental: [], efecto_estado: ["veneno", "destello"] },
-    objetos: { eslinga_flash: false, bomba_sonica: false, trampa_electrica: false, trampa_escollo: true },
-    inmune_objetos: false,
-    notas: "Eslinga Flash / Bomba Sónica"
+    "id": "gypceros",
+    "nombre": "Gypceros",
+    "tipo": [
+      "curtido",
+      "colera"
+    ],
+    "capturable": true,
+    "especie": "bird-wyvern",
+    "descripcion": "Monstruos que emplean sus abultadas crestas para aturdir a sus enemigos con destellos de luz y apuntillarlas con saliva venenosa.",
+    "tamano": {
+      "base": 964.138,
+      "mini": 867.7242,
+      "silver": 1108.7587,
+      "gold": 1185.8898
+    },
+    "zonas": [
+      "Cuenca Oleosa",
+      "Llanos Barlovento",
+      "Ruinas de Wyveria",
+      "Acantilados del Témpano"
+    ],
+    "punto_debil": "Cabeza",
+    "elementos_efectivos": [
+      "fuego"
+    ],
+    "elementos": {
+      "fuego": 1.8,
+      "agua": 1,
+      "rayo": 0,
+      "hielo": 1.4,
+      "dragon": 1
+    },
+    "estados": {
+      "veneno": 1,
+      "sueno": 2,
+      "paralisis": 2,
+      "nitro": 2,
+      "aturdido": 2,
+      "agotamiento": 2
+    },
+    "ataques_especiales": {
+      "rugido": null,
+      "temblor_viento": "viento_menor",
+      "ataque_elemental": [],
+      "efecto_estado": [
+        "veneno",
+        "destello"
+      ]
+    },
+    "objetos": {
+      "eslinga_flash": false,
+      "bomba_sonica": false,
+      "trampa_electrica": false,
+      "trampa_escollo": true
+    },
+    "inmune_objetos": false,
+    "notas": "Eslinga Flash / Bomba Sónica",
+    "drops": [
+      {
+        "nombre": "Piel elástica+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 22
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 22
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 26
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 33
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 33
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 45
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 45
+          }
+        ]
+      },
+      {
+        "nombre": "Ala de Gypceros",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 22
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 22
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 26
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 27
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 27
+          }
+        ]
+      },
+      {
+        "nombre": "Cabeza de Gypceros",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 10
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 10
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 10
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 70,
+            "parte": "head"
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 70,
+            "parte": "head"
+          }
+        ]
+      },
+      {
+        "nombre": "Cola de Gypceros",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 38
+          }
+        ]
+      },
+      {
+        "nombre": "Certificado Gypceros S",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 8
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 8
+          }
+        ]
+      },
+      {
+        "nombre": "Gema de wyvern pájaro",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 3
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 3
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 3
+          },
+          {
+            "tipo": "talla",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 5
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 5
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 7
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100
+          }
+        ]
+      },
+      {
+        "nombre": "Extracto de poder",
+        "rareza": 4,
+        "condiciones": [
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 43
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 43
+          }
+        ]
+      },
+      {
+        "nombre": "Novacristal",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "herida_destruida",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 12
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 12
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 30,
+            "parte": "head"
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30,
+            "parte": "head"
+          }
+        ]
+      },
+      {
+        "nombre": "Vesícula tóxica",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 2,
+            "probabilidad": 25
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "low",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          }
+        ]
+      },
+      {
+        "nombre": "Esq. hematita wyveriana",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 50
+          }
+        ]
+      },
+      {
+        "nombre": "Hematita wyveriana (P)",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 35
+          }
+        ]
+      },
+      {
+        "nombre": "Hematita wyveriana",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 15
+          }
+        ]
+      }
+    ]
   },
   {
-    id: "rathian",
-    nombre: "Rathian",
-    tipo: ["curtido"],
-    capturable: true,
-    punto_debil: "Boca",
-    elementos_efectivos: ["dragon"],
-    elementos: { fuego: 0, agua: 0.7, rayo: 1.1, hielo: 0.7, dragon: 1.7 },
-    estados: { veneno: 1, sueno: 2, paralisis: 2, nitro: 2, aturdido: 2, agotamiento: 2 },
-    ataques_especiales: { rugido: "debil", temblor_viento: "viento_menor", ataque_elemental: ["llamasblight"], efecto_estado: ["veneno"] },
-    objetos: { eslinga_flash: true, bomba_sonica: false, trampa_electrica: true, trampa_escollo: true },
-    inmune_objetos: false,
-    notas: "Bomba Sónica"
+    "id": "rathian",
+    "nombre": "Rathian",
+    "tipo": [
+      "curtido"
+    ],
+    "capturable": true,
+    "especie": "flying-wyvern",
+    "descripcion": "Las \"reinas de la tierra\", wyverns hembra escupefuego, son conocidas por sus patas fuertes y sus mortíferas colas venenosas.",
+    "tamano": {
+      "base": 1754.37,
+      "mini": 1578.933,
+      "silver": 2017.5255,
+      "gold": 2157.8752
+    },
+    "zonas": [
+      "Cuenca Oleosa",
+      "Llanos Barlovento",
+      "Bosque Escarlata"
+    ],
+    "punto_debil": "Boca",
+    "elementos_efectivos": [
+      "dragon"
+    ],
+    "elementos": {
+      "fuego": 0,
+      "agua": 0.7,
+      "rayo": 1.1,
+      "hielo": 0.7,
+      "dragon": 1.7
+    },
+    "estados": {
+      "veneno": 1,
+      "sueno": 2,
+      "paralisis": 2,
+      "nitro": 2,
+      "aturdido": 2,
+      "agotamiento": 2
+    },
+    "ataques_especiales": {
+      "rugido": "debil",
+      "temblor_viento": "viento_menor",
+      "ataque_elemental": [
+        "llamasblight"
+      ],
+      "efecto_estado": [
+        "veneno"
+      ]
+    },
+    "objetos": {
+      "eslinga_flash": true,
+      "bomba_sonica": false,
+      "trampa_electrica": true,
+      "trampa_escollo": true
+    },
+    "inmune_objetos": false,
+    "notas": "Bomba Sónica",
+    "drops": [
+      {
+        "nombre": "Escama de Rathian+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 23
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 50
+          },
+          {
+            "tipo": "talla_cola_podrida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 60
+          }
+        ]
+      },
+      {
+        "nombre": "Coraza de Rathian",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 23
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 23
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 42
+          }
+        ]
+      },
+      {
+        "nombre": "Membrana de Rathian",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 16
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 18
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 33
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "left-wing"
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "right-wing"
+          }
+        ]
+      },
+      {
+        "nombre": "Púa de Rathian+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 8
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 8
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 10
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 13
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 21
+          },
+          {
+            "tipo": "talla_cola_podrida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "talla_cola",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 80
+          }
+        ]
+      },
+      {
+        "nombre": "Rubí de Rathian",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 3
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 3
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 5
+          },
+          {
+            "tipo": "talla_cola",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 7
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 7
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100
+          }
+        ]
+      },
+      {
+        "nombre": "Médula de Rath",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 8
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 10
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 11
+          },
+          {
+            "tipo": "talla_cola",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 13
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 21
+          }
+        ]
+      },
+      {
+        "nombre": "Certificado Rathian S",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 8
+          }
+        ]
+      },
+      {
+        "nombre": "Vesícula infernal",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 2,
+            "probabilidad": 18
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 18
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          }
+        ]
+      },
+      {
+        "nombre": "Hematita wyveriana (P)",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 65
+          }
+        ]
+      },
+      {
+        "nombre": "Hematita wyveriana",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 35
+          }
+        ]
+      }
+    ]
   },
   {
-    id: "guardian-fulgur-anjanath",
-    nombre: "Guardián Fulgur Anjanath",
-    tipo: ["curtido"],
-    capturable: true,
-    punto_debil: "Boca",
-    elementos_efectivos: ["hielo", "agua"],
-    elementos: { fuego: 1, agua: 1.7, rayo: 0, hielo: 2, dragon: 0.9 },
-    estados: { veneno: 1, sueno: 2, paralisis: 2, nitro: 2, aturdido: 2, agotamiento: 0 },
-    ataques_especiales: { rugido: "debil", temblor_viento: "viento_menor", ataque_elemental: ["truenoblight"], efecto_estado: [] },
-    objetos: { eslinga_flash: true, bomba_sonica: false, trampa_electrica: true, trampa_escollo: true },
-    inmune_objetos: false,
-    notas: "Bomba Sónica"
+    "id": "guardian-fulgur-anjanath",
+    "nombre": "Guardián Fulgur Anjanath",
+    "tipo": [
+      "curtido"
+    ],
+    "capturable": true,
+    "especie": "construct",
+    "descripcion": "Una especie artificial creada por una civilización ancestral con la energía de un Anjanath Fulgúreo. Lanza rayos, y su mordisco es letal.",
+    "tamano": {
+      "base": 1646.46,
+      "mini": 1481.814,
+      "silver": 1893.429,
+      "gold": 2025.1458
+    },
+    "zonas": [
+      "Ruinas de Wyveria"
+    ],
+    "punto_debil": "Boca",
+    "elementos_efectivos": [
+      "hielo",
+      "agua"
+    ],
+    "elementos": {
+      "fuego": 1,
+      "agua": 1.7,
+      "rayo": 0,
+      "hielo": 2,
+      "dragon": 0.9
+    },
+    "estados": {
+      "veneno": 1,
+      "sueno": 2,
+      "paralisis": 2,
+      "nitro": 2,
+      "aturdido": 2,
+      "agotamiento": 0
+    },
+    "ataques_especiales": {
+      "rugido": "debil",
+      "temblor_viento": "viento_menor",
+      "ataque_elemental": [
+        "truenoblight"
+      ],
+      "efecto_estado": []
+    },
+    "objetos": {
+      "eslinga_flash": true,
+      "bomba_sonica": false,
+      "trampa_electrica": true,
+      "trampa_escollo": true
+    },
+    "inmune_objetos": false,
+    "notas": "Bomba Sónica",
+    "drops": [
+      {
+        "nombre": "Escama de Fulgúreo G.+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 23
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 45
+          },
+          {
+            "tipo": "talla_cola_podrida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 60
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "left-leg"
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "right-leg"
+          }
+        ]
+      },
+      {
+        "nombre": "Pelaje de Fulgúreo G.+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 23
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 23
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 35
+          }
+        ]
+      },
+      {
+        "nombre": "Colmillo de Fulgúreo G.+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 16
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 18
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 2,
+            "probabilidad": 30,
+            "parte": "head"
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 33
+          }
+        ]
+      },
+      {
+        "nombre": "Hueso nasal fulgúreo G.+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 8
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 10
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 13
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 21
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 70,
+            "parte": "head"
+          }
+        ]
+      },
+      {
+        "nombre": "Cola de Fulgúreo G.",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 8
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 10
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 11
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 21
+          },
+          {
+            "tipo": "talla_cola_podrida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "talla_cola",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 93
+          }
+        ]
+      },
+      {
+        "nombre": "Gema de Fulgúreo G.",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 3
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 3
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 5
+          },
+          {
+            "tipo": "talla_cola",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 7
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 7
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100
+          }
+        ]
+      },
+      {
+        "nombre": "Certificado Fulgúreo G. S",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 8
+          }
+        ]
+      },
+      {
+        "nombre": "Cristal nublado",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "carve-crystallized",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 83
+          }
+        ]
+      },
+      {
+        "nombre": "Cristal chispeante",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "carve-crystallized",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 17
+          }
+        ]
+      },
+      {
+        "nombre": "Vesícula de rayo",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 2,
+            "probabilidad": 18
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 18
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          }
+        ]
+      },
+      {
+        "nombre": "Sangre de Guardián+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 8
+          }
+        ]
+      },
+      {
+        "nombre": "Pelaje de Guardián+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 12
+          }
+        ]
+      },
+      {
+        "nombre": "Hematita wyveriana (P)",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 45
+          }
+        ]
+      },
+      {
+        "nombre": "Hematita wyveriana",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 35
+          }
+        ]
+      },
+      {
+        "nombre": "Hematita wyveriana (G)",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 20
+          }
+        ]
+      }
+    ]
   },
   {
-    id: "rathalos",
-    nombre: "Rathalos",
-    tipo: ["curtido"],
-    capturable: true,
-    punto_debil: "Boca",
-    elementos_efectivos: ["dragon"],
-    elementos: { fuego: 0, agua: 0.8, rayo: 1, hielo: 0.8, dragon: 1.8 },
-    estados: { veneno: 2, sueno: 2, paralisis: 1, nitro: 1, aturdido: 2, agotamiento: 2 },
-    ataques_especiales: { rugido: "debil", temblor_viento: "viento_menor", ataque_elemental: ["llamasblight"], efecto_estado: ["veneno"] },
-    objetos: { eslinga_flash: true, bomba_sonica: false, trampa_electrica: true, trampa_escollo: true },
-    inmune_objetos: false,
-    notas: "Bomba Sónica"
+    "id": "rathalos",
+    "nombre": "Rathalos",
+    "tipo": [
+      "curtido"
+    ],
+    "capturable": true,
+    "especie": "flying-wyvern",
+    "descripcion": "Wyverns temibles conocidos como los \"reyes de los cielos\". Provistos de fuertes garras venenosas, se lanzan en picado sobre sus presas desde arriba.",
+    "tamano": {
+      "base": 1704.22,
+      "mini": 1533.798,
+      "silver": 1959.8529,
+      "gold": 2096.1907
+    },
+    "zonas": [
+      "Cuenca Oleosa",
+      "Bosque Escarlata",
+      "Ruinas de Wyveria"
+    ],
+    "punto_debil": "Boca",
+    "elementos_efectivos": [
+      "dragon"
+    ],
+    "elementos": {
+      "fuego": 0,
+      "agua": 0.8,
+      "rayo": 1,
+      "hielo": 0.8,
+      "dragon": 1.8
+    },
+    "estados": {
+      "veneno": 2,
+      "sueno": 2,
+      "paralisis": 1,
+      "nitro": 1,
+      "aturdido": 2,
+      "agotamiento": 2
+    },
+    "ataques_especiales": {
+      "rugido": "debil",
+      "temblor_viento": "viento_menor",
+      "ataque_elemental": [
+        "llamasblight"
+      ],
+      "efecto_estado": [
+        "veneno"
+      ]
+    },
+    "objetos": {
+      "eslinga_flash": true,
+      "bomba_sonica": false,
+      "trampa_electrica": true,
+      "trampa_escollo": true
+    },
+    "inmune_objetos": false,
+    "notas": "Bomba Sónica",
+    "drops": [
+      {
+        "nombre": "Médula de Rath",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 8
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 10
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 11
+          },
+          {
+            "tipo": "talla_cola",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 13
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 21
+          }
+        ]
+      },
+      {
+        "nombre": "Escama de Rathalos+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 23
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 50
+          },
+          {
+            "tipo": "talla_cola_podrida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 60
+          }
+        ]
+      },
+      {
+        "nombre": "Coraza de Rathalos",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 23
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 23
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 50
+          }
+        ]
+      },
+      {
+        "nombre": "Ala de Rathalos",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 16
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 18
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 33
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "left-wing"
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "right-wing"
+          }
+        ]
+      },
+      {
+        "nombre": "Cola de Rathalos",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 8
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 10
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 13
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 21
+          },
+          {
+            "tipo": "talla_cola_podrida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "talla_cola",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 80
+          }
+        ]
+      },
+      {
+        "nombre": "Rubí de Rathalos",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 3
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 3
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 5
+          },
+          {
+            "tipo": "talla_cola",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 7
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 7
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100
+          }
+        ]
+      },
+      {
+        "nombre": "Certificado Rathalos S",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 8
+          }
+        ]
+      },
+      {
+        "nombre": "Vesícula infernal",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 2,
+            "probabilidad": 18
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 18
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          }
+        ]
+      },
+      {
+        "nombre": "Hematita wyveriana (P)",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 45
+          }
+        ]
+      },
+      {
+        "nombre": "Hematita wyveriana",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 35
+          }
+        ]
+      },
+      {
+        "nombre": "Hematita wyveriana (G)",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 20
+          }
+        ]
+      }
+    ]
   },
   {
-    id: "gravios",
-    nombre: "Gravios",
-    tipo: ["curtido"],
-    capturable: true,
-    punto_debil: "Cabeza / Barriga / Espalda / Cola (romper armadura primero)",
-    elementos_efectivos: ["agua"],
-    elementos: { fuego: 0, agua: 1.9, rayo: 1, hielo: 1, dragon: 1.3 },
-    estados: { veneno: 2, sueno: 2, paralisis: 2, nitro: 2, aturdido: 2, agotamiento: 2 },
-    ataques_especiales: { rugido: "fuerte", temblor_viento: "temblor_menor", ataque_elemental: ["llamasblight"], efecto_estado: ["veneno", "sueno"] },
-    objetos: { eslinga_flash: true, bomba_sonica: false, trampa_electrica: true, trampa_escollo: true },
-    inmune_objetos: false,
-    notas: "Bomba Sónica"
+    "id": "gravios",
+    "nombre": "Gravios",
+    "tipo": [
+      "curtido"
+    ],
+    "capturable": true,
+    "especie": "flying-wyvern",
+    "descripcion": "Wyverns gigantescos de la Cuenca Oleosa. Sus desarrolladas corazas repelen los ataques y lanzan rayos de calor abrasadores.",
+    "tamano": {
+      "base": 2100.58,
+      "mini": 1890.522,
+      "silver": 2415.667,
+      "gold": 2583.7136
+    },
+    "zonas": [
+      "Cuenca Oleosa",
+      "Ruinas de Wyveria"
+    ],
+    "punto_debil": "Cabeza / Barriga / Espalda / Cola (romper armadura primero)",
+    "elementos_efectivos": [
+      "agua"
+    ],
+    "elementos": {
+      "fuego": 0,
+      "agua": 1.9,
+      "rayo": 1,
+      "hielo": 1,
+      "dragon": 1.3
+    },
+    "estados": {
+      "veneno": 2,
+      "sueno": 2,
+      "paralisis": 2,
+      "nitro": 2,
+      "aturdido": 2,
+      "agotamiento": 2
+    },
+    "ataques_especiales": {
+      "rugido": "fuerte",
+      "temblor_viento": "temblor_menor",
+      "ataque_elemental": [
+        "llamasblight"
+      ],
+      "efecto_estado": [
+        "veneno",
+        "sueno"
+      ]
+    },
+    "objetos": {
+      "eslinga_flash": true,
+      "bomba_sonica": false,
+      "trampa_electrica": true,
+      "trampa_escollo": true
+    },
+    "inmune_objetos": false,
+    "notas": "Bomba Sónica",
+    "drops": [
+      {
+        "nombre": "Gema de wyvern",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 3
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 3
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 5
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 7
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100
+          }
+        ]
+      },
+      {
+        "nombre": "Coraza de Gravios",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 21
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 60,
+            "parte": "back"
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 60,
+            "parte": "left-leg"
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 60,
+            "parte": "right-leg"
+          },
+          {
+            "tipo": "talla_cola",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 78
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 80
+          },
+          {
+            "tipo": "talla_cola_podrida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100
+          }
+        ]
+      },
+      {
+        "nombre": "Cráneo de Gravios",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 10
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 13
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "head"
+          }
+        ]
+      },
+      {
+        "nombre": "Pleura de Gravios+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 16
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 18
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "stomach"
+          }
+        ]
+      },
+      {
+        "nombre": "Médula de Gravios",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 8
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 10
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 11
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 18
+          },
+          {
+            "tipo": "talla_cola",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 22
+          }
+        ]
+      },
+      {
+        "nombre": "Ala de Gravios",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 21
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 23
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "left-wing"
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "right-wing"
+          }
+        ]
+      },
+      {
+        "nombre": "Certificado Gravios S",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 8
+          }
+        ]
+      },
+      {
+        "nombre": "Piedra de lava",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 40,
+            "parte": "back"
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 40,
+            "parte": "left-leg"
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 40,
+            "parte": "right-leg"
+          }
+        ]
+      },
+      {
+        "nombre": "Vesícula infernal",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 2,
+            "probabilidad": 7
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 10
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 13
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          }
+        ]
+      },
+      {
+        "nombre": "Vesícula de coma",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 2,
+            "probabilidad": 7
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 10
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 13
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          }
+        ]
+      },
+      {
+        "nombre": "Hematita wyveriana (P)",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 45
+          }
+        ]
+      },
+      {
+        "nombre": "Hematita wyveriana",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 35
+          }
+        ]
+      },
+      {
+        "nombre": "Hematita wyveriana (G)",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 20
+          }
+        ]
+      }
+    ]
   },
   {
-    id: "blangonga",
-    nombre: "Blangonga",
-    tipo: ["curtido", "colera"],
-    capturable: true,
-    punto_debil: "Trasero",
-    elementos_efectivos: ["fuego"],
-    elementos: { fuego: 1.3, agua: 1, rayo: 1, hielo: 0, dragon: 0 },
-    estados: { veneno: 2, sueno: 2, paralisis: 2, nitro: 2, aturdido: 2, agotamiento: 2 },
-    ataques_especiales: { rugido: "debil", temblor_viento: null, ataque_elemental: ["escarchablight"], efecto_estado: [] },
-    objetos: { eslinga_flash: true, bomba_sonica: false, trampa_electrica: true, trampa_escollo: true },
-    inmune_objetos: false,
-    notas: "Bomba Sónica"
+    "id": "blangonga",
+    "nombre": "Blangonga",
+    "tipo": [
+      "curtido",
+      "colera"
+    ],
+    "capturable": true,
+    "especie": "fanged-beast",
+    "descripcion": "Bestias enormes y blancas que controlan a otros Blango y atacan en manada. Tienen mucha movilidad, sobre todo en climas nevados.",
+    "tamano": {
+      "base": 899.3712,
+      "mini": 809.4341,
+      "silver": 1034.2769,
+      "gold": 1106.2266
+    },
+    "zonas": [
+      "Acantilados del Témpano"
+    ],
+    "punto_debil": "Trasero",
+    "elementos_efectivos": [
+      "fuego"
+    ],
+    "elementos": {
+      "fuego": 1.3,
+      "agua": 1,
+      "rayo": 1,
+      "hielo": 0,
+      "dragon": 0
+    },
+    "estados": {
+      "veneno": 2,
+      "sueno": 2,
+      "paralisis": 2,
+      "nitro": 2,
+      "aturdido": 2,
+      "agotamiento": 2
+    },
+    "ataques_especiales": {
+      "rugido": "debil",
+      "temblor_viento": null,
+      "ataque_elemental": [
+        "escarchablight"
+      ],
+      "efecto_estado": []
+    },
+    "objetos": {
+      "eslinga_flash": true,
+      "bomba_sonica": false,
+      "trampa_electrica": true,
+      "trampa_escollo": true
+    },
+    "inmune_objetos": false,
+    "notas": "Bomba Sónica",
+    "drops": [
+      {
+        "nombre": "Gema bestial",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 3
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 3
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 5
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 7
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100
+          }
+        ]
+      },
+      {
+        "nombre": "Piel de Blangonga+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 27
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 31
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 33
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100
+          }
+        ]
+      },
+      {
+        "nombre": "Colmillo Blangonga+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 54
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "head"
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "head"
+          }
+        ]
+      },
+      {
+        "nombre": "Pelo de Blangonga",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 27
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 27
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 31
+          }
+        ]
+      },
+      {
+        "nombre": "Cola de Blangonga",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 39
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "tail"
+          }
+        ]
+      },
+      {
+        "nombre": "Certificado Blangonga S",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 8
+          }
+        ]
+      },
+      {
+        "nombre": "Hueso robusto gigante",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          }
+        ]
+      },
+      {
+        "nombre": "Hematita wyveriana (P)",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 45
+          }
+        ]
+      },
+      {
+        "nombre": "Hematita wyveriana",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 35
+          }
+        ]
+      },
+      {
+        "nombre": "Hematita wyveriana (G)",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 20
+          }
+        ]
+      }
+    ]
   },
   {
-    id: "gore-magala",
-    nombre: "Gore Magala",
-    tipo: ["curtido"],
-    capturable: true,
-    punto_debil: "Boca",
-    elementos_efectivos: ["fuego"],
-    elementos: { fuego: 1.2, agua: 0, rayo: 1, hielo: 1, dragon: 1.1 },
-    estados: { veneno: 1, sueno: 1, paralisis: 1, nitro: 2, aturdido: 1, agotamiento: 2 },
-    ataques_especiales: { rugido: "fuerte", temblor_viento: null, ataque_elemental: [], efecto_estado: ["frenes"] },
-    objetos: { eslinga_flash: false, bomba_sonica: false, trampa_electrica: true, trampa_escollo: true },
-    inmune_objetos: false,
-    notas: "Eslinga Flash / Bomba Sónica"
+    "id": "gore-magala",
+    "nombre": "Gore Magala",
+    "tipo": [
+      "curtido"
+    ],
+    "capturable": true,
+    "especie": "demi-elder",
+    "descripcion": "Monstruos cubiertos por grandes alas, como un manto negro. No tienen ojos, así que usan una serie de escamas para ubicar a la presa.",
+    "tamano": {
+      "base": 1765.9,
+      "mini": 1589.3099,
+      "silver": 1960.149,
+      "gold": 2066.103
+    },
+    "zonas": [
+      "Ruinas de Wyveria",
+      "Acantilados del Témpano"
+    ],
+    "punto_debil": "Boca",
+    "elementos_efectivos": [
+      "fuego"
+    ],
+    "elementos": {
+      "fuego": 1.2,
+      "agua": 0,
+      "rayo": 1,
+      "hielo": 1,
+      "dragon": 1.1
+    },
+    "estados": {
+      "veneno": 1,
+      "sueno": 1,
+      "paralisis": 1,
+      "nitro": 2,
+      "aturdido": 1,
+      "agotamiento": 2
+    },
+    "ataques_especiales": {
+      "rugido": "fuerte",
+      "temblor_viento": null,
+      "ataque_elemental": [],
+      "efecto_estado": [
+        "frenes"
+      ]
+    },
+    "objetos": {
+      "eslinga_flash": false,
+      "bomba_sonica": false,
+      "trampa_electrica": true,
+      "trampa_escollo": true
+    },
+    "inmune_objetos": false,
+    "notas": "Eslinga Flash / Bomba Sónica",
+    "drops": [
+      {
+        "nombre": "Escama Gore Magala+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 22
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 24
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 24
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 38
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "talla_cola_podrida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 60
+          }
+        ]
+      },
+      {
+        "nombre": "Coraza Gore Magala",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 21
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 22
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 24
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 38
+          }
+        ]
+      },
+      {
+        "nombre": "Ala Gore Magala+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 13
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 13
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 16
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 25
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "left-wing"
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "right-wing"
+          }
+        ]
+      },
+      {
+        "nombre": "Espolón Gore Magala",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 16
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 21
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 22
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 25
+          }
+        ]
+      },
+      {
+        "nombre": "Cola Gore Magala",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 11
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 11
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 11
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 18
+          },
+          {
+            "tipo": "talla_cola_podrida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "talla_cola",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 93
+          }
+        ]
+      },
+      {
+        "nombre": "Sensor Gore Magala+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 11
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 25
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "antennae"
+          }
+        ]
+      },
+      {
+        "nombre": "Nictogema Gore Magala",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 3
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 3
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 4
+          },
+          {
+            "tipo": "talla_cola",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 7
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 7
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100
+          }
+        ]
+      },
+      {
+        "nombre": "Certificado Gore Magala S",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 8
+          }
+        ]
+      },
+      {
+        "nombre": "Cristal de cólera",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 24
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          }
+        ]
+      },
+      {
+        "nombre": "Hematita wyveriana",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 70
+          }
+        ]
+      },
+      {
+        "nombre": "Hematita wyveriana (G)",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 23
+          }
+        ]
+      },
+      {
+        "nombre": "Trozo hematita wyveriana",
+        "rareza": 8,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 7
+          }
+        ]
+      }
+    ]
   },
   {
-    id: "arkveld",
-    nombre: "Arkveld",
-    tipo: ["curtido", "hipercurtido"],
-    capturable: true,
-    punto_debil: "Cadenas",
-    elementos_efectivos: [],
-    elementos: { fuego: 0.8, agua: 0.8, rayo: 0.8, hielo: 0.8, dragon: 0.8 },
-    estados: { veneno: 2, sueno: 2, paralisis: 2, nitro: 2, aturdido: 2, agotamiento: 2 },
-    ataques_especiales: { rugido: "debil", temblor_viento: "viento_menor", ataque_elemental: ["dragonblight"], efecto_estado: [] },
-    objetos: { eslinga_flash: true, bomba_sonica: false, trampa_electrica: true, trampa_escollo: true },
-    inmune_objetos: false,
-    notas: "Bomba Sónica / Eslinga Flash / Ataques Elementales de las Espadas Duales"
+    "id": "arkveld",
+    "nombre": "Arkveld",
+    "tipo": [
+      "curtido",
+      "hipercurtido"
+    ],
+    "capturable": true,
+    "especie": "flying-wyvern",
+    "descripcion": "Un wyvern con alas en forma de cadenas. Con los filos flexibles de los cadenáculos rebanan a sus presas y absorben su energía elemental.",
+    "tamano": {
+      "base": 1666.54,
+      "mini": 1499.886,
+      "silver": 1916.521,
+      "gold": 2049.8442
+    },
+    "zonas": [
+      "Cuenca Oleosa",
+      "Llanos Barlovento",
+      "Bosque Escarlata",
+      "Ruinas de Wyveria",
+      "Acantilados del Témpano"
+    ],
+    "punto_debil": "Cadenas",
+    "elementos_efectivos": [],
+    "elementos": {
+      "fuego": 0.8,
+      "agua": 0.8,
+      "rayo": 0.8,
+      "hielo": 0.8,
+      "dragon": 0.8
+    },
+    "estados": {
+      "veneno": 2,
+      "sueno": 2,
+      "paralisis": 2,
+      "nitro": 2,
+      "aturdido": 2,
+      "agotamiento": 2
+    },
+    "ataques_especiales": {
+      "rugido": "debil",
+      "temblor_viento": "viento_menor",
+      "ataque_elemental": [
+        "dragonblight"
+      ],
+      "efecto_estado": []
+    },
+    "objetos": {
+      "eslinga_flash": true,
+      "bomba_sonica": false,
+      "trampa_electrica": true,
+      "trampa_escollo": true
+    },
+    "inmune_objetos": false,
+    "notas": "Bomba Sónica / Eslinga Flash / Ataques Elementales de las Espadas Duales",
+    "drops": [
+      {
+        "nombre": "Cola de Arkveld",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 8
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 11
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 11
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 21
+          },
+          {
+            "tipo": "talla_cola_podrida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "talla_cola",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 93
+          }
+        ]
+      },
+      {
+        "nombre": "Escama de Arkveld+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 23
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 45
+          },
+          {
+            "tipo": "talla_cola_podrida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 60
+          }
+        ]
+      },
+      {
+        "nombre": "Armadura de Arkveld",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 23
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 23
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 43
+          }
+        ]
+      },
+      {
+        "nombre": "Piel de Arkveld blanco",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 12
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 18
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 18
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 33
+          }
+        ]
+      },
+      {
+        "nombre": "Coraza callosa de Arkveld",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 18
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "left-wing-blade"
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "right-wing-blade"
+          }
+        ]
+      },
+      {
+        "nombre": "Cuerno de Arkveld+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 8
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 11
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 13
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 21
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "head"
+          }
+        ]
+      },
+      {
+        "nombre": "Gema de Arkveld",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 3
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 3
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 5
+          },
+          {
+            "tipo": "talla_cola",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 7
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 7
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100
+          }
+        ]
+      },
+      {
+        "nombre": "Certificado Arkveld S",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 8
+          }
+        ]
+      },
+      {
+        "nombre": "Hueso escudo",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 11
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 18
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          }
+        ]
+      },
+      {
+        "nombre": "Hematita wyveriana (G)",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 85
+          }
+        ]
+      },
+      {
+        "nombre": "Trozo hematita wyveriana",
+        "rareza": 8,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 15
+          }
+        ]
+      }
+    ]
   },
   {
-    id: "mitzutsune",
-    nombre: "Mitzutsune",
-    tipo: ["curtido"],
-    capturable: true,
-    punto_debil: "Cabeza / Garras / Espalda",
-    elementos_efectivos: ["rayo", "dragon"],
-    elementos: { fuego: 1, agua: 0, rayo: 1.4, hielo: 1, dragon: 1.4 },
-    estados: { veneno: 2, sueno: 2, paralisis: 2, nitro: 2, aturdido: 2, agotamiento: 2 },
-    ataques_especiales: { rugido: "debil", temblor_viento: null, ataque_elemental: ["llamasblight", "aguablight"], efecto_estado: [] },
-    objetos: { eslinga_flash: true, bomba_sonica: false, trampa_electrica: true, trampa_escollo: true },
-    inmune_objetos: false,
-    notas: "Bomba Sónica"
+    "id": "mitzutsune",
+    "nombre": "Mitzutsune",
+    "tipo": [
+      "curtido"
+    ],
+    "capturable": true,
+    "especie": "leviathan",
+    "descripcion": "Leviatanes evolucionados de forma única. Segregan una espuma peculiar que cubre a los enemigos con peligrosas burbujas.",
+    "tamano": {
+      "base": 1923.434,
+      "mini": 1731.0906,
+      "silver": 2211.949,
+      "gold": 2365.8237
+    },
+    "zonas": [
+      "Bosque Escarlata",
+      "Ruinas de Wyveria"
+    ],
+    "punto_debil": "Cabeza / Garras / Espalda",
+    "elementos_efectivos": [
+      "rayo",
+      "dragon"
+    ],
+    "elementos": {
+      "fuego": 1,
+      "agua": 0,
+      "rayo": 1.4,
+      "hielo": 1,
+      "dragon": 1.4
+    },
+    "estados": {
+      "veneno": 2,
+      "sueno": 2,
+      "paralisis": 2,
+      "nitro": 2,
+      "aturdido": 2,
+      "agotamiento": 2
+    },
+    "ataques_especiales": {
+      "rugido": "debil",
+      "temblor_viento": null,
+      "ataque_elemental": [
+        "llamasblight",
+        "aguablight"
+      ],
+      "efecto_estado": []
+    },
+    "objetos": {
+      "eslinga_flash": true,
+      "bomba_sonica": false,
+      "trampa_electrica": true,
+      "trampa_escollo": true
+    },
+    "inmune_objetos": false,
+    "notas": "Bomba Sónica",
+    "drops": [
+      {
+        "nombre": "Hueso afilado",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          }
+        ]
+      },
+      {
+        "nombre": "Hematita wyveriana (G)",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 85
+          }
+        ]
+      },
+      {
+        "nombre": "Trozo hematita wyveriana",
+        "rareza": 8,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 15
+          }
+        ]
+      },
+      {
+        "nombre": "Certificado de Mizutsune S",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 8
+          }
+        ]
+      },
+      {
+        "nombre": "Escama de Mizutsune+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 24
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 24
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "talla_cola_podrida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 60
+          }
+        ]
+      },
+      {
+        "nombre": "Pelo violeta Mizutsune+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 22
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 24
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "tail"
+          }
+        ]
+      },
+      {
+        "nombre": "Garra de Mizutsune+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 13
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 25
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "left-nail"
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "right-nail"
+          }
+        ]
+      },
+      {
+        "nombre": "Aleta de Mizutsune+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 8
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 8
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 11
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 25
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "head"
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "dorsal-fin"
+          }
+        ]
+      },
+      {
+        "nombre": "Cola de Mizutsune",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 8
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 8
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 11
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 18
+          },
+          {
+            "tipo": "talla_cola_podrida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "talla_cola",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 94
+          }
+        ]
+      },
+      {
+        "nombre": "Espuma burbujas+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 16
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 18
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 18
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 25
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 40
+          }
+        ]
+      },
+      {
+        "nombre": "Orbe agua Mizutsune",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 3
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 3
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 3
+          },
+          {
+            "tipo": "talla_cola",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 6
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 7
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100
+          }
+        ]
+      }
+    ]
   },
   {
-    id: "seregios",
-    nombre: "Seregios",
-    tipo: ["curtido"],
-    capturable: true,
-    punto_debil: "Patas",
-    elementos_efectivos: ["rayo"],
-    elementos: { fuego: 0, agua: 1, rayo: 1.8, hielo: 1.3, dragon: 1 },
-    estados: { veneno: 2, sueno: 2, paralisis: 1, nitro: 2, aturdido: 2, agotamiento: 2 },
-    ataques_especiales: { rugido: "debil", temblor_viento: null, ataque_elemental: [], efecto_estado: ["sangrado"] },
-    objetos: { eslinga_flash: true, bomba_sonica: false, trampa_electrica: true, trampa_escollo: true },
-    inmune_objetos: false,
-    notas: "Bomba Sónica"
+    "id": "seregios",
+    "nombre": "Seregios",
+    "tipo": [
+      "curtido"
+    ],
+    "capturable": true,
+    "especie": "flying-wyvern",
+    "descripcion": "Wyverns voladores muy territoriales. Famosos por lo afiladas que son las escamas de las que están recubiertos.",
+    "tamano": {
+      "base": 1730.27,
+      "mini": 1557.2429,
+      "silver": 1989.8104,
+      "gold": 2128.2322
+    },
+    "zonas": [
+      "Llanos Barlovento",
+      "Ruinas de Wyveria"
+    ],
+    "punto_debil": "Patas",
+    "elementos_efectivos": [
+      "rayo"
+    ],
+    "elementos": {
+      "fuego": 0,
+      "agua": 1,
+      "rayo": 1.8,
+      "hielo": 1.3,
+      "dragon": 1
+    },
+    "estados": {
+      "veneno": 2,
+      "sueno": 2,
+      "paralisis": 1,
+      "nitro": 2,
+      "aturdido": 2,
+      "agotamiento": 2
+    },
+    "ataques_especiales": {
+      "rugido": "debil",
+      "temblor_viento": null,
+      "ataque_elemental": [],
+      "efecto_estado": [
+        "sangrado"
+      ]
+    },
+    "objetos": {
+      "eslinga_flash": true,
+      "bomba_sonica": false,
+      "trampa_electrica": true,
+      "trampa_escollo": true
+    },
+    "inmune_objetos": false,
+    "notas": "Bomba Sónica",
+    "drops": [
+      {
+        "nombre": "Esclascama Seregios",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 22
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 23
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 25
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 50
+          },
+          {
+            "tipo": "talla_cola_podrida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 60
+          }
+        ]
+      },
+      {
+        "nombre": "Filo de Seregios",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 22
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 25
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 50
+          }
+        ]
+      },
+      {
+        "nombre": "Cortador Seregios",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 18
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 18
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 18
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 27
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "right-leg"
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "left-leg"
+          }
+        ]
+      },
+      {
+        "nombre": "Empaladora Seregios",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 8
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 8
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 11
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 18
+          },
+          {
+            "tipo": "talla_cola_podrida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "talla_cola",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100
+          }
+        ]
+      },
+      {
+        "nombre": "Fisurador Seregios",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 8
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 8
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 11
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 27
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "head"
+          }
+        ]
+      },
+      {
+        "nombre": "Arañadora Seregios",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 13
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 27
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "right-wing"
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "left-wing"
+          }
+        ]
+      },
+      {
+        "nombre": "Disidente Seregios",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 1
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 1
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 1
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 2
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100
+          }
+        ]
+      },
+      {
+        "nombre": "Certificado Seregios S",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 8
+          }
+        ]
+      },
+      {
+        "nombre": "Hueso escudo",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          }
+        ]
+      },
+      {
+        "nombre": "Hematita wyveriana (G)",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 85
+          }
+        ]
+      },
+      {
+        "nombre": "Trozo hematita wyveriana",
+        "rareza": 8,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 15
+          }
+        ]
+      }
+    ]
   },
   {
-    id: "lagiacrus",
-    nombre: "Lagiacrus",
-    tipo: ["curtido"],
-    capturable: true,
-    punto_debil: "Cabeza / Espalda",
-    elementos_efectivos: ["fuego"],
-    elementos: { fuego: 1.6, agua: 0, rayo: 0, hielo: 1.1, dragon: 1.1 },
-    estados: { veneno: 2, sueno: 2, paralisis: 1, nitro: 2, aturdido: 1, agotamiento: 2 },
-    ataques_especiales: { rugido: "debil", temblor_viento: null, ataque_elemental: ["truenoblight"], efecto_estado: [] },
-    objetos: { eslinga_flash: true, bomba_sonica: false, trampa_electrica: true, trampa_escollo: true },
-    inmune_objetos: false,
-    notas: "Bomba Sónica"
+    "id": "lagiacrus",
+    "nombre": "Lagiacrus",
+    "tipo": [
+      "curtido"
+    ],
+    "capturable": true,
+    "especie": "leviathan",
+    "descripcion": "Los leviatanes están en la cima de la cadena alimentaria acuática. Han aparecido en aguas del Bosque Escarlata, atraídos por el entorno fértil.",
+    "tamano": {
+      "base": 2535.46,
+      "mini": 2281.9138,
+      "silver": 2763.6514,
+      "gold": 2865.0698
+    },
+    "zonas": [
+      "Bosque Escarlata"
+    ],
+    "punto_debil": "Cabeza / Espalda",
+    "elementos_efectivos": [
+      "fuego"
+    ],
+    "elementos": {
+      "fuego": 1.6,
+      "agua": 0,
+      "rayo": 0,
+      "hielo": 1.1,
+      "dragon": 1.1
+    },
+    "estados": {
+      "veneno": 2,
+      "sueno": 2,
+      "paralisis": 1,
+      "nitro": 2,
+      "aturdido": 1,
+      "agotamiento": 2
+    },
+    "ataques_especiales": {
+      "rugido": "debil",
+      "temblor_viento": null,
+      "ataque_elemental": [
+        "truenoblight"
+      ],
+      "efecto_estado": []
+    },
+    "objetos": {
+      "eslinga_flash": true,
+      "bomba_sonica": false,
+      "trampa_electrica": true,
+      "trampa_escollo": true
+    },
+    "inmune_objetos": false,
+    "notas": "Bomba Sónica",
+    "drops": [
+      {
+        "nombre": "Hueso escudo",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          }
+        ]
+      },
+      {
+        "nombre": "Hematita wyveriana (G)",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 85
+          }
+        ]
+      },
+      {
+        "nombre": "Trozo hematita wyveriana",
+        "rareza": 8,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 15
+          }
+        ]
+      },
+      {
+        "nombre": "Certificado Lagiacrus S",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 8
+          }
+        ]
+      },
+      {
+        "nombre": "Escama de Lagiacrus+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 22
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 25
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 30
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 50
+          }
+        ]
+      },
+      {
+        "nombre": "Piel de Lagiacrus+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 22
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 23
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 25
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 50
+          },
+          {
+            "tipo": "talla_cola_podrida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 60
+          }
+        ]
+      },
+      {
+        "nombre": "Electropúa de Lagiacrus",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 13
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 27
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "back"
+          }
+        ]
+      },
+      {
+        "nombre": "Cuerno de Lagiacrus+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 8
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 8
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 11
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 27
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "head"
+          }
+        ]
+      },
+      {
+        "nombre": "Cola de Lagiacrus",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 8
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 8
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 11
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 18
+          },
+          {
+            "tipo": "talla_cola_podrida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "talla_cola",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100
+          }
+        ]
+      },
+      {
+        "nombre": "Garra de Lagiacrus+",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 18
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 18
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 18
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 27
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "front-legs"
+          }
+        ]
+      },
+      {
+        "nombre": "Zafiro de Lagiacrus",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 1
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 1
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 1
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 2
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100
+          }
+        ]
+      }
+    ]
   },
   {
-    id: "omega-planetes",
-    nombre: "Omega Planetes",
-    tipo: [],
-    capturable: false,
-    punto_debil: "Cabeza / Patas / Espalda",
-    elementos_efectivos: ["rayo", "dragon"],
-    elementos: { fuego: 0, agua: 1, rayo: 2.6, hielo: 0.9, dragon: 2.3 },
-    estados: { veneno: 0, sueno: 0, paralisis: 1, nitro: 2, aturdido: 1, agotamiento: 0 },
-    ataques_especiales: { rugido: null, temblor_viento: null, ataque_elemental: ["llamasblight"], efecto_estado: ["penalizacion_vida"] },
-    objetos: { eslinga_flash: false, bomba_sonica: false, trampa_electrica: false, trampa_escollo: false },
-    inmune_objetos: true,
-    notas: "Inmune a todos los objetos"
+    "id": "omega-planetes",
+    "nombre": "Omega Planetes",
+    "tipo": [],
+    "capturable": false,
+    "especie": "machine",
+    "descripcion": "Armazón Omega que cruzó la grieta interdimensional y ha acudido a las Tierras Prohibidas en busca de formas de vida más fuertes y planetas que invadir.",
+    "tamano": {
+      "base": 1181.86,
+      "mini": 1063.674,
+      "silver": 1359.1389,
+      "gold": 1453.6877
+    },
+    "zonas": [
+      "Acantilados del Témpano"
+    ],
+    "punto_debil": "Cabeza / Patas / Espalda",
+    "elementos_efectivos": [
+      "rayo",
+      "dragon"
+    ],
+    "elementos": {
+      "fuego": 0,
+      "agua": 1,
+      "rayo": 2.6,
+      "hielo": 0.9,
+      "dragon": 2.3
+    },
+    "estados": {
+      "veneno": 0,
+      "sueno": 0,
+      "paralisis": 1,
+      "nitro": 2,
+      "aturdido": 1,
+      "agotamiento": 0
+    },
+    "ataques_especiales": {
+      "rugido": null,
+      "temblor_viento": null,
+      "ataque_elemental": [
+        "llamasblight"
+      ],
+      "efecto_estado": [
+        "penalizacion_vida"
+      ]
+    },
+    "objetos": {
+      "eslinga_flash": false,
+      "bomba_sonica": false,
+      "trampa_electrica": false,
+      "trampa_escollo": false
+    },
+    "inmune_objetos": true,
+    "notas": "Inmune a todos los objetos",
+    "drops": [
+      {
+        "nombre": "Datos Omega 1.0",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 8
+          }
+        ]
+      },
+      {
+        "nombre": "Tornillo Omega",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 25
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 28
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 50
+          }
+        ]
+      },
+      {
+        "nombre": "Muelle Omega",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 23
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 25
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 50
+          }
+        ]
+      },
+      {
+        "nombre": "Pedal Omega",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 18
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "right-front-leg"
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "left-front-leg"
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "right-hind-leg"
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "left-hind-leg"
+          }
+        ]
+      },
+      {
+        "nombre": "Lente Omega",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 13
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 13
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "head"
+          }
+        ]
+      },
+      {
+        "nombre": "Eje Omega",
+        "rareza": 6,
+        "condiciones": [
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 11
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 11
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "periscope"
+          }
+        ]
+      },
+      {
+        "nombre": "Nódulo Omega",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 2
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 3
+          }
+        ]
+      }
+    ]
   },
   {
-    id: "gogmazios",
-    nombre: "Gogmazios",
-    tipo: [],
-    capturable: false,
-    punto_debil: "Cuerno / Garras Alares / Pecho / Cola",
-    elementos_efectivos: ["fuego"],
-    elementos: { fuego: 1, agua: 0, rayo: 0, hielo: 0, dragon: 0.6 },
-    estados: { veneno: 0, sueno: 0, paralisis: 0, nitro: 2, aturdido: 1, agotamiento: 0 },
-    ataques_especiales: { rugido: "fuerte", temblor_viento: "fuerte", ataque_elemental: ["llamasblight"], efecto_estado: ["alquitranado"] },
-    objetos: { eslinga_flash: false, bomba_sonica: false, trampa_electrica: false, trampa_escollo: false },
-    inmune_objetos: true,
-    notas: "Inmune a todos los objetos"
+    "id": "gogmazios",
+    "nombre": "Gogmazios",
+    "tipo": [],
+    "capturable": false,
+    "especie": "elder-dragon",
+    "descripcion": "Un misterioso dragón anciano cubierto de la cabeza a la cola por un líquido negro y viscoso que estaba hibernando en el territorio bajo Azuz.",
+    "tamano": {
+      "base": 4861.25,
+      "mini": 4375.125,
+      "silver": 5590.4375,
+      "gold": 5979.3374
+    },
+    "zonas": [
+      "Cuenca Oleosa"
+    ],
+    "punto_debil": "Cuerno / Garras Alares / Pecho / Cola",
+    "elementos_efectivos": [
+      "fuego"
+    ],
+    "elementos": {
+      "fuego": 1,
+      "agua": 0,
+      "rayo": 0,
+      "hielo": 0,
+      "dragon": 0.6
+    },
+    "estados": {
+      "veneno": 0,
+      "sueno": 0,
+      "paralisis": 0,
+      "nitro": 2,
+      "aturdido": 1,
+      "agotamiento": 0
+    },
+    "ataques_especiales": {
+      "rugido": "fuerte",
+      "temblor_viento": "fuerte",
+      "ataque_elemental": [
+        "llamasblight"
+      ],
+      "efecto_estado": [
+        "alquitranado"
+      ]
+    },
+    "objetos": {
+      "eslinga_flash": false,
+      "bomba_sonica": false,
+      "trampa_electrica": false,
+      "trampa_escollo": false
+    },
+    "inmune_objetos": true,
+    "notas": "Inmune a todos los objetos",
+    "drops": [
+      {
+        "nombre": "Hematita wyveriana (G)",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 85
+          }
+        ]
+      },
+      {
+        "nombre": "Trozo hematita wyveriana",
+        "rareza": 8,
+        "condiciones": [
+          {
+            "tipo": "tempered-wound-destroyed",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 15
+          }
+        ]
+      },
+      {
+        "nombre": "Certificado de Gogmazios S",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 8
+          }
+        ]
+      },
+      {
+        "nombre": "Muralla de Gogmazios",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 23
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 24
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 50
+          },
+          {
+            "tipo": "talla_cola_podrida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 60
+          }
+        ]
+      },
+      {
+        "nombre": "Fortaleza de Gogmazios",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 10
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 12
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "head"
+          }
+        ]
+      },
+      {
+        "nombre": "Azote de Gogmazios",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 6
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 8
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "chest"
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "back"
+          }
+        ]
+      },
+      {
+        "nombre": "Trituradoras de Gogmazios",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 6
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 8
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "left-wing-legs"
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "right-wing-legs"
+          }
+        ]
+      },
+      {
+        "nombre": "Fibra de ala de Gogmazios",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 21
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 21
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 35
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 40
+          }
+        ]
+      },
+      {
+        "nombre": "Cola espinosa de Gogmazios",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 10
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 10
+          },
+          {
+            "tipo": "talla_cola_podrida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 40
+          },
+          {
+            "tipo": "talla_cola",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 98
+          }
+        ]
+      },
+      {
+        "nombre": "Gema dracónica bélica",
+        "rareza": 8,
+        "condiciones": [
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 1
+          },
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 2
+          },
+          {
+            "tipo": "talla_cola",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 2
+          }
+        ]
+      },
+      {
+        "nombre": "Aceite de hueso pesado",
+        "rareza": 7,
+        "condiciones": [
+          {
+            "tipo": "talla",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "talla_cuerpo_podrido",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "recompensa_caceria",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 15
+          },
+          {
+            "tipo": "herida_destruida",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 20
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "back"
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 1,
+            "probabilidad": 100,
+            "parte": "tail-tip"
+          }
+        ]
+      },
+      {
+        "nombre": "Armamento mutado",
+        "rareza": 8,
+        "condiciones": [
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 4,
+            "probabilidad": 100,
+            "parte": "hide"
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 4,
+            "probabilidad": 100,
+            "parte": "hide"
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 4,
+            "probabilidad": 100,
+            "parte": "hide"
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 4,
+            "probabilidad": 100,
+            "parte": "hide"
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 4,
+            "probabilidad": 100,
+            "parte": "hide"
+          },
+          {
+            "tipo": "parte_rota",
+            "rango": "high",
+            "cantidad": 4,
+            "probabilidad": 100,
+            "parte": "hide"
+          },
+          {
+            "tipo": "broken-fragment",
+            "rango": "high",
+            "cantidad": 2,
+            "probabilidad": 100
+          }
+        ]
+      }
+    ]
   }
 ];

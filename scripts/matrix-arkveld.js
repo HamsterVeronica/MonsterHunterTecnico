@@ -1,8 +1,9 @@
-// scripts/matrix-arkveld.js — genera data/matriz-arkveld.txt
-// node scripts/matrix-arkveld.js
 const fs = require('fs');
 
-// ─── Datos de armas (copiados de data/weapons.js) ───────────────────────────
+//------------------------------------------------------------//
+// ─── ESTO ES UN SIMPLE TEST PARA HACER MATRICES DE DAÑO ───
+//------------------------------------------------------------//
+
 const WEAPONS = [
   { id: 'great-sword',   nombre: 'Gran Espada',     bloat: 4.8, tipo_dano: 'corte'     },
   { id: 'long-sword',    nombre: 'Espada Larga',    bloat: 3.3, tipo_dano: 'corte'     },
@@ -20,23 +21,19 @@ const WEAPONS = [
   { id: 'heavy-bowgun',  nombre: 'Ballesta Pesada', bloat: 1.5, tipo_dano: 'proyectil'},
 ];
 
-// ─── Cargar HITZONES (el fichero es JSON válido entre la primera { y última }) ──
 const hzCode   = fs.readFileSync('data/hitzones.js', 'utf8');
 const hzStart  = hzCode.indexOf('{');
 const hzEnd    = hzCode.lastIndexOf('}') + 1;
 const HITZONES = JSON.parse(hzCode.slice(hzStart, hzEnd));
 
-// ─── Cargar MOTION_VALUES (mismo truco) ─────────────────────────────────────
 const mvCode        = fs.readFileSync('data/motion-values.js', 'utf8');
 const mvStart       = mvCode.indexOf('{');
 const mvEnd         = mvCode.lastIndexOf('}') + 1;
 const MOTION_VALUES = JSON.parse(mvCode.slice(mvStart, mvEnd));
 
-// ─── Config ──────────────────────────────────────────────────────────────────
-const TRUE_RAW = 100;   // Daño real normalizado — multiplica por tu daño real real
-const SHARP    = 1.32;  // Filo blanco
+const TRUE_RAW = 100;
+const SHARP    = 1.32;
 
-// ─── Arkveld ─────────────────────────────────────────────────────────────────
 const ark    = HITZONES['arkveld'];
 const partes = Object.keys(ark);
 
@@ -52,7 +49,6 @@ const PARTE_ES = {
   'Left Claw':'Garra Izq.','Right Claw':'Garra Der.',
 };
 
-// ─── Calcular daño ────────────────────────────────────────────────────────────
 const rows = WEAPONS.map(w => {
   const mvData = MOTION_VALUES[w.id] && MOTION_VALUES[w.id].raw;
   const avgMV  = mvData ? mvData.avg : 100;
@@ -69,7 +65,6 @@ const rows = WEAPONS.map(w => {
   return row;
 });
 
-// ─── Render tabla de texto ────────────────────────────────────────────────────
 const partLabels = partes.map(p => PARTE_ES[p] || p);
 
 const W_ARMA = Math.max(18, ...rows.map(r => r.arma.length));
@@ -110,7 +105,6 @@ for (const r of rows) {
   out += `  ${padL(r.arma, W_ARMA)}: ${pad(r[headParte+'_min'],4)} – ${pad(r[headParte+'_max'],4)}  (media: ${r[headParte]})\n`;
 }
 
-// ─── Guardar ─────────────────────────────────────────────────────────────────
 fs.writeFileSync('data/matriz-arkveld.txt', out, 'utf8');
 console.log(out);
 console.log('Guardado en: data/matriz-arkveld.txt');

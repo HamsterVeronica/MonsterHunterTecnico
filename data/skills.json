@@ -1,0 +1,6307 @@
+[
+    {
+        "name": "Antidraco",
+        "kind": "armor",
+        "description": "Aumenta la resistencia a draco. En niveles más altos también mejora la defensa.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 1
+                },
+                "level": 1,
+                "name": null,
+                "description": "Resistencia al draco +6.",
+                "id": 1
+            },
+            {
+                "skill": {
+                    "id": 1
+                },
+                "level": 2,
+                "name": null,
+                "description": "Resistencia al draco +12.",
+                "id": 2
+            },
+            {
+                "skill": {
+                    "id": 1
+                },
+                "level": 3,
+                "name": null,
+                "description": "Resistencia a draco +20. Defensa +10.",
+                "id": 3
+            }
+        ],
+        "icon": {
+            "id": 6,
+            "kind": "defense"
+        },
+        "id": 1,
+        "gameId": -2125233152
+    },
+    {
+        "name": "Disparo abanico/potente",
+        "kind": "weapon",
+        "description": "Aumenta el ataque de la munición abanico de la ballesta y los tiros potentes y disparo rápido del arco.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 2
+                },
+                "level": 1,
+                "name": null,
+                "description": "Aumenta un poco la potencia de la munición y flechas indicados.",
+                "id": 4
+            }
+        ],
+        "icon": {
+            "id": 5,
+            "kind": "ranged"
+        },
+        "id": 2,
+        "gameId": -2123993856
+    },
+    {
+        "name": "Ojo crítico",
+        "kind": "weapon",
+        "description": "Aumenta la afinidad.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 3
+                },
+                "level": 1,
+                "name": null,
+                "description": "Afinidad +4 %.",
+                "id": 5
+            },
+            {
+                "skill": {
+                    "id": 3
+                },
+                "level": 2,
+                "name": null,
+                "description": "Afinidad +8 %.",
+                "id": 6
+            },
+            {
+                "skill": {
+                    "id": 3
+                },
+                "level": 3,
+                "name": null,
+                "description": "Afinidad +12 %.",
+                "id": 7
+            },
+            {
+                "skill": {
+                    "id": 3
+                },
+                "level": 4,
+                "name": null,
+                "description": "Afinidad +16 %.",
+                "id": 8
+            },
+            {
+                "skill": {
+                    "id": 3
+                },
+                "level": 5,
+                "name": null,
+                "description": "Afinidad +20 %.",
+                "id": 9
+            }
+        ],
+        "icon": {
+            "id": 2,
+            "kind": "affinity"
+        },
+        "id": 3,
+        "gameId": -2096489472
+    },
+    {
+        "name": "Protección de Guardián",
+        "kind": "group",
+        "description": null,
+        "ranks": [
+            {
+                "skill": {
+                    "id": 4
+                },
+                "level": 1,
+                "name": "Guarda de Wyveria",
+                "description": "Cuando estés en las Ruinas de Wyveria, reduce el daño elemental y único.",
+                "id": 10
+            }
+        ],
+        "icon": {
+            "id": 13,
+            "kind": "group"
+        },
+        "id": 4,
+        "gameId": -2041451904
+    },
+    {
+        "name": "Añade nitro",
+        "kind": "weapon",
+        "description": "Si tienes un arco equipado, permite equiparte con viales de nitro.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 5
+                },
+                "level": 1,
+                "name": null,
+                "description": "Permite aplicar viales de nitro.",
+                "id": 11
+            }
+        ],
+        "icon": {
+            "id": 5,
+            "kind": "ranged"
+        },
+        "id": 5,
+        "gameId": -2022542848
+    },
+    {
+        "name": "Disparo normal",
+        "kind": "weapon",
+        "description": "Aumenta el poder de ataque de la munición normal, las flechas normales y el tiro golondrina volante.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 6
+                },
+                "level": 1,
+                "name": null,
+                "description": "Aumenta un poco la potencia de la munición y flechas indicados.",
+                "id": 12
+            }
+        ],
+        "icon": {
+            "id": 5,
+            "kind": "ranged"
+        },
+        "id": 6,
+        "gameId": -1961297152
+    },
+    {
+        "name": "Mutación rápida",
+        "kind": "weapon",
+        "description": "Aumenta la velocidad de mutación y la fuerza de ataque de las hachas espada y las hachas cargadas.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 7
+                },
+                "level": 1,
+                "name": null,
+                "description": "Velocidad +10 %.",
+                "id": 13
+            },
+            {
+                "skill": {
+                    "id": 7
+                },
+                "level": 2,
+                "name": null,
+                "description": "Velocidad +20 %. Potencia de ataque con mutación +10 %.",
+                "id": 14
+            },
+            {
+                "skill": {
+                    "id": 7
+                },
+                "level": 3,
+                "name": null,
+                "description": "Velocidad +30 %. Potencia de ataque con mutación +20 %.",
+                "id": 15
+            }
+        ],
+        "icon": {
+            "id": 9,
+            "kind": "offense"
+        },
+        "id": 7,
+        "gameId": -1961116288
+    },
+    {
+        "name": "Pena inmediata",
+        "kind": "weapon",
+        "description": "Añade efecto aturdidor a los ataques al desenfundar y aumenta un poco el ataque. (No sirve mientras montas).",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 8
+                },
+                "level": 1,
+                "name": null,
+                "description": "Los ataques al desenfundar causan una pequeña cantidad de daño por aturdimiento y ganan +3 de ataque.",
+                "id": 16
+            },
+            {
+                "skill": {
+                    "id": 8
+                },
+                "level": 2,
+                "name": null,
+                "description": "Los ataques al desenfundar causan una cantidad mediana de daño por aturdimiento y ganan +5 de ataque.",
+                "id": 17
+            },
+            {
+                "skill": {
+                    "id": 8
+                },
+                "level": 3,
+                "name": null,
+                "description": "Los ataques al desenfundar causan una gran cantidad de daño por aturdimiento y ganan +7 de ataque.",
+                "id": 18
+            }
+        ],
+        "icon": {
+            "id": 9,
+            "kind": "offense"
+        },
+        "id": 8,
+        "gameId": -1946345856
+    },
+    {
+        "name": "Ataque paralizante",
+        "kind": "weapon",
+        "description": "Acelera la acumulación de parálisis. (Tiene un límite máximo).",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 9
+                },
+                "level": 1,
+                "name": null,
+                "description": "Acumulación de parálisis +5 %. Bonus +10.",
+                "id": 19
+            },
+            {
+                "skill": {
+                    "id": 9
+                },
+                "level": 2,
+                "name": null,
+                "description": "Acumulación de parálisis +10 %. Bonus +20.",
+                "id": 20
+            },
+            {
+                "skill": {
+                    "id": 9
+                },
+                "level": 3,
+                "name": null,
+                "description": "Acumulación de parálisis +20 %. Bonus +50.",
+                "id": 21
+            }
+        ],
+        "icon": {
+            "id": 3,
+            "kind": "element"
+        },
+        "id": 9,
+        "gameId": -1863702144
+    },
+    {
+        "name": "Favor del señor",
+        "kind": "group",
+        "description": null,
+        "ranks": [
+            {
+                "skill": {
+                    "id": 10
+                },
+                "level": 1,
+                "name": "Inspiración",
+                "description": "Potencia el ataque un tiempo al usar efectos tales como efectos de melodías que afecten a compañeros cercanos.",
+                "id": 22
+            }
+        ],
+        "icon": {
+            "id": 13,
+            "kind": "group"
+        },
+        "id": 10,
+        "gameId": -1769550080
+    },
+    {
+        "name": "Afán de Anjanath Fulgúreo",
+        "kind": "set",
+        "description": null,
+        "ranks": [
+            {
+                "skill": {
+                    "id": 11
+                },
+                "level": 1,
+                "name": "Segunda oportunidad I",
+                "description": "Da una barra de resistencia adicional.",
+                "id": 23
+            },
+            {
+                "skill": {
+                    "id": 11
+                },
+                "level": 2,
+                "name": "Segunda oportunidad II",
+                "description": "Da una barra de resistencia larga adicional.",
+                "id": 24
+            }
+        ],
+        "icon": {
+            "id": 14,
+            "kind": "set"
+        },
+        "id": 11,
+        "gameId": -1768553344
+    },
+    {
+        "name": "Ataque venenoso",
+        "kind": "weapon",
+        "description": "Acelera la acumulación de veneno. (Tiene un límite máximo).",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 12
+                },
+                "level": 1,
+                "name": null,
+                "description": "Acumulación de veneno +5 %. Bonus +10.",
+                "id": 25
+            },
+            {
+                "skill": {
+                    "id": 12
+                },
+                "level": 2,
+                "name": null,
+                "description": "Acumulación de veneno +10 %. Bonus +20.",
+                "id": 26
+            },
+            {
+                "skill": {
+                    "id": 12
+                },
+                "level": 3,
+                "name": null,
+                "description": "Acumulación de veneno +20 %. Bonus +50.",
+                "id": 27
+            }
+        ],
+        "icon": {
+            "id": 3,
+            "kind": "element"
+        },
+        "id": 12,
+        "gameId": -1716324608
+    },
+    {
+        "name": "Coalescencia",
+        "kind": "armor",
+        "description": "Aumenta los ataques elementales y los efectos de estado de forma temporal tras recuperarte de plagas y estados alterados.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 13
+                },
+                "level": 1,
+                "name": null,
+                "description": "Mientras esté activo, aumenta un poco el ataque elemental y la intensidad de los estados alterados que infliges.",
+                "id": 28
+            },
+            {
+                "skill": {
+                    "id": 13
+                },
+                "level": 2,
+                "name": null,
+                "description": "Mientras esté activo, aumenta el ataque elemental y la intensidad de los estados alterados que infliges.",
+                "id": 29
+            },
+            {
+                "skill": {
+                    "id": 13
+                },
+                "level": 3,
+                "name": null,
+                "description": "Mientras esté activo, aumenta mucho el ataque elemental y la intensidad de los estados alterados que infliges.",
+                "id": 30
+            }
+        ],
+        "icon": {
+            "id": 9,
+            "kind": "offense"
+        },
+        "id": 13,
+        "gameId": -1700743296
+    },
+    {
+        "name": "Constitución",
+        "kind": "armor",
+        "description": "Disminuye el gasto de resistencia al esquivar o realizar determinadas acciones.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 14
+                },
+                "level": 1,
+                "name": null,
+                "description": "Reduce el consumo fijo de resistencia en un 10 %.",
+                "id": 31
+            },
+            {
+                "skill": {
+                    "id": 14
+                },
+                "level": 2,
+                "name": null,
+                "description": "Reduce el consumo fijo de resistencia en un 20 %.",
+                "id": 32
+            },
+            {
+                "skill": {
+                    "id": 14
+                },
+                "level": 3,
+                "name": null,
+                "description": "Reduce el consumo fijo de resistencia en un 30 %.",
+                "id": 33
+            },
+            {
+                "skill": {
+                    "id": 14
+                },
+                "level": 4,
+                "name": null,
+                "description": "Reduce el consumo fijo de resistencia en un 40 %.",
+                "id": 34
+            },
+            {
+                "skill": {
+                    "id": 14
+                },
+                "level": 5,
+                "name": null,
+                "description": "Reduce el consumo fijo de resistencia en un 50 %.",
+                "id": 35
+            }
+        ],
+        "icon": {
+            "id": 8,
+            "kind": "stamina"
+        },
+        "id": 14,
+        "gameId": -1689391744
+    },
+    {
+        "name": "Duración de objetos",
+        "kind": "armor",
+        "description": "Aumenta la duración del efecto de algunos objetos.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 15
+                },
+                "level": 1,
+                "name": null,
+                "description": "Duración del efecto de objetos +10 %.",
+                "id": 36
+            },
+            {
+                "skill": {
+                    "id": 15
+                },
+                "level": 2,
+                "name": null,
+                "description": "Duración del efecto de objetos +25 %.",
+                "id": 37
+            },
+            {
+                "skill": {
+                    "id": 15
+                },
+                "level": 3,
+                "name": null,
+                "description": "Duración del efecto de objetos +50 %.",
+                "id": 38
+            }
+        ],
+        "icon": {
+            "id": 11,
+            "kind": "item"
+        },
+        "id": 15,
+        "gameId": -1684613760
+    },
+    {
+        "name": "Escudo",
+        "kind": "weapon",
+        "description": "Reduce el daño recibido al bloquear, y permite protegerse de ataques que normalmente no se pueden bloquear.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 16
+                },
+                "level": 1,
+                "name": null,
+                "description": "Reduce el daño recibido en un 10 %, y en un 20 % adicional si se dan ciertas condiciones.",
+                "id": 39
+            },
+            {
+                "skill": {
+                    "id": 16
+                },
+                "level": 2,
+                "name": null,
+                "description": "Reduce el daño recibido en un 20 %, y en un 30 % adicional si se dan ciertas condiciones.",
+                "id": 40
+            },
+            {
+                "skill": {
+                    "id": 16
+                },
+                "level": 3,
+                "name": null,
+                "description": "Reduce el daño recibido en un 30 %, y en un 50 % adicional si se dan ciertas condiciones.",
+                "id": 41
+            }
+        ],
+        "icon": {
+            "id": 10,
+            "kind": "utility"
+        },
+        "id": 16,
+        "gameId": -1674114176
+    },
+    {
+        "name": "Capas de escamas",
+        "kind": "group",
+        "description": null,
+        "ranks": [
+            {
+                "skill": {
+                    "id": 17
+                },
+                "level": 1,
+                "name": "Adrenalina",
+                "description": "Reduce temporalmente el consumo de resistencia cuando la salud esté al 40% o menos.",
+                "id": 42
+            }
+        ],
+        "icon": {
+            "id": 13,
+            "kind": "group"
+        },
+        "id": 17,
+        "gameId": -1664678272
+    },
+    {
+        "name": "Antivirus",
+        "kind": "armor",
+        "description": "Acelera la recuperación cuando contraes el virus de la cólera. Tras curarte, aumenta tu afinidad.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 18
+                },
+                "level": 1,
+                "name": null,
+                "description": "Al contraer la cólera, acelera un poco el consumo de la barra de infección. Afinidad +3 % si te curas.",
+                "id": 43
+            },
+            {
+                "skill": {
+                    "id": 18
+                },
+                "level": 2,
+                "name": null,
+                "description": "Al contraer la cólera, acelera el consumo de la barra de infección. Afinidad +6 % si te curas.",
+                "id": 44
+            },
+            {
+                "skill": {
+                    "id": 18
+                },
+                "level": 3,
+                "name": null,
+                "description": "Al contraer la cólera, acelera mucho el consumo de la barra de infección. Afinidad +10 % si te curas.",
+                "id": 45
+            }
+        ],
+        "icon": {
+            "id": 9,
+            "kind": "offense"
+        },
+        "id": 18,
+        "gameId": -1662120192
+    },
+    {
+        "name": "Cuero flexible",
+        "kind": "group",
+        "description": null,
+        "ranks": [
+            {
+                "skill": {
+                    "id": 19
+                },
+                "level": 1,
+                "name": "Recolección de cazador",
+                "description": "Aumenta la velocidad de recolección y protege contra los empujes mientras recolectas o despiezas.",
+                "id": 46
+            }
+        ],
+        "icon": {
+            "id": 13,
+            "kind": "group"
+        },
+        "id": 19,
+        "gameId": -1648695680
+    },
+    {
+        "name": "Sabiduría impartida",
+        "kind": "group",
+        "description": null,
+        "ranks": [
+            {
+                "skill": {
+                    "id": 20
+                },
+                "level": 1,
+                "name": "Suerte del mendigo",
+                "description": "Aumenta la probabilidad de encontrar puntos de recolección de recursos raros.",
+                "id": 47
+            }
+        ],
+        "icon": {
+            "id": 13,
+            "kind": "group"
+        },
+        "id": 20,
+        "gameId": -1642078720
+    },
+    {
+        "name": "Veneno extendido",
+        "kind": "weapon",
+        "description": "Prolonga la duración de los efectos del veneno en monstruos.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 21
+                },
+                "level": 1,
+                "name": null,
+                "description": "Prolonga un 20 % la duración del veneno que inflijas.",
+                "id": 48
+            }
+        ],
+        "icon": {
+            "id": 9,
+            "kind": "offense"
+        },
+        "id": 21,
+        "gameId": -1629629184
+    },
+    {
+        "name": "Bonus críticos",
+        "kind": "weapon",
+        "description": "Aumenta el daño de golpes críticos.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 22
+                },
+                "level": 1,
+                "name": null,
+                "description": "Los críticos infligen un 28 % más de daño que un ataque normal.",
+                "id": 49
+            },
+            {
+                "skill": {
+                    "id": 22
+                },
+                "level": 2,
+                "name": null,
+                "description": "Los críticos infligen un 31 % más de daño que un ataque normal.",
+                "id": 50
+            },
+            {
+                "skill": {
+                    "id": 22
+                },
+                "level": 3,
+                "name": null,
+                "description": "Los críticos infligen un 34 % más de daño que un ataque normal.",
+                "id": 51
+            },
+            {
+                "skill": {
+                    "id": 22
+                },
+                "level": 4,
+                "name": null,
+                "description": "Los críticos infligen un 37 % más de daño que un ataque normal.",
+                "id": 52
+            },
+            {
+                "skill": {
+                    "id": 22
+                },
+                "level": 5,
+                "name": null,
+                "description": "Los críticos infligen un 40 % más de daño que un ataque normal.",
+                "id": 53
+            }
+        ],
+        "icon": {
+            "id": 2,
+            "kind": "affinity"
+        },
+        "id": 22,
+        "gameId": -1607763456
+    },
+    {
+        "name": "Andanada rápida",
+        "kind": "weapon",
+        "description": "Mejora las andanadas de la ballesta ligera.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 23
+                },
+                "level": 1,
+                "name": null,
+                "description": "Potencia de andanadas +5 %.",
+                "id": 54
+            }
+        ],
+        "icon": {
+            "id": 5,
+            "kind": "ranged"
+        },
+        "id": 23,
+        "gameId": -1507579776
+    },
+    {
+        "name": "Maestro de cargas",
+        "kind": "weapon",
+        "description": "Aumenta el poder elemental y los efectos de estado para los ataques cargados.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 24
+                },
+                "level": 1,
+                "name": null,
+                "description": "Aumenta un poco el ataque elemental y los efectos de estado para los ataques cargados.",
+                "id": 55
+            },
+            {
+                "skill": {
+                    "id": 24
+                },
+                "level": 2,
+                "name": null,
+                "description": "Aumenta el ataque elemental y los efectos de estado para los ataques cargados.",
+                "id": 56
+            },
+            {
+                "skill": {
+                    "id": 24
+                },
+                "level": 3,
+                "name": null,
+                "description": "Aumenta mucho el ataque elemental y los efectos de estado para los ataques cargados.",
+                "id": 57
+            }
+        ],
+        "icon": {
+            "id": 3,
+            "kind": "element"
+        },
+        "id": 24,
+        "gameId": -1475134080
+    },
+    {
+        "name": "Energía de Xu Wu",
+        "kind": "set",
+        "description": null,
+        "ranks": [
+            {
+                "skill": {
+                    "id": 25
+                },
+                "level": 1,
+                "name": "Demonio proteína I",
+                "description": "Ataque +15 temporalmente tras haber comido un filete al punto o similares.",
+                "id": 58
+            },
+            {
+                "skill": {
+                    "id": 25
+                },
+                "level": 2,
+                "name": "Demonio proteína II",
+                "description": "Ataque +30 temporalmente tras haber comido un filete al punto o similares.",
+                "id": 59
+            }
+        ],
+        "icon": {
+            "id": 14,
+            "kind": "set"
+        },
+        "id": 25,
+        "gameId": -1468066176
+    },
+    {
+        "name": "Salud de Arkveld Guardián",
+        "kind": "set",
+        "description": null,
+        "ranks": [
+            {
+                "skill": {
+                    "id": 26
+                },
+                "level": 1,
+                "name": "Diezmador I",
+                "description": "Restablece bastante salud cuando rematas la herida de un monstruo grande.",
+                "id": 60
+            },
+            {
+                "skill": {
+                    "id": 26
+                },
+                "level": 2,
+                "name": "Diezmador II",
+                "description": "Restablece salud cuando rematas la herida de un monstruo grande.",
+                "id": 61
+            }
+        ],
+        "icon": {
+            "id": 14,
+            "kind": "set"
+        },
+        "id": 26,
+        "gameId": -1432692352
+    },
+    {
+        "name": "Pulso de Guardián",
+        "kind": "group",
+        "description": null,
+        "ranks": [
+            {
+                "skill": {
+                    "id": 27
+                },
+                "level": 1,
+                "name": "Explosión de wylact",
+                "description": "Aumenta la velocidad de recuperación de resistencia y la parte roja de la barra cuando estás cerca de petrowylact.",
+                "id": 62
+            }
+        ],
+        "icon": {
+            "id": 13,
+            "kind": "group"
+        },
+        "id": 27,
+        "gameId": -1305836672
+    },
+    {
+        "name": "Mejora de salto",
+        "kind": "armor",
+        "description": "Te permite esquivar lanzándote cuando estás de cara a monstruos grandes, y alarga la distancia de esquiva.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 28
+                },
+                "level": 1,
+                "name": null,
+                "description": "Activa el efecto de la habilidad del mismo nombre.",
+                "id": 63
+            }
+        ],
+        "icon": {
+            "id": 10,
+            "kind": "utility"
+        },
+        "id": 28,
+        "gameId": -1304512512
+    },
+    {
+        "name": "As de la cornamusa",
+        "kind": "weapon",
+        "description": "Aumenta el tiempo que duran las melodías de la cornamusa. (El efecto se pierde al cambiar de arma).",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 29
+                },
+                "level": 1,
+                "name": null,
+                "description": "Prolonga la duración de efectos de melodías y aumenta la probabilidad de curar más con las melodías curativas.",
+                "id": 64
+            },
+            {
+                "skill": {
+                    "id": 29
+                },
+                "level": 2,
+                "name": null,
+                "description": "Prolonga mucho la duración de los efectos de melodía.",
+                "id": 65
+            }
+        ],
+        "icon": {
+            "id": 9,
+            "kind": "offense"
+        },
+        "id": 29,
+        "gameId": -1237438336
+    },
+    {
+        "name": "Recuperación",
+        "kind": "armor",
+        "description": "Aumenta la cantidad de salud recuperada al usar un objeto curativo.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 30
+                },
+                "level": 1,
+                "name": null,
+                "description": "Bonifica un poco la recuperación.",
+                "id": 66
+            },
+            {
+                "skill": {
+                    "id": 30
+                },
+                "level": 2,
+                "name": null,
+                "description": "Bonifica bastante la recuperación.",
+                "id": 67
+            },
+            {
+                "skill": {
+                    "id": 30
+                },
+                "level": 3,
+                "name": null,
+                "description": "Bonifica mucho la recuperación.",
+                "id": 68
+            }
+        ],
+        "icon": {
+            "id": 7,
+            "kind": "health"
+        },
+        "id": 30,
+        "gameId": -1235658624
+    },
+    {
+        "name": "Recuperación rápida",
+        "kind": "armor",
+        "description": "Acelera la recuperación de daño recuperable (la parte roja de la barra de salud).",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 31
+                },
+                "level": 1,
+                "name": null,
+                "description": "Duplica la velocidad a la que se cura la parte de daño recuperable.",
+                "id": 69
+            },
+            {
+                "skill": {
+                    "id": 31
+                },
+                "level": 2,
+                "name": null,
+                "description": "Triplica la velocidad a la que se cura la parte de daño recuperable.",
+                "id": 70
+            },
+            {
+                "skill": {
+                    "id": 31
+                },
+                "level": 3,
+                "name": null,
+                "description": "Cuadruplica la velocidad a la que se cura la parte de daño recuperable.",
+                "id": 71
+            }
+        ],
+        "icon": {
+            "id": 7,
+            "kind": "health"
+        },
+        "id": 31,
+        "gameId": -1121468544
+    },
+    {
+        "name": "Envainado veloz",
+        "kind": "armor",
+        "description": "Aumenta la velocidad al envainar el arma equipada.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 32
+                },
+                "level": 1,
+                "name": null,
+                "description": "Aumenta un poco la velocidad al envainar.",
+                "id": 72
+            },
+            {
+                "skill": {
+                    "id": 32
+                },
+                "level": 2,
+                "name": null,
+                "description": "Aumenta la velocidad al envainar.",
+                "id": 73
+            },
+            {
+                "skill": {
+                    "id": 32
+                },
+                "level": 3,
+                "name": null,
+                "description": "Aumenta mucho la velocidad al envainar.",
+                "id": 74
+            }
+        ],
+        "icon": {
+            "id": 10,
+            "kind": "utility"
+        },
+        "id": 32,
+        "gameId": -1073401280
+    },
+    {
+        "name": "Hambre de Arkveld",
+        "kind": "set",
+        "description": null,
+        "ranks": [
+            {
+                "skill": {
+                    "id": 33
+                },
+                "level": 1,
+                "name": "Regeneración I",
+                "description": "Regenera pequeñas cantidades de salud si atacas continuamente a un monstruo. La salud ganada depende del arma.",
+                "id": 75
+            },
+            {
+                "skill": {
+                    "id": 33
+                },
+                "level": 2,
+                "name": "Regeneración II",
+                "description": "Regenera tu salud mientras atacas continuamente a un monstruo. La salud ganada depende del arma.",
+                "id": 76
+            }
+        ],
+        "icon": {
+            "id": 14,
+            "kind": "set"
+        },
+        "id": 33,
+        "gameId": -964369920
+    },
+    {
+        "name": "Oración de floradanza",
+        "kind": "set",
+        "description": null,
+        "ranks": [
+            {
+                "skill": {
+                    "id": 34
+                },
+                "level": 1,
+                "name": "Favor de la floradanza I",
+                "description": "Durante la floradanza, añade objetos especiales a las recompensas de misión. (Sin efecto si te unes a media misión).",
+                "id": 77
+            },
+            {
+                "skill": {
+                    "id": 34
+                },
+                "level": 2,
+                "name": "Favor de la floradanza II",
+                "description": "Durante la floradanza, añade objetos especiales para las recompensas de misión y aumenta bastante el ataque y la defensa.",
+                "id": 78
+            }
+        ],
+        "icon": {
+            "id": 14,
+            "kind": "set"
+        },
+        "id": 34,
+        "gameId": -911441792
+    },
+    {
+        "name": "Antiviento",
+        "kind": "armor",
+        "description": "Protege contra las ráfagas de viento.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 35
+                },
+                "level": 1,
+                "name": null,
+                "description": "Anula las ráfagas de viento menores y reduce a la mitad el efecto de las ráfagas mayores.",
+                "id": 79
+            },
+            {
+                "skill": {
+                    "id": 35
+                },
+                "level": 2,
+                "name": null,
+                "description": "Anula las ráfagas de viento menores y mayores, y reduce a la mitad el efecto de las ráfagas de dragón.",
+                "id": 80
+            },
+            {
+                "skill": {
+                    "id": 35
+                },
+                "level": 3,
+                "name": null,
+                "description": "Anula todos los tipos de ráfagas de viento.",
+                "id": 81
+            }
+        ],
+        "icon": {
+            "id": 10,
+            "kind": "utility"
+        },
+        "id": 35,
+        "gameId": -895828480
+    },
+    {
+        "name": "As del aturdimiento",
+        "kind": "weapon",
+        "description": "Hace más probable que consigas aturdir a un monstruo.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 36
+                },
+                "level": 1,
+                "name": null,
+                "description": "Posibilidad de aturdir +20 %.",
+                "id": 82
+            },
+            {
+                "skill": {
+                    "id": 36
+                },
+                "level": 2,
+                "name": null,
+                "description": "Posibilidad de aturdir +30 %.",
+                "id": 83
+            },
+            {
+                "skill": {
+                    "id": 36
+                },
+                "level": 3,
+                "name": null,
+                "description": "Posibilidad de aturdir +40 %.",
+                "id": 84
+            }
+        ],
+        "icon": {
+            "id": 9,
+            "kind": "offense"
+        },
+        "id": 36,
+        "gameId": -893407296
+    },
+    {
+        "name": "Bombardero",
+        "kind": "armor",
+        "description": "Aumenta el daño de los objetos explosivos.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 37
+                },
+                "level": 1,
+                "name": null,
+                "description": "Potencia explosiva +10 %.",
+                "id": 85
+            },
+            {
+                "skill": {
+                    "id": 37
+                },
+                "level": 2,
+                "name": null,
+                "description": "Potencia explosiva +20 %.",
+                "id": 86
+            },
+            {
+                "skill": {
+                    "id": 37
+                },
+                "level": 3,
+                "name": null,
+                "description": "Potencia explosiva +30 %.",
+                "id": 87
+            }
+        ],
+        "icon": {
+            "id": 11,
+            "kind": "item"
+        },
+        "id": 37,
+        "gameId": -857543744
+    },
+    {
+        "name": "Desuello",
+        "kind": "armor",
+        "description": "Facilita infligir heridas. También puede infligir daño extra no elemental si se acumula (salvo con ciertos ataques).",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 38
+                },
+                "level": 1,
+                "name": null,
+                "description": "Hace que sea un poco más fácil infligir heridas. También inflige daño no elemental adicional.",
+                "id": 88
+            },
+            {
+                "skill": {
+                    "id": 38
+                },
+                "level": 2,
+                "name": null,
+                "description": "Hace que sea bastante más fácil infligir heridas. También inflige un poco más de daño no elemental adicional.",
+                "id": 89
+            },
+            {
+                "skill": {
+                    "id": 38
+                },
+                "level": 3,
+                "name": null,
+                "description": "Hace que sea más fácil infligir heridas. También inflige bastante más daño no elemental adicional.",
+                "id": 90
+            },
+            {
+                "skill": {
+                    "id": 38
+                },
+                "level": 4,
+                "name": null,
+                "description": "Hace que sea mucho más fácil infligir heridas. También inflige más daño no elemental adicional.",
+                "id": 91
+            },
+            {
+                "skill": {
+                    "id": 38
+                },
+                "level": 5,
+                "name": null,
+                "description": "Hace que sea bastante más fácil infligir heridas. También inflige más daño no elemental adicional.",
+                "id": 92
+            }
+        ],
+        "icon": {
+            "id": 9,
+            "kind": "offense"
+        },
+        "id": 38,
+        "gameId": -856322816
+    },
+    {
+        "name": "Filo alisado",
+        "kind": "weapon",
+        "description": "Aumenta temporalmente la afinidad cuando estás mojado o tienes plaga de burbujas. (El efecto es acumulable).",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 39
+                },
+                "level": 1,
+                "name": null,
+                "description": "Afinidad +3 % con mojado y +7 % con plaga de burbujas.",
+                "id": 93
+            },
+            {
+                "skill": {
+                    "id": 39
+                },
+                "level": 2,
+                "name": null,
+                "description": "Afinidad +6 % con mojado y +14 % con plaga de burbujas.",
+                "id": 94
+            },
+            {
+                "skill": {
+                    "id": 39
+                },
+                "level": 3,
+                "name": null,
+                "description": "Afinidad +9 % con mojado y +21 % con plaga de burbujas.",
+                "id": 95
+            }
+        ],
+        "icon": {
+            "id": 2,
+            "kind": "affinity"
+        },
+        "id": 39,
+        "gameId": -847539392
+    },
+    {
+        "name": "Ataque de nitro",
+        "kind": "weapon",
+        "description": "Acelera la acumulación de nitro. (Tiene un límite máximo).",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 40
+                },
+                "level": 1,
+                "name": null,
+                "description": "Acumulación de nitro +5 %. Bonus +10.",
+                "id": 96
+            },
+            {
+                "skill": {
+                    "id": 40
+                },
+                "level": 2,
+                "name": null,
+                "description": "Acumulación de nitro +10 %. Bonus +20.",
+                "id": 97
+            },
+            {
+                "skill": {
+                    "id": 40
+                },
+                "level": 3,
+                "name": null,
+                "description": "Acumulación de nitro +20 %. Bonus +50.",
+                "id": 98
+            }
+        ],
+        "icon": {
+            "id": 3,
+            "kind": "element"
+        },
+        "id": 40,
+        "gameId": -844978880
+    },
+    {
+        "name": "Ataque de draco",
+        "kind": "weapon",
+        "description": "Potencia los ataques elementales de draco. (El poder elemental tiene un máximo).",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 41
+                },
+                "level": 1,
+                "name": null,
+                "description": "Ataque de draco +40.",
+                "id": 99
+            },
+            {
+                "skill": {
+                    "id": 41
+                },
+                "level": 2,
+                "name": null,
+                "description": "Ataque de draco +10 %. Bonus +50.",
+                "id": 100
+            },
+            {
+                "skill": {
+                    "id": 41
+                },
+                "level": 3,
+                "name": null,
+                "description": "Ataque de draco +20 %. Bonus +60.",
+                "id": 101
+            }
+        ],
+        "icon": {
+            "id": 3,
+            "kind": "element"
+        },
+        "id": 41,
+        "gameId": -776946176
+    },
+    {
+        "name": "Experto en trepar",
+        "kind": "armor",
+        "description": "Reduce el gasto de resistencia mientras trepas por hiedras.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 42
+                },
+                "level": 1,
+                "name": null,
+                "description": "Reduce el gasto de resistencia mientras trepas un 50 %.",
+                "id": 102
+            }
+        ],
+        "icon": {
+            "id": 10,
+            "kind": "utility"
+        },
+        "id": 42,
+        "gameId": -692636288
+    },
+    {
+        "name": "Corredor de fondo",
+        "kind": "armor",
+        "description": "Reduce el gasto de resistencia para acciones que la consumen gradualmente (como esprintar).",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 43
+                },
+                "level": 1,
+                "name": null,
+                "description": "Reduce el consumo gradual de resistencia en un 15 %.",
+                "id": 103
+            },
+            {
+                "skill": {
+                    "id": 43
+                },
+                "level": 2,
+                "name": null,
+                "description": "Reduce el consumo gradual de resistencia en un 30 %.",
+                "id": 104
+            },
+            {
+                "skill": {
+                    "id": 43
+                },
+                "level": 3,
+                "name": null,
+                "description": "Reduce el consumo gradual de resistencia en un 50 %.",
+                "id": 105
+            }
+        ],
+        "icon": {
+            "id": 8,
+            "kind": "stamina"
+        },
+        "id": 43,
+        "gameId": -682586176
+    },
+    {
+        "name": "Añade parálisis",
+        "kind": "weapon",
+        "description": "Si tienes un arco equipado, permite equiparte con viales paralizantes.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 44
+                },
+                "level": 1,
+                "name": null,
+                "description": "Permite aplicar viales paralizantes.",
+                "id": 106
+            }
+        ],
+        "icon": {
+            "id": 5,
+            "kind": "ranged"
+        },
+        "id": 44,
+        "gameId": -676967744
+    },
+    {
+        "name": "Amortiguador",
+        "kind": "armor",
+        "description": "Desactiva la reacción al daño cuando golpeas a un aliado o viceversa.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 45
+                },
+                "level": 1,
+                "name": null,
+                "description": "Activa el efecto de la habilidad del mismo nombre.",
+                "id": 107
+            }
+        ],
+        "icon": {
+            "id": 10,
+            "kind": "utility"
+        },
+        "id": 45,
+        "gameId": -632440576
+    },
+    {
+        "name": "Antitemblores",
+        "kind": "armor",
+        "description": "Protege contra los temblores de tierra.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 46
+                },
+                "level": 1,
+                "name": null,
+                "description": "Anula los temblores de tierra muy leves y reduce a la mitad los efectos de los temblores de tierra leves.",
+                "id": 108
+            },
+            {
+                "skill": {
+                    "id": 46
+                },
+                "level": 2,
+                "name": null,
+                "description": "Anula hasta los temblores de tierra leves y reduce mucho el efecto de los temblores mayores.",
+                "id": 109
+            },
+            {
+                "skill": {
+                    "id": 46
+                },
+                "level": 3,
+                "name": null,
+                "description": "Anula todos los temblores de tierra.",
+                "id": 110
+            }
+        ],
+        "icon": {
+            "id": 10,
+            "kind": "utility"
+        },
+        "id": 46,
+        "gameId": -609509888
+    },
+    {
+        "name": "Artillería",
+        "kind": "weapon",
+        "description": "Potencia ataques explosivos, como proyectiles, fuego de wyvern, viales del hacha cargada y munición explosiva.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 47
+                },
+                "level": 1,
+                "name": null,
+                "description": "Potencia bastante cada ataque y la velocidad de disparo del fuego de wyvern. Disparo de fuego +30.",
+                "id": 111
+            },
+            {
+                "skill": {
+                    "id": 47
+                },
+                "level": 2,
+                "name": null,
+                "description": "Potencia cada ataque y la velocidad de disparo del fuego de wyvern. Disparo de fuego +60.",
+                "id": 112
+            },
+            {
+                "skill": {
+                    "id": 47
+                },
+                "level": 3,
+                "name": null,
+                "description": "Potencia mucho cada ataque y la velocidad de disparo del fuego de wyvern. Disparo de fuego +90.",
+                "id": 113
+            }
+        ],
+        "icon": {
+            "id": 9,
+            "kind": "offense"
+        },
+        "id": 47,
+        "gameId": -596764096
+    },
+    {
+        "name": "Experto en supervivencia",
+        "kind": "armor",
+        "description": "Recuperas salud adicional cuando interactúas con elementos del entorno.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 48
+                },
+                "level": 1,
+                "name": null,
+                "description": "Restablece 50 de salud.",
+                "id": 114
+            },
+            {
+                "skill": {
+                    "id": 48
+                },
+                "level": 2,
+                "name": null,
+                "description": "Restablece 80 de salud.",
+                "id": 115
+            },
+            {
+                "skill": {
+                    "id": 48
+                },
+                "level": 3,
+                "name": null,
+                "description": "Restablece 100 de salud.",
+                "id": 116
+            }
+        ],
+        "icon": {
+            "id": 7,
+            "kind": "health"
+        },
+        "id": 48,
+        "gameId": -593005376
+    },
+    {
+        "name": "Antiplagas",
+        "kind": "armor",
+        "description": "Protege contra todas las plagas elementales.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 49
+                },
+                "level": 1,
+                "name": null,
+                "description": "Reduce la duración de todas las plagas elementales un 50 %.",
+                "id": 117
+            },
+            {
+                "skill": {
+                    "id": 49
+                },
+                "level": 2,
+                "name": null,
+                "description": "Reduce la duración de todas las plagas elementales un 75 %.",
+                "id": 118
+            },
+            {
+                "skill": {
+                    "id": 49
+                },
+                "level": 3,
+                "name": null,
+                "description": "Anula todas las plagas elementales.",
+                "id": 119
+            }
+        ],
+        "icon": {
+            "id": 6,
+            "kind": "defense"
+        },
+        "id": 49,
+        "gameId": -568838336
+    },
+    {
+        "name": "Ataque de fuego",
+        "kind": "weapon",
+        "description": "Potencia los ataques elementales de fuego. (El poder elemental tiene un máximo).",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 50
+                },
+                "level": 1,
+                "name": null,
+                "description": "Ataque de fuego +40.",
+                "id": 120
+            },
+            {
+                "skill": {
+                    "id": 50
+                },
+                "level": 2,
+                "name": null,
+                "description": "Ataque de fuego +10 %. Bonus +50.",
+                "id": 121
+            },
+            {
+                "skill": {
+                    "id": 50
+                },
+                "level": 3,
+                "name": null,
+                "description": "Ataque de fuego +20 %. Bonus +60.",
+                "id": 122
+            }
+        ],
+        "icon": {
+            "id": 3,
+            "kind": "element"
+        },
+        "id": 50,
+        "gameId": -562534336
+    },
+    {
+        "name": "Pulso de Zoh Shia",
+        "kind": "set",
+        "description": null,
+        "ranks": [
+            {
+                "skill": {
+                    "id": 51
+                },
+                "level": 1,
+                "name": "Superrecuperación I",
+                "description": "Permite que la barra de salud se regenere lentamente hasta el máximo, aunque no tenga una parte en rojo.",
+                "id": 123
+            },
+            {
+                "skill": {
+                    "id": 51
+                },
+                "level": 2,
+                "name": "Superrecuperación II",
+                "description": "Permite que la barra de salud se regenere hasta el máximo, aunque no tenga una parte en rojo.",
+                "id": 124
+            }
+        ],
+        "icon": {
+            "id": 14,
+            "kind": "set"
+        },
+        "id": 51,
+        "gameId": -555494336
+    },
+    {
+        "name": "Micología",
+        "kind": "armor",
+        "description": "Permite digerir setas no comestibles y beneficiarse de sus efectos.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 52
+                },
+                "level": 1,
+                "name": null,
+                "description": "Permite digerir setas azules y hongos.",
+                "id": 125
+            },
+            {
+                "skill": {
+                    "id": 52
+                },
+                "level": 2,
+                "name": null,
+                "description": "Además de lo anterior, permite digerir nitrosetas y paralisetas.",
+                "id": 126
+            },
+            {
+                "skill": {
+                    "id": 52
+                },
+                "level": 3,
+                "name": null,
+                "description": "Además de lo anterior, permite digerir mandrágora, mancha del diablo y setas excitantes.",
+                "id": 127
+            }
+        ],
+        "icon": {
+            "id": 11,
+            "kind": "item"
+        },
+        "id": 52,
+        "gameId": -481419552
+    },
+    {
+        "name": "Balística",
+        "kind": "weapon",
+        "description": "Amplía el alcance en que munición y flechas tienen máxima potencia. Los niveles más altos mejoran la potencia.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 53
+                },
+                "level": 1,
+                "name": null,
+                "description": "Aumenta un poco el alcance.",
+                "id": 128
+            },
+            {
+                "skill": {
+                    "id": 53
+                },
+                "level": 2,
+                "name": null,
+                "description": "Aumenta el alcance.",
+                "id": 129
+            },
+            {
+                "skill": {
+                    "id": 53
+                },
+                "level": 3,
+                "name": null,
+                "description": "Amplía mucho el rango crítico, y aumenta la potencia de los ataques dentro del rango crítico.",
+                "id": 130
+            }
+        ],
+        "icon": {
+            "id": 5,
+            "kind": "ranged"
+        },
+        "id": 53,
+        "gameId": -420608864
+    },
+    {
+        "name": "Protección de Gravios",
+        "kind": "set",
+        "description": null,
+        "ranks": [
+            {
+                "skill": {
+                    "id": 54
+                },
+                "level": 1,
+                "name": "Armadura intachable I",
+                "description": "Reduce el daño que recibes un 20 % cuando tienes la salud al completo.",
+                "id": 131
+            },
+            {
+                "skill": {
+                    "id": 54
+                },
+                "level": 2,
+                "name": "Armadura intachable II",
+                "description": "Reduce el daño que recibes un 35 % cuando tienes la salud al completo.",
+                "id": 132
+            }
+        ],
+        "icon": {
+            "id": 14,
+            "kind": "set"
+        },
+        "id": 54,
+        "gameId": -418246240
+    },
+    {
+        "name": "Antihedor",
+        "kind": "armor",
+        "description": "Protege contra el hedor.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 55
+                },
+                "level": 1,
+                "name": null,
+                "description": "Reduce la duración del hedor un 50 %.",
+                "id": 133
+            },
+            {
+                "skill": {
+                    "id": 55
+                },
+                "level": 2,
+                "name": null,
+                "description": "Protege contra el hedor.",
+                "id": 134
+            }
+        ],
+        "icon": {
+            "id": 11,
+            "kind": "item"
+        },
+        "id": 55,
+        "gameId": -411441344
+    },
+    {
+        "name": "Poder de Mizutsune",
+        "kind": "set",
+        "description": null,
+        "ranks": [
+            {
+                "skill": {
+                    "id": 56
+                },
+                "level": 1,
+                "name": "Danza burbujeante I",
+                "description": "Evita la plaga de burbujas mayor, y te da plaga de burbujas menor tras esquivar varias veces.",
+                "id": 135
+            },
+            {
+                "skill": {
+                    "id": 56
+                },
+                "level": 2,
+                "name": "Danza burbujeante II",
+                "description": "Además de los efectos anteriores, mejora las esquivas mientras te afecte una plaga de burbujas menor.",
+                "id": 136
+            }
+        ],
+        "icon": {
+            "id": 14,
+            "kind": "set"
+        },
+        "id": 56,
+        "gameId": -403054144
+    },
+    {
+        "name": "Punto débil",
+        "kind": "armor",
+        "description": "Aumenta la afinidad de ataques que aprovechan los puntos débiles y las heridas de un monstruo.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 57
+                },
+                "level": 1,
+                "name": null,
+                "description": "Los ataques en puntos débiles ganan afinidad +5 %, más un 3 % adicional sobre heridas.",
+                "id": 137
+            },
+            {
+                "skill": {
+                    "id": 57
+                },
+                "level": 2,
+                "name": null,
+                "description": "Los ataques en puntos débiles ganan afinidad +10 %, más un 5 % adicional sobre heridas.",
+                "id": 138
+            },
+            {
+                "skill": {
+                    "id": 57
+                },
+                "level": 3,
+                "name": null,
+                "description": "Los ataques en puntos débiles ganan afinidad +15 %, más un 10 % adicional sobre heridas.",
+                "id": 139
+            },
+            {
+                "skill": {
+                    "id": 57
+                },
+                "level": 4,
+                "name": null,
+                "description": "Los ataques en puntos débiles tienen afinidad +20 %, más un 15 % adicional sobre heridas.",
+                "id": 140
+            },
+            {
+                "skill": {
+                    "id": 57
+                },
+                "level": 5,
+                "name": null,
+                "description": "Los ataques en puntos débiles tienen afinidad +30 %, más un 20 % adicional sobre heridas.",
+                "id": 141
+            }
+        ],
+        "icon": {
+            "id": 1,
+            "kind": "attack"
+        },
+        "id": 57,
+        "gameId": -397570464
+    },
+    {
+        "name": "Aguante",
+        "kind": "armor",
+        "description": "Aumenta la recuperación de resistencia.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 58
+                },
+                "level": 1,
+                "name": null,
+                "description": "Velocidad de recuperación de resistencia +10 %.",
+                "id": 142
+            },
+            {
+                "skill": {
+                    "id": 58
+                },
+                "level": 2,
+                "name": null,
+                "description": "Velocidad de recuperación de resistencia +30 %.",
+                "id": 143
+            },
+            {
+                "skill": {
+                    "id": 58
+                },
+                "level": 3,
+                "name": null,
+                "description": "Velocidad de recuperación de resistencia +50 %.",
+                "id": 144
+            }
+        ],
+        "icon": {
+            "id": 8,
+            "kind": "stamina"
+        },
+        "id": 58,
+        "gameId": -315492576
+    },
+    {
+        "name": "Bloqueo mejorado",
+        "kind": "weapon",
+        "description": "Reduce los empujes y el gasto de resistencia al bloquear ataques.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 59
+                },
+                "level": 1,
+                "name": null,
+                "description": "Reduce muy ligeramente el impacto de los ataques. Disminuye el consumo de resistencia en un 15 %.",
+                "id": 145
+            },
+            {
+                "skill": {
+                    "id": 59
+                },
+                "level": 2,
+                "name": null,
+                "description": "Reduce el impacto de los ataques. Disminuye el consumo de resistencia en un 30 %.",
+                "id": 146
+            },
+            {
+                "skill": {
+                    "id": 59
+                },
+                "level": 3,
+                "name": null,
+                "description": "Reduce mucho el impacto de los ataques. Disminuye el consumo de resistencia en un 50 %.",
+                "id": 147
+            }
+        ],
+        "icon": {
+            "id": 10,
+            "kind": "utility"
+        },
+        "id": 59,
+        "gameId": -307644128
+    },
+    {
+        "name": "Carga veloz",
+        "kind": "weapon",
+        "description": "Carga los indicadores de armas rápidamente, así como los ataques cargados con armas que lo permitan.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 60
+                },
+                "level": 1,
+                "name": null,
+                "description": "Aumenta un poco la velocidad de carga del medidor y reduce el tiempo de carga en un 5 %.",
+                "id": 148
+            },
+            {
+                "skill": {
+                    "id": 60
+                },
+                "level": 2,
+                "name": null,
+                "description": "Aumenta bastante la velocidad de carga del medidor y reduce el tiempo de carga en un 10 %.",
+                "id": 149
+            },
+            {
+                "skill": {
+                    "id": 60
+                },
+                "level": 3,
+                "name": null,
+                "description": "Aumenta la velocidad de carga del medidor y reduce el tiempo de carga en un 15 %.",
+                "id": 150
+            }
+        ],
+        "icon": {
+            "id": 9,
+            "kind": "offense"
+        },
+        "id": 60,
+        "gameId": -283334048
+    },
+    {
+        "name": "Mejora al deslumbrar",
+        "kind": "armor",
+        "description": "Mejora la efectividad de los ataques y objetos que produzcan destellos.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 61
+                },
+                "level": 1,
+                "name": null,
+                "description": "Mejora la efectividad de los ataques y objetos que produzcan destellos.",
+                "id": 151
+            }
+        ],
+        "icon": {
+            "id": 11,
+            "kind": "item"
+        },
+        "id": 61,
+        "gameId": -257693696
+    },
+    {
+        "name": "Rebelión de Jin Dahaad",
+        "kind": "set",
+        "description": null,
+        "ranks": [
+            {
+                "skill": {
+                    "id": 62
+                },
+                "level": 1,
+                "name": "Contraataque atrapador I",
+                "description": "Aumenta el ataque tras recuperarte de los estados enmarañado, plaga de escarcha, inmovilización o un forcejeo.",
+                "id": 152
+            },
+            {
+                "skill": {
+                    "id": 62
+                },
+                "level": 2,
+                "name": "Contraataque atrapador II",
+                "description": "Aumenta mucho el ataque tras recuperarte de los estados enmarañado, plaga de escarcha, inmovilización o un forcejeo.",
+                "id": 153
+            }
+        ],
+        "icon": {
+            "id": 14,
+            "kind": "set"
+        },
+        "id": 62,
+        "gameId": -215826112
+    },
+    {
+        "name": "Movilidad por agua/fango",
+        "kind": "armor",
+        "description": "Protege contra penalizaciones a la movilidad mientras estás en el agua, el fango oleoso o los arroyos.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 63
+                },
+                "level": 1,
+                "name": null,
+                "description": "Anula el efecto de corrientes fangosas y la ralentización por agua/fango. Reduce la ralentización por aceite de hueso.",
+                "id": 154
+            },
+            {
+                "skill": {
+                    "id": 63
+                },
+                "level": 2,
+                "name": null,
+                "description": "Además de lo anterior, también anula los efectos de las olas.",
+                "id": 155
+            }
+        ],
+        "icon": {
+            "id": 10,
+            "kind": "utility"
+        },
+        "id": 63,
+        "gameId": -201445760
+    },
+    {
+        "name": "Antisueño",
+        "kind": "armor",
+        "description": "Reduce o elimina los efectos del sueño.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 64
+                },
+                "level": 1,
+                "name": null,
+                "description": "Reduce la duración del sueño un 30 %.",
+                "id": 156
+            },
+            {
+                "skill": {
+                    "id": 64
+                },
+                "level": 2,
+                "name": null,
+                "description": "Reduce la duración del sueño un 60 %.",
+                "id": 157
+            },
+            {
+                "skill": {
+                    "id": 64
+                },
+                "level": 3,
+                "name": null,
+                "description": "Protege contra el sueño.",
+                "id": 158
+            }
+        ],
+        "icon": {
+            "id": 6,
+            "kind": "defense"
+        },
+        "id": 64,
+        "gameId": -193031552
+    },
+    {
+        "name": "Añade fatiga",
+        "kind": "weapon",
+        "description": "Si tienes un arco equipado, permite equiparte con viales de fatiga.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 65
+                },
+                "level": 1,
+                "name": null,
+                "description": "Permite aplicar viales de fatiga.",
+                "id": 159
+            }
+        ],
+        "icon": {
+            "id": 5,
+            "kind": "ranged"
+        },
+        "id": 65,
+        "gameId": -181774400
+    },
+    {
+        "name": "Bloqueo agresivo",
+        "kind": "weapon",
+        "description": "Aumenta el poder de ataque de forma temporal tras un bloqueo perfecto.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 66
+                },
+                "level": 1,
+                "name": null,
+                "description": "Ataque +5 % mientras esté activo.",
+                "id": 160
+            },
+            {
+                "skill": {
+                    "id": 66
+                },
+                "level": 2,
+                "name": null,
+                "description": "Ataque +10 % mientras esté activo.",
+                "id": 161
+            },
+            {
+                "skill": {
+                    "id": 66
+                },
+                "level": 3,
+                "name": null,
+                "description": "Ataque +15 % mientras esté activo.",
+                "id": 162
+            }
+        ],
+        "icon": {
+            "id": 1,
+            "kind": "attack"
+        },
+        "id": 66,
+        "gameId": -181127504
+    },
+    {
+        "name": "Emboscada",
+        "kind": "armor",
+        "description": "Aumenta el daño contra monstruos grandes de forma temporal con un ataque sigiloso.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 67
+                },
+                "level": 1,
+                "name": null,
+                "description": "Ataque +5 % mientras esté activo.",
+                "id": 163
+            },
+            {
+                "skill": {
+                    "id": 67
+                },
+                "level": 2,
+                "name": null,
+                "description": "Ataque +10 % mientras esté activo.",
+                "id": 164
+            },
+            {
+                "skill": {
+                    "id": 67
+                },
+                "level": 3,
+                "name": null,
+                "description": "Ataque +15 % mientras esté activo.",
+                "id": 165
+            }
+        ],
+        "icon": {
+            "id": 9,
+            "kind": "offense"
+        },
+        "id": 67,
+        "gameId": -171796848
+    },
+    {
+        "name": "Estado crítico",
+        "kind": "weapon",
+        "description": "Aumenta los efectos de estados alterados (parálisis, sueño, nitro y veneno) cuando son resultado de un crítico.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 68
+                },
+                "level": 1,
+                "name": null,
+                "description": "Aumenta un poco los efectos de estados alterados cuando son resultado de un crítico.",
+                "id": 166
+            },
+            {
+                "skill": {
+                    "id": 68
+                },
+                "level": 2,
+                "name": null,
+                "description": "Aumenta el efecto de los estados alterados cuando infliges un golpe crítico.",
+                "id": 167
+            },
+            {
+                "skill": {
+                    "id": 68
+                },
+                "level": 3,
+                "name": null,
+                "description": "Aumenta mucho el efecto de los estados alterados cuando infliges un golpe crítico.",
+                "id": 168
+            }
+        ],
+        "icon": {
+            "id": 3,
+            "kind": "element"
+        },
+        "id": 68,
+        "gameId": -168922880
+    },
+    {
+        "name": "Bonus tiro especial",
+        "kind": "weapon",
+        "description": "Potencia las flechas perforadragones, mil dragones y marcadoras del arco, y los tiros especiales de la ballesta.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 69
+                },
+                "level": 1,
+                "name": null,
+                "description": "Aumenta bastante la potencia de la munición y flechas indicados.",
+                "id": 169
+            },
+            {
+                "skill": {
+                    "id": 69
+                },
+                "level": 2,
+                "name": null,
+                "description": "Aumenta la potencia de la munición y flechas especificados.",
+                "id": 170
+            }
+        ],
+        "icon": {
+            "id": 5,
+            "kind": "ranged"
+        },
+        "id": 69,
+        "gameId": -160562336
+    },
+    {
+        "name": "Poder Doshaguma",
+        "kind": "set",
+        "description": null,
+        "ranks": [
+            {
+                "skill": {
+                    "id": 70
+                },
+                "level": 1,
+                "name": "¡Qué fuertes! I",
+                "description": "Potencia el ataque +10 por un tiempo tras un forcejeo o tras un ataque interceptor con éxito.",
+                "id": 171
+            },
+            {
+                "skill": {
+                    "id": 70
+                },
+                "level": 2,
+                "name": "¡Qué fuertes! II",
+                "description": "Potencia el ataque +25 por un tiempo tras un forcejeo o tras un ataque interceptor con éxito.",
+                "id": 172
+            }
+        ],
+        "icon": {
+            "id": 14,
+            "kind": "set"
+        },
+        "id": 70,
+        "gameId": -62248528
+    },
+    {
+        "name": "Fulgor de Rathalos",
+        "kind": "set",
+        "description": null,
+        "ranks": [
+            {
+                "skill": {
+                    "id": 71
+                },
+                "level": 1,
+                "name": "Abrasador I",
+                "description": "Da cierta probabilidad de infligir daño adicional de fuego al conectar un golpe.",
+                "id": 173
+            },
+            {
+                "skill": {
+                    "id": 71
+                },
+                "level": 2,
+                "name": "Abrasador II",
+                "description": "Aumenta el daño de fuego adicional al conectar un golpe.",
+                "id": 174
+            }
+        ],
+        "icon": {
+            "id": 14,
+            "kind": "set"
+        },
+        "id": 71,
+        "gameId": -3666104
+    },
+    {
+        "name": "Bonus de ataque",
+        "kind": "weapon",
+        "description": "Aumenta notablemente el poder de ataque.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 72
+                },
+                "level": 1,
+                "name": null,
+                "description": "Ataque +3.",
+                "id": 175
+            },
+            {
+                "skill": {
+                    "id": 72
+                },
+                "level": 2,
+                "name": null,
+                "description": "Ataque +5.",
+                "id": 176
+            },
+            {
+                "skill": {
+                    "id": 72
+                },
+                "level": 3,
+                "name": null,
+                "description": "Ataque +7.",
+                "id": 177
+            },
+            {
+                "skill": {
+                    "id": 72
+                },
+                "level": 4,
+                "name": null,
+                "description": "Ataque +2 %. Bonus +8.",
+                "id": 178
+            },
+            {
+                "skill": {
+                    "id": 72
+                },
+                "level": 5,
+                "name": null,
+                "description": "Ataque +4 %. Bonus +9.",
+                "id": 179
+            }
+        ],
+        "icon": {
+            "id": 1,
+            "kind": "attack"
+        },
+        "id": 72,
+        "gameId": 1
+    },
+    {
+        "name": "Favor de la gloria",
+        "kind": "group",
+        "description": null,
+        "ranks": [
+            {
+                "skill": {
+                    "id": 73
+                },
+                "level": 1,
+                "name": "Suerte",
+                "description": "Aumenta las recompensas por objetivos de misión. (No sirve si accedes a una misión a medias).",
+                "id": 180
+            }
+        ],
+        "icon": {
+            "id": 13,
+            "kind": "group"
+        },
+        "id": 73,
+        "gameId": 2237
+    },
+    {
+        "name": "Espíritu festivo",
+        "kind": "group",
+        "description": null,
+        "ranks": [
+            {
+                "skill": {
+                    "id": 74
+                },
+                "level": 1,
+                "name": "Despiece extra",
+                "description": "Permite despiezar una vez más de lo normal a los monstruos que abatas. (No aplicable si la misión ya ha empezado).",
+                "id": 181
+            }
+        ],
+        "icon": {
+            "id": 13,
+            "kind": "group"
+        },
+        "id": 74,
+        "gameId": 13941
+    },
+    {
+        "name": "Irrupción",
+        "kind": "armor",
+        "description": "Aumenta el poder de ataque y la afinidad contra monstruos grandes afectados por veneno o parálisis.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 75
+                },
+                "level": 1,
+                "name": null,
+                "description": "Ataque +6 contra monstruos grandes afectados por veneno o parálisis.",
+                "id": 182
+            },
+            {
+                "skill": {
+                    "id": 75
+                },
+                "level": 2,
+                "name": null,
+                "description": "Ataque +8 y afinidad +5 % contra monstruos grandes afectados por veneno o parálisis.",
+                "id": 183
+            },
+            {
+                "skill": {
+                    "id": 75
+                },
+                "level": 3,
+                "name": null,
+                "description": "Ataque +10 y afinidad +10 % contra monstruos grandes afectados por veneno o parálisis.",
+                "id": 184
+            },
+            {
+                "skill": {
+                    "id": 75
+                },
+                "level": 4,
+                "name": null,
+                "description": "Ataque +12 y afinidad +15 % contra monstruos grandes afectados por veneno o parálisis.",
+                "id": 185
+            },
+            {
+                "skill": {
+                    "id": 75
+                },
+                "level": 5,
+                "name": null,
+                "description": "Ataque +15 y afinidad +20 % contra monstruos grandes afectados por veneno o parálisis.",
+                "id": 186
+            }
+        ],
+        "icon": {
+            "id": 9,
+            "kind": "offense"
+        },
+        "id": 75,
+        "gameId": 27684744
+    },
+    {
+        "name": "Experto en salto",
+        "kind": "armor",
+        "description": "Evita que los ataques te derriben mientras saltas.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 76
+                },
+                "level": 1,
+                "name": null,
+                "description": "Anula los empujes mientras saltas.",
+                "id": 187
+            }
+        ],
+        "icon": {
+            "id": 10,
+            "kind": "utility"
+        },
+        "id": 76,
+        "gameId": 78208296
+    },
+    {
+        "name": "Intervalo de evasión",
+        "kind": "armor",
+        "description": "Prolonga el periodo de invulnerabilidad al esquivar.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 77
+                },
+                "level": 1,
+                "name": null,
+                "description": "Alarga muy ligeramente el momento de invulnerabilidad al esquivar.",
+                "id": 188
+            },
+            {
+                "skill": {
+                    "id": 77
+                },
+                "level": 2,
+                "name": null,
+                "description": "Alarga un poco el momento de invulnerabilidad al esquivar.",
+                "id": 189
+            },
+            {
+                "skill": {
+                    "id": 77
+                },
+                "level": 3,
+                "name": null,
+                "description": "Prolonga el momento de invulnerabilidad al esquivar.",
+                "id": 190
+            },
+            {
+                "skill": {
+                    "id": 77
+                },
+                "level": 4,
+                "name": null,
+                "description": "Alarga mucho el momento de invulnerabilidad al esquivar.",
+                "id": 191
+            },
+            {
+                "skill": {
+                    "id": 77
+                },
+                "level": 5,
+                "name": null,
+                "description": "Alarga muchísimo el momento de invulnerabilidad al esquivar.",
+                "id": 192
+            }
+        ],
+        "icon": {
+            "id": 10,
+            "kind": "utility"
+        },
+        "id": 77,
+        "gameId": 144660544
+    },
+    {
+        "name": "Ataque de sueño",
+        "kind": "weapon",
+        "description": "Acelera la acumulación de sueño. (Tiene un límite máximo).",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 78
+                },
+                "level": 1,
+                "name": null,
+                "description": "Acumulación de sueño +5 %. Bonus +10.",
+                "id": 193
+            },
+            {
+                "skill": {
+                    "id": 78
+                },
+                "level": 2,
+                "name": null,
+                "description": "Acumulación de sueño +10 %. Bonus +20.",
+                "id": 194
+            },
+            {
+                "skill": {
+                    "id": 78
+                },
+                "level": 3,
+                "name": null,
+                "description": "Acumulación de sueño +20 %. Bonus +50.",
+                "id": 195
+            }
+        ],
+        "icon": {
+            "id": 3,
+            "kind": "element"
+        },
+        "id": 78,
+        "gameId": 166057120
+    },
+    {
+        "name": "Añade sueño",
+        "kind": "weapon",
+        "description": "Si tienes un arco equipado, permite equiparte con viales de sueño.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 79
+                },
+                "level": 1,
+                "name": null,
+                "description": "Permite aplicar viales de sueño.",
+                "id": 196
+            }
+        ],
+        "icon": {
+            "id": 5,
+            "kind": "ranged"
+        },
+        "id": 79,
+        "gameId": 169998480
+    },
+    {
+        "name": "Antirrugidos",
+        "kind": "armor",
+        "description": "Protege contra los rugidos de monstruos grandes.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 80
+                },
+                "level": 1,
+                "name": null,
+                "description": "Reduce el efecto de los rugidos más débiles.",
+                "id": 197
+            },
+            {
+                "skill": {
+                    "id": 80
+                },
+                "level": 2,
+                "name": null,
+                "description": "Anula el efecto de los rugidos más débiles y reduce el efecto de los rugidos fuertes.",
+                "id": 198
+            },
+            {
+                "skill": {
+                    "id": 80
+                },
+                "level": 3,
+                "name": null,
+                "description": "Anula el efecto de los rugidos, tanto débiles como fuertes.",
+                "id": 199
+            }
+        ],
+        "icon": {
+            "id": 10,
+            "kind": "utility"
+        },
+        "id": 80,
+        "gameId": 192746944
+    },
+    {
+        "name": "Venganza",
+        "kind": "armor",
+        "description": "Aumenta el poder de ataque de manera temporal tras ser derribado.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 81
+                },
+                "level": 1,
+                "name": null,
+                "description": "Ataque +10 mientras esté activo.",
+                "id": 200
+            },
+            {
+                "skill": {
+                    "id": 81
+                },
+                "level": 2,
+                "name": null,
+                "description": "Ataque +15 mientras esté activo. Prolonga bastante la duración del efecto.",
+                "id": 201
+            },
+            {
+                "skill": {
+                    "id": 81
+                },
+                "level": 3,
+                "name": null,
+                "description": "Ataque +25 mientras esté activo. Prolonga la duración del efecto.",
+                "id": 202
+            }
+        ],
+        "icon": {
+            "id": 1,
+            "kind": "attack"
+        },
+        "id": 81,
+        "gameId": 280489184
+    },
+    {
+        "name": "Elemento crítico",
+        "kind": "weapon",
+        "description": "Aumenta el daño elemental (fuego, agua, rayo, hielo, draco) cuando es resultado de un crítico.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 82
+                },
+                "level": 1,
+                "name": null,
+                "description": "Aumenta un poco el daño elemental mientras está activo.",
+                "id": 203
+            },
+            {
+                "skill": {
+                    "id": 82
+                },
+                "level": 2,
+                "name": null,
+                "description": "Aumenta el daño elemental mientras está activo.",
+                "id": 204
+            },
+            {
+                "skill": {
+                    "id": 82
+                },
+                "level": 3,
+                "name": null,
+                "description": "Aumenta mucho el daño elemental mientras está activo.",
+                "id": 205
+            }
+        ],
+        "icon": {
+            "id": 3,
+            "kind": "element"
+        },
+        "id": 82,
+        "gameId": 313598432
+    },
+    {
+        "name": "Más carga",
+        "kind": "weapon",
+        "description": "Aumenta el daño y la capacidad de aturdir de los ataques cargados del martillo.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 83
+                },
+                "level": 1,
+                "name": null,
+                "description": "Activa el efecto de la habilidad del mismo nombre.",
+                "id": 206
+            }
+        ],
+        "icon": {
+            "id": 9,
+            "kind": "offense"
+        },
+        "id": 83,
+        "gameId": 353114912
+    },
+    {
+        "name": "Antiagua",
+        "kind": "armor",
+        "description": "Aumenta la resistencia al agua. En niveles más altos también mejora la defensa.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 84
+                },
+                "level": 1,
+                "name": null,
+                "description": "Resistencia al agua +6.",
+                "id": 207
+            },
+            {
+                "skill": {
+                    "id": 84
+                },
+                "level": 2,
+                "name": null,
+                "description": "Resistencia al agua +12.",
+                "id": 208
+            },
+            {
+                "skill": {
+                    "id": 84
+                },
+                "level": 3,
+                "name": null,
+                "description": "Resistencia al agua +20. Defensa +10.",
+                "id": 209
+            }
+        ],
+        "icon": {
+            "id": 6,
+            "kind": "defense"
+        },
+        "id": 84,
+        "gameId": 383104832
+    },
+    {
+        "name": "Impacto mejorado",
+        "kind": "weapon",
+        "description": "Aumenta el daño infligido cuando el afilado de tu arma esté bajo.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 85
+                },
+                "level": 1,
+                "name": null,
+                "description": "Inflige +5 % de daño cuando la barra de afilado esté en amarillo o peor.",
+                "id": 210
+            },
+            {
+                "skill": {
+                    "id": 85
+                },
+                "level": 2,
+                "name": null,
+                "description": "Inflige +10 % de daño cuando la barra de afilado esté en amarillo o peor.",
+                "id": 211
+            },
+            {
+                "skill": {
+                    "id": 85
+                },
+                "level": 3,
+                "name": null,
+                "description": "Inflige +10 % de daño cuando la barra de afilado esté en verde o peor.",
+                "id": 212
+            }
+        ],
+        "icon": {
+            "id": 4,
+            "kind": "handicraft"
+        },
+        "id": 85,
+        "gameId": 397306144
+    },
+    {
+        "name": "Bonus ataque en salto",
+        "kind": "weapon",
+        "description": "Aumenta el daño provocado por los ataques en salto.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 86
+                },
+                "level": 1,
+                "name": null,
+                "description": "Ataque en salto +10 %.",
+                "id": 213
+            }
+        ],
+        "icon": {
+            "id": 9,
+            "kind": "offense"
+        },
+        "id": 86,
+        "gameId": 402237312
+    },
+    {
+        "name": "Heroicidad",
+        "kind": "armor",
+        "description": "Aumenta el poder de ataque y la defensa cuando la salud baja al 35 % o menos.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 87
+                },
+                "level": 1,
+                "name": null,
+                "description": "Defensa +50 mientras esté activo.",
+                "id": 214
+            },
+            {
+                "skill": {
+                    "id": 87
+                },
+                "level": 2,
+                "name": null,
+                "description": "Ataque +5 % y defensa +50 mientras esté activo.",
+                "id": 215
+            },
+            {
+                "skill": {
+                    "id": 87
+                },
+                "level": 3,
+                "name": null,
+                "description": "Ataque +5 % y defensa +100 mientras esté activo.",
+                "id": 216
+            },
+            {
+                "skill": {
+                    "id": 87
+                },
+                "level": 4,
+                "name": null,
+                "description": "Ataque +10 % y defensa +100 mientras esté activo.",
+                "id": 217
+            },
+            {
+                "skill": {
+                    "id": 87
+                },
+                "level": 5,
+                "name": null,
+                "description": "Ataque +30 %. Se pierden las mejoras de defensa de los niveles previos mientras esté activo.",
+                "id": 218
+            }
+        ],
+        "icon": {
+            "id": 9,
+            "kind": "offense"
+        },
+        "id": 87,
+        "gameId": 422666624
+    },
+    {
+        "name": "Adaptabilidad",
+        "kind": "armor",
+        "description": "Protege contra el daño ambiental, como el calor o el frío.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 88
+                },
+                "level": 1,
+                "name": null,
+                "description": "Anula los efectos del calor y el frío.",
+                "id": 219
+            },
+            {
+                "skill": {
+                    "id": 88
+                },
+                "level": 2,
+                "name": null,
+                "description": "Anula el daño ambiental.",
+                "id": 220
+            }
+        ],
+        "icon": {
+            "id": 6,
+            "kind": "defense"
+        },
+        "id": 88,
+        "gameId": 424768352
+    },
+    {
+        "name": "Cuero mantecoso",
+        "kind": "group",
+        "description": null,
+        "ranks": [
+            {
+                "skill": {
+                    "id": 89
+                },
+                "level": 1,
+                "name": "Afinidad deslizante",
+                "description": "Aumenta temporalmente tu afinidad cuando se desliza por el terreno.",
+                "id": 221
+            }
+        ],
+        "icon": {
+            "id": 13,
+            "kind": "group"
+        },
+        "id": 89,
+        "gameId": 451472896
+    },
+    {
+        "name": "Experto en herramientas",
+        "kind": "armor",
+        "description": "Reduce el tiempo de recarga de las herramientas especializadas.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 90
+                },
+                "level": 1,
+                "name": null,
+                "description": "Reduce el tiempo de recarga un 10 %.",
+                "id": 222
+            },
+            {
+                "skill": {
+                    "id": 90
+                },
+                "level": 2,
+                "name": null,
+                "description": "Reduce el tiempo de recarga un 20 %.",
+                "id": 223
+            },
+            {
+                "skill": {
+                    "id": 90
+                },
+                "level": 3,
+                "name": null,
+                "description": "Reduce el tiempo de recarga un 30 %.",
+                "id": 224
+            },
+            {
+                "skill": {
+                    "id": 90
+                },
+                "level": 4,
+                "name": null,
+                "description": "Reduce el tiempo de recarga un 40 %.",
+                "id": 225
+            },
+            {
+                "skill": {
+                    "id": 90
+                },
+                "level": 5,
+                "name": null,
+                "description": "Reduce el tiempo de recarga un 50 %.",
+                "id": 226
+            }
+        ],
+        "icon": {
+            "id": 11,
+            "kind": "item"
+        },
+        "id": 90,
+        "gameId": 469540352
+    },
+    {
+        "name": "Ataque de agua",
+        "kind": "weapon",
+        "description": "Potencia los ataques elementales de agua. (El poder elemental tiene un máximo).",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 91
+                },
+                "level": 1,
+                "name": null,
+                "description": "Ataque de agua +40.",
+                "id": 227
+            },
+            {
+                "skill": {
+                    "id": 91
+                },
+                "level": 2,
+                "name": null,
+                "description": "Ataque de agua +10 %. Bonus +50.",
+                "id": 228
+            },
+            {
+                "skill": {
+                    "id": 91
+                },
+                "level": 3,
+                "name": null,
+                "description": "Ataque de agua +20 %. Bonus +60.",
+                "id": 229
+            }
+        ],
+        "icon": {
+            "id": 3,
+            "kind": "element"
+        },
+        "id": 91,
+        "gameId": 508916704
+    },
+    {
+        "name": "Antiparálisis",
+        "kind": "armor",
+        "description": "Reduce o elimina los efectos de la parálisis.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 92
+                },
+                "level": 1,
+                "name": null,
+                "description": "Reduce la duración de la parálisis un 30 %.",
+                "id": 230
+            },
+            {
+                "skill": {
+                    "id": 92
+                },
+                "level": 2,
+                "name": null,
+                "description": "Reduce la duración de la parálisis un 60 %.",
+                "id": 231
+            },
+            {
+                "skill": {
+                    "id": 92
+                },
+                "level": 3,
+                "name": null,
+                "description": "Protege contra la parálisis.",
+                "id": 232
+            }
+        ],
+        "icon": {
+            "id": 6,
+            "kind": "defense"
+        },
+        "id": 92,
+        "gameId": 522288832
+    },
+    {
+        "name": "Voltaje de Rey Dau",
+        "kind": "set",
+        "description": null,
+        "ranks": [
+            {
+                "skill": {
+                    "id": 93
+                },
+                "level": 1,
+                "name": "Rugido atronador I",
+                "description": "Prolonga bastante el tiempo de activación de la habilidad \"poder latente\".",
+                "id": 233
+            },
+            {
+                "skill": {
+                    "id": 93
+                },
+                "level": 2,
+                "name": "Rugido atronador II",
+                "description": "Prolonga el tiempo de activación de la habilidad \"poder latente\".",
+                "id": 234
+            }
+        ],
+        "icon": {
+            "id": 14,
+            "kind": "set"
+        },
+        "id": 93,
+        "gameId": 539707072
+    },
+    {
+        "name": "Disparo perforante",
+        "kind": "weapon",
+        "description": "Aumenta el ataque de la munición perforante (ballesta) y la munición perforadragones y mil dragones (arco).",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 94
+                },
+                "level": 1,
+                "name": null,
+                "description": "Aumenta un poco la potencia de la munición y flechas indicados.",
+                "id": 235
+            }
+        ],
+        "icon": {
+            "id": 5,
+            "kind": "ranged"
+        },
+        "id": 94,
+        "gameId": 552982656
+    },
+    {
+        "name": "Ráfaga",
+        "kind": "armor",
+        "description": "Conectar golpes sin pausa potencia gradualmente el ataque/atq. elemental (la bonificación depende del arma).",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 95
+                },
+                "level": 1,
+                "name": null,
+                "description": "El primer golpe potencia un poco el ataque y el daño elemental. Al 5.º impacto, la bonificación es mayor.",
+                "id": 236
+            },
+            {
+                "skill": {
+                    "id": 95
+                },
+                "level": 2,
+                "name": null,
+                "description": "Si conectas 5 golpes seguidos, ganas bastantes más bonificaciones.",
+                "id": 237
+            },
+            {
+                "skill": {
+                    "id": 95
+                },
+                "level": 3,
+                "name": null,
+                "description": "Si conectas 5 golpes seguidos, ganas muchas más bonificaciones.",
+                "id": 238
+            },
+            {
+                "skill": {
+                    "id": 95
+                },
+                "level": 4,
+                "name": null,
+                "description": "Golpea 5 veces seguidas para bonus aún más elevados.",
+                "id": 239
+            },
+            {
+                "skill": {
+                    "id": 95
+                },
+                "level": 5,
+                "name": null,
+                "description": "Golpea 5 veces seguidas para bonus muy elevados.",
+                "id": 240
+            }
+        ],
+        "icon": {
+            "id": 9,
+            "kind": "offense"
+        },
+        "id": 95,
+        "gameId": 565867136
+    },
+    {
+        "name": "Torrente de llamas blancas",
+        "kind": "weapon",
+        "description": "Da cierta probabilidad de infligir daño adicional al conectar un golpe.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 96
+                },
+                "level": 1,
+                "name": null,
+                "description": "Activa el efecto de la habilidad. (No acumulable si se usa con abrasador, pero añade daño de fuego adicional).",
+                "id": 241
+            }
+        ],
+        "icon": {
+            "id": 1,
+            "kind": "attack"
+        },
+        "id": 96,
+        "gameId": 576193792
+    },
+    {
+        "name": "Pelaje atractivo",
+        "kind": "group",
+        "description": null,
+        "ranks": [
+            {
+                "skill": {
+                    "id": 97
+                },
+                "level": 1,
+                "name": "Distracción",
+                "description": "Llamarás más la atención al atacar a un monstruo.",
+                "id": 242
+            }
+        ],
+        "icon": {
+            "id": 13,
+            "kind": "group"
+        },
+        "id": 97,
+        "gameId": 583598144
+    },
+    {
+        "name": "Geología",
+        "kind": "armor",
+        "description": "Aumenta el número de objetos que obtienes en puntos de recolección.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 98
+                },
+                "level": 1,
+                "name": null,
+                "description": "Consigues un objeto adicional al recolectar en pilas de huesos.",
+                "id": 243
+            },
+            {
+                "skill": {
+                    "id": 98
+                },
+                "level": 2,
+                "name": null,
+                "description": "Consigues un objeto adicional al recolectar objetos especiales.",
+                "id": 244
+            },
+            {
+                "skill": {
+                    "id": 98
+                },
+                "level": 3,
+                "name": null,
+                "description": "Consigues un objeto adicional al recolectar en afloramientos mineros.",
+                "id": 245
+            }
+        ],
+        "icon": {
+            "id": 12,
+            "kind": "gathering"
+        },
+        "id": 98,
+        "gameId": 595870656
+    },
+    {
+        "name": "Poder máximo",
+        "kind": "armor",
+        "description": "Aumenta la afinidad mientras la resistencia esté llena durante cierto tiempo.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 99
+                },
+                "level": 1,
+                "name": null,
+                "description": "Afinidad +10 % mientras esté activo.",
+                "id": 246
+            },
+            {
+                "skill": {
+                    "id": 99
+                },
+                "level": 2,
+                "name": null,
+                "description": "Afinidad +20 % mientras esté activo.",
+                "id": 247
+            },
+            {
+                "skill": {
+                    "id": 99
+                },
+                "level": 3,
+                "name": null,
+                "description": "Afinidad +30 % mientras esté activo.",
+                "id": 248
+            }
+        ],
+        "icon": {
+            "id": 1,
+            "kind": "attack"
+        },
+        "id": 99,
+        "gameId": 632127488
+    },
+    {
+        "name": "Ingesta rápida",
+        "kind": "armor",
+        "description": "Aumenta la velocidad al comer carne y consumir objetos.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 100
+                },
+                "level": 1,
+                "name": null,
+                "description": "Aumenta bastante la velocidad al comer.",
+                "id": 249
+            },
+            {
+                "skill": {
+                    "id": 100
+                },
+                "level": 2,
+                "name": null,
+                "description": "Aumenta la velocidad al comer.",
+                "id": 250
+            },
+            {
+                "skill": {
+                    "id": 100
+                },
+                "level": 3,
+                "name": null,
+                "description": "Aumenta mucho la velocidad al comer.",
+                "id": 251
+            }
+        ],
+        "icon": {
+            "id": 10,
+            "kind": "utility"
+        },
+        "id": 100,
+        "gameId": 634068352
+    },
+    {
+        "name": "Antihielo",
+        "kind": "armor",
+        "description": "Aumenta la resistencia al hielo. En niveles más altos también mejora la defensa.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 101
+                },
+                "level": 1,
+                "name": null,
+                "description": "Resistencia al hielo +6.",
+                "id": 252
+            },
+            {
+                "skill": {
+                    "id": 101
+                },
+                "level": 2,
+                "name": null,
+                "description": "Resistencia al hielo +12.",
+                "id": 253
+            },
+            {
+                "skill": {
+                    "id": 101
+                },
+                "level": 3,
+                "name": null,
+                "description": "Resistencia al hielo +20. Defensa +10.",
+                "id": 254
+            }
+        ],
+        "icon": {
+            "id": 6,
+            "kind": "defense"
+        },
+        "id": 101,
+        "gameId": 652161472
+    },
+    {
+        "name": "Distancia evasiva",
+        "kind": "armor",
+        "description": "Aumenta la distancia al esquivar.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 102
+                },
+                "level": 1,
+                "name": null,
+                "description": "Aumenta un poco la distancia a la que esquivas.",
+                "id": 255
+            },
+            {
+                "skill": {
+                    "id": 102
+                },
+                "level": 2,
+                "name": null,
+                "description": "Aumenta la distancia a la que esquivas.",
+                "id": 256
+            },
+            {
+                "skill": {
+                    "id": 102
+                },
+                "level": 3,
+                "name": null,
+                "description": "Aumenta mucho la distancia a la que esquivas.",
+                "id": 257
+            }
+        ],
+        "icon": {
+            "id": 10,
+            "kind": "utility"
+        },
+        "id": 102,
+        "gameId": 673822976
+    },
+    {
+        "name": "Desenfunde crítico",
+        "kind": "weapon",
+        "description": "Aumenta la afinidad al realizar ataques tras desenfundar o preparar el arma. (No tiene efecto mientras montas).",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 103
+                },
+                "level": 1,
+                "name": null,
+                "description": "Afinidad +50 %.",
+                "id": 258
+            },
+            {
+                "skill": {
+                    "id": 103
+                },
+                "level": 2,
+                "name": null,
+                "description": "Afinidad +75 %.",
+                "id": 259
+            },
+            {
+                "skill": {
+                    "id": 103
+                },
+                "level": 3,
+                "name": null,
+                "description": "Afinidad +100 %.",
+                "id": 260
+            }
+        ],
+        "icon": {
+            "id": 2,
+            "kind": "affinity"
+        },
+        "id": 103,
+        "gameId": 686533440
+    },
+    {
+        "name": "Carga prolongada",
+        "kind": "weapon",
+        "description": "Las espadas largas, espadas dobles, glaives insecto, hachas espada y hachas cargadas permanecen cargadas más tiempo.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 104
+                },
+                "level": 1,
+                "name": null,
+                "description": "Aumenta bastante la duración de las bonificaciones de las armas.",
+                "id": 261
+            },
+            {
+                "skill": {
+                    "id": 104
+                },
+                "level": 2,
+                "name": null,
+                "description": "Aumenta la duración de las bonificaciones de las armas.",
+                "id": 262
+            },
+            {
+                "skill": {
+                    "id": 104
+                },
+                "level": 3,
+                "name": null,
+                "description": "Aumenta mucho la duración de las bonificaciones de las armas.",
+                "id": 263
+            }
+        ],
+        "icon": {
+            "id": 9,
+            "kind": "offense"
+        },
+        "id": 104,
+        "gameId": 691199232
+    },
+    {
+        "name": "Antiaturdimiento",
+        "kind": "armor",
+        "description": "Reduce la duración del aturdimiento.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 105
+                },
+                "level": 1,
+                "name": null,
+                "description": "Reduce la duración del aturdimiento un 30 %.",
+                "id": 264
+            },
+            {
+                "skill": {
+                    "id": 105
+                },
+                "level": 2,
+                "name": null,
+                "description": "Reduce la duración del aturdimiento un 60 %.",
+                "id": 265
+            },
+            {
+                "skill": {
+                    "id": 105
+                },
+                "level": 3,
+                "name": null,
+                "description": "Protege contra el aturdimiento.",
+                "id": 266
+            }
+        ],
+        "icon": {
+            "id": 6,
+            "kind": "defense"
+        },
+        "id": 105,
+        "gameId": 705317568
+    },
+    {
+        "name": "Tiranía de Gore Magala",
+        "kind": "set",
+        "description": null,
+        "ranks": [
+            {
+                "skill": {
+                    "id": 106
+                },
+                "level": 1,
+                "name": "Eclipse negro I",
+                "description": "Te infecta con la cólera al enfrentarte a monstruos grandes.",
+                "id": 267
+            },
+            {
+                "skill": {
+                    "id": 106
+                },
+                "level": 2,
+                "name": "Eclipse negro II",
+                "description": "Te infecta con cólera y potencia el ataque al enfrentarte a monstruos grandes. El ataque aumenta tras recuperarte.",
+                "id": 268
+            }
+        ],
+        "icon": {
+            "id": 14,
+            "kind": "set"
+        },
+        "id": 106,
+        "gameId": 722735744
+    },
+    {
+        "name": "Espíritu de Blangonga",
+        "kind": "set",
+        "description": null,
+        "ranks": [
+            {
+                "skill": {
+                    "id": 107
+                },
+                "level": 1,
+                "name": "Grito de guerra I",
+                "description": "El gesto ¡hacia la victoria! mejora bastante por un tiempo el ataque de aliados cercanos (sobre todo camaradas/cazadores de apoyo).",
+                "id": 269
+            },
+            {
+                "skill": {
+                    "id": 107
+                },
+                "level": 2,
+                "name": "Grito de guerra II",
+                "description": "El gesto ¡hacia la victoria! mejora por un tiempo el ataque de aliados cercanos (esp. camaradas y cazadores de apoyo).",
+                "id": 270
+            }
+        ],
+        "icon": {
+            "id": 14,
+            "kind": "set"
+        },
+        "id": 107,
+        "gameId": 741102208
+    },
+    {
+        "name": "Firmeza",
+        "kind": "armor",
+        "description": "Protege contra reacciones a pequeños ataques, como ser empujado hacia atrás.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 108
+                },
+                "level": 1,
+                "name": null,
+                "description": "Protege contra los empujes.",
+                "id": 271
+            },
+            {
+                "skill": {
+                    "id": 108
+                },
+                "level": 2,
+                "name": null,
+                "description": "Protege contra los empujes. Los golpes que normalmente te derribarían solo te empujarán.",
+                "id": 272
+            },
+            {
+                "skill": {
+                    "id": 108
+                },
+                "level": 3,
+                "name": null,
+                "description": "Protege contra los empujes y contra los derribos.",
+                "id": 273
+            }
+        ],
+        "icon": {
+            "id": 10,
+            "kind": "utility"
+        },
+        "id": 108,
+        "gameId": 742695104
+    },
+    {
+        "name": "Cargar arma",
+        "kind": "weapon",
+        "description": "Mejora la recarga y capacidad de munición de la lanza pistola, y la capacidad de viales del hacha cargada.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 109
+                },
+                "level": 1,
+                "name": null,
+                "description": "Aumenta la velocidad de recarga de munición y viales.",
+                "id": 274
+            },
+            {
+                "skill": {
+                    "id": 109
+                },
+                "level": 2,
+                "name": null,
+                "description": "Acelera la recarga de munición/viales. Lanza pistola: Capacidad de carga +1. Hacha carg.: Máx. 5 viales (barra amarilla).",
+                "id": 275
+            }
+        ],
+        "icon": {
+            "id": 10,
+            "kind": "utility"
+        },
+        "id": 109,
+        "gameId": 802725120
+    },
+    {
+        "name": "Antinitro",
+        "kind": "armor",
+        "description": "Protege contra la plaga de nitro.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 110
+                },
+                "level": 1,
+                "name": null,
+                "description": "Ralentiza la plaga de nitro y reduce el daño por nitro.",
+                "id": 276
+            },
+            {
+                "skill": {
+                    "id": 110
+                },
+                "level": 2,
+                "name": null,
+                "description": "Ralentiza mucho la plaga de nitro y reduce mucho el daño por nitro.",
+                "id": 277
+            },
+            {
+                "skill": {
+                    "id": 110
+                },
+                "level": 3,
+                "name": null,
+                "description": "Protege contra la plaga de nitro.",
+                "id": 278
+            }
+        ],
+        "icon": {
+            "id": 6,
+            "kind": "defense"
+        },
+        "id": 110,
+        "gameId": 820385792
+    },
+    {
+        "name": "Comida gratis",
+        "kind": "armor",
+        "description": "Ofrece una probabilidad determinada de consumir un objeto de comida o bebida gratis.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 111
+                },
+                "level": 1,
+                "name": null,
+                "description": "Probabilidad de activación del 10 %.",
+                "id": 279
+            },
+            {
+                "skill": {
+                    "id": 111
+                },
+                "level": 2,
+                "name": null,
+                "description": "Probabilidad de activación del 25 %.",
+                "id": 280
+            },
+            {
+                "skill": {
+                    "id": 111
+                },
+                "level": 3,
+                "name": null,
+                "description": "Probabilidad de activación del 45 %.",
+                "id": 281
+            }
+        ],
+        "icon": {
+            "id": 11,
+            "kind": "item"
+        },
+        "id": 111,
+        "gameId": 850626240
+    },
+    {
+        "name": "Botánica",
+        "kind": "armor",
+        "description": "Aumenta la cantidad de hierbas y otros objetos consumibles que se obtienen al extraer recursos.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 112
+                },
+                "level": 1,
+                "name": null,
+                "description": "Cada vez que extraes hierbas consigues una adicional.",
+                "id": 282
+            },
+            {
+                "skill": {
+                    "id": 112
+                },
+                "level": 2,
+                "name": null,
+                "description": "Consigues un objeto adicional al recolectar frutos, nueces o semillas.",
+                "id": 283
+            },
+            {
+                "skill": {
+                    "id": 112
+                },
+                "level": 3,
+                "name": null,
+                "description": "Consigues un objeto adicional al recolectar insectos consumibles.",
+                "id": 284
+            },
+            {
+                "skill": {
+                    "id": 112
+                },
+                "level": 4,
+                "name": null,
+                "description": "Consigues un objeto adicional al recolectar setas consumibles.",
+                "id": 285
+            }
+        ],
+        "icon": {
+            "id": 12,
+            "kind": "gathering"
+        },
+        "id": 112,
+        "gameId": 860517760
+    },
+    {
+        "name": "Efecto área",
+        "kind": "armor",
+        "description": "Permite que el efecto de ciertos objetos también afecte a aliados cercanos.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 113
+                },
+                "level": 1,
+                "name": null,
+                "description": "Los objetos que utilices afectan a los aliados cercanos con un 33 % de eficacia.",
+                "id": 286
+            },
+            {
+                "skill": {
+                    "id": 113
+                },
+                "level": 2,
+                "name": null,
+                "description": "Los objetos que utilices afectan a los aliados en un radio mayor con un 33 % de eficacia.",
+                "id": 287
+            },
+            {
+                "skill": {
+                    "id": 113
+                },
+                "level": 3,
+                "name": null,
+                "description": "Los objetos que utilices afectan a los aliados en un radio mayor con un 66 % de eficacia.",
+                "id": 288
+            },
+            {
+                "skill": {
+                    "id": 113
+                },
+                "level": 4,
+                "name": null,
+                "description": "Los objetos que utilices afectan a los aliados en un radio mucho más amplio con un 66 % de eficacia.",
+                "id": 289
+            },
+            {
+                "skill": {
+                    "id": 113
+                },
+                "level": 5,
+                "name": null,
+                "description": "Los objetos que utilices afectan a los aliados en un radio mucho más amplio con total eficacia.",
+                "id": 290
+            }
+        ],
+        "icon": {
+            "id": 11,
+            "kind": "item"
+        },
+        "id": 113,
+        "gameId": 894530496
+    },
+    {
+        "name": "Entomología",
+        "kind": "armor",
+        "description": "Los cuerpos de insectos pequeños no se destruirán, lo que permite despiezarlos (con ciertas excepciones).",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 114
+                },
+                "level": 1,
+                "name": null,
+                "description": "Activa el efecto de la habilidad del mismo nombre.",
+                "id": 291
+            }
+        ],
+        "icon": {
+            "id": 12,
+            "kind": "gathering"
+        },
+        "id": 114,
+        "gameId": 898284480
+    },
+    {
+        "name": "Potencia de Odogaron Ébano",
+        "kind": "set",
+        "description": null,
+        "ranks": [
+            {
+                "skill": {
+                    "id": 115
+                },
+                "level": 1,
+                "name": "Ráfaga potenciada I",
+                "description": "Prolonga la duración de la habilidad \"ráfaga\" y da ataque +8 mientras \"ráfaga\" esté activa.",
+                "id": 292
+            },
+            {
+                "skill": {
+                    "id": 115
+                },
+                "level": 2,
+                "name": "Ráfaga potenciada II",
+                "description": "Prolonga más la duración de la habilidad \"ráfaga\" y da ataque +18 mientras \"ráfaga\" esté activa.",
+                "id": 293
+            }
+        ],
+        "icon": {
+            "id": 14,
+            "kind": "set"
+        },
+        "id": 115,
+        "gameId": 918165056
+    },
+    {
+        "name": "Añade veneno",
+        "kind": "weapon",
+        "description": "Si tienes un arco equipado, permite equiparte con viales de veneno.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 116
+                },
+                "level": 1,
+                "name": null,
+                "description": "Permite aplicar viales de veneno.",
+                "id": 294
+            }
+        ],
+        "icon": {
+            "id": 5,
+            "kind": "ranged"
+        },
+        "id": 116,
+        "gameId": 919683456
+    },
+    {
+        "name": "Filo de cuchilla",
+        "kind": "weapon",
+        "description": "Evita que el arma pierda afilado.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 117
+                },
+                "level": 1,
+                "name": null,
+                "description": "Da una probabilidad del 10 % de no perder afilado.",
+                "id": 295
+            },
+            {
+                "skill": {
+                    "id": 117
+                },
+                "level": 2,
+                "name": null,
+                "description": "Da una probabilidad del 25 % de no perder afilado.",
+                "id": 296
+            },
+            {
+                "skill": {
+                    "id": 117
+                },
+                "level": 3,
+                "name": null,
+                "description": "Da una probabilidad del 50 % de no perder afilado.",
+                "id": 297
+            }
+        ],
+        "icon": {
+            "id": 4,
+            "kind": "handicraft"
+        },
+        "id": 117,
+        "gameId": 1050520384
+    },
+    {
+        "name": "Bonus de defensa",
+        "kind": "armor",
+        "description": "Aumenta la defensa. En niveles más altos también mejora las resistencias.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 118
+                },
+                "level": 1,
+                "name": null,
+                "description": "Defensa +5.",
+                "id": 298
+            },
+            {
+                "skill": {
+                    "id": 118
+                },
+                "level": 2,
+                "name": null,
+                "description": "Defensa +10.",
+                "id": 299
+            },
+            {
+                "skill": {
+                    "id": 118
+                },
+                "level": 3,
+                "name": null,
+                "description": "Defensa +5 %. Bonus: +10.",
+                "id": 300
+            },
+            {
+                "skill": {
+                    "id": 118
+                },
+                "level": 4,
+                "name": null,
+                "description": "Defensa +5 %. Bonus +20. Resistencias elementales +3.",
+                "id": 301
+            },
+            {
+                "skill": {
+                    "id": 118
+                },
+                "level": 5,
+                "name": null,
+                "description": "Defensa +8 %. Bonus +20. Resistencias elementales +3.",
+                "id": 302
+            },
+            {
+                "skill": {
+                    "id": 118
+                },
+                "level": 6,
+                "name": null,
+                "description": "Defensa +8 %. Bonus +35. Resistencias elementales +5.",
+                "id": 303
+            },
+            {
+                "skill": {
+                    "id": 118
+                },
+                "level": 7,
+                "name": null,
+                "description": "Defensa +10 %. Bonus +35. Resistencias elementales +5.",
+                "id": 304
+            }
+        ],
+        "icon": {
+            "id": 6,
+            "kind": "defense"
+        },
+        "id": 118,
+        "gameId": 1077686656
+    },
+    {
+        "name": "Artesanía",
+        "kind": "weapon",
+        "description": "Expande la barra de afilado del arma, pero no lo hará más allá de su máximo predeterminado.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 119
+                },
+                "level": 1,
+                "name": null,
+                "description": "Afilado del arma +10.",
+                "id": 305
+            },
+            {
+                "skill": {
+                    "id": 119
+                },
+                "level": 2,
+                "name": null,
+                "description": "Afilado del arma +20.",
+                "id": 306
+            },
+            {
+                "skill": {
+                    "id": 119
+                },
+                "level": 3,
+                "name": null,
+                "description": "Afilado del arma +30.",
+                "id": 307
+            },
+            {
+                "skill": {
+                    "id": 119
+                },
+                "level": 4,
+                "name": null,
+                "description": "Afilado del arma +40.",
+                "id": 308
+            },
+            {
+                "skill": {
+                    "id": 119
+                },
+                "level": 5,
+                "name": null,
+                "description": "Afilado del arma +50.",
+                "id": 309
+            }
+        ],
+        "icon": {
+            "id": 4,
+            "kind": "handicraft"
+        },
+        "id": 119,
+        "gameId": 1160639488
+    },
+    {
+        "name": "Subida de adrenalina",
+        "kind": "armor",
+        "description": "Aumenta temporalmente la potencia de ataque tras esquivar en el momento justo en que te ataque un monstruo.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 120
+                },
+                "level": 1,
+                "name": null,
+                "description": "Ataque +10 mientras esté activo.",
+                "id": 310
+            },
+            {
+                "skill": {
+                    "id": 120
+                },
+                "level": 2,
+                "name": null,
+                "description": "Ataque +15 mientras esté activo.",
+                "id": 311
+            },
+            {
+                "skill": {
+                    "id": 120
+                },
+                "level": 3,
+                "name": null,
+                "description": "Ataque +20 mientras esté activo.",
+                "id": 312
+            },
+            {
+                "skill": {
+                    "id": 120
+                },
+                "level": 4,
+                "name": null,
+                "description": "Ataque +25 mientras esté activo.",
+                "id": 313
+            },
+            {
+                "skill": {
+                    "id": 120
+                },
+                "level": 5,
+                "name": null,
+                "description": "Ataque +30 mientras esté activo.",
+                "id": 314
+            }
+        ],
+        "icon": {
+            "id": 1,
+            "kind": "attack"
+        },
+        "id": 120,
+        "gameId": 1174975744
+    },
+    {
+        "name": "Ataque de hielo",
+        "kind": "weapon",
+        "description": "Potencia los ataques elementales de hielo. (El poder elemental tiene un máximo).",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 121
+                },
+                "level": 1,
+                "name": null,
+                "description": "Ataque de hielo +40.",
+                "id": 315
+            },
+            {
+                "skill": {
+                    "id": 121
+                },
+                "level": 2,
+                "name": null,
+                "description": "Ataque de hielo +10 %. Bonus +50.",
+                "id": 316
+            },
+            {
+                "skill": {
+                    "id": 121
+                },
+                "level": 3,
+                "name": null,
+                "description": "Ataque de hielo +20 %. Bonus +60.",
+                "id": 317
+            }
+        ],
+        "icon": {
+            "id": 3,
+            "kind": "element"
+        },
+        "id": 121,
+        "gameId": 1268070400
+    },
+    {
+        "name": "Bendición divina",
+        "kind": "armor",
+        "description": "Confiere cierta probabilidad de reducir el daño que sufres.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 122
+                },
+                "level": 1,
+                "name": null,
+                "description": "Reduce el daño recibido un 15 % mientras esté activo.",
+                "id": 318
+            },
+            {
+                "skill": {
+                    "id": 122
+                },
+                "level": 2,
+                "name": null,
+                "description": "Reduce el daño recibido un 30 % mientras esté activo.",
+                "id": 319
+            },
+            {
+                "skill": {
+                    "id": 122
+                },
+                "level": 3,
+                "name": null,
+                "description": "Reduce el daño recibido un 50 % mientras esté activo.",
+                "id": 320
+            }
+        ],
+        "icon": {
+            "id": 6,
+            "kind": "defense"
+        },
+        "id": 122,
+        "gameId": 1346775424
+    },
+    {
+        "name": "Resentimiento",
+        "kind": "armor",
+        "description": "Aumenta el ataque cuando se activa el daño temporal (la parte roja de la barra de salud).",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 123
+                },
+                "level": 1,
+                "name": null,
+                "description": "Ataque +5 mientras esté activo.",
+                "id": 321
+            },
+            {
+                "skill": {
+                    "id": 123
+                },
+                "level": 2,
+                "name": null,
+                "description": "Ataque +10 mientras esté activo.",
+                "id": 322
+            },
+            {
+                "skill": {
+                    "id": 123
+                },
+                "level": 3,
+                "name": null,
+                "description": "Ataque +15 mientras esté activo.",
+                "id": 323
+            },
+            {
+                "skill": {
+                    "id": 123
+                },
+                "level": 4,
+                "name": null,
+                "description": "Ataque +20 mientras esté activo.",
+                "id": 324
+            },
+            {
+                "skill": {
+                    "id": 123
+                },
+                "level": 5,
+                "name": null,
+                "description": "Ataque +25 mientras esté activo.",
+                "id": 325
+            }
+        ],
+        "icon": {
+            "id": 1,
+            "kind": "attack"
+        },
+        "id": 123,
+        "gameId": 1359821952
+    },
+    {
+        "name": "Toque maestro",
+        "kind": "weapon",
+        "description": "Evita que el arma pierda afilado con los ataques críticos.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 124
+                },
+                "level": 1,
+                "name": null,
+                "description": "Probabilidad de no perder afilado +80 % mientras esté activo.",
+                "id": 326
+            }
+        ],
+        "icon": {
+            "id": 4,
+            "kind": "handicraft"
+        },
+        "id": 124,
+        "gameId": 1389859584
+    },
+    {
+        "name": "Antifuego",
+        "kind": "armor",
+        "description": "Aumenta la resistencia al fuego. En niveles más altos también mejora la defensa.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 125
+                },
+                "level": 1,
+                "name": null,
+                "description": "Resistencia al fuego +6.",
+                "id": 327
+            },
+            {
+                "skill": {
+                    "id": 125
+                },
+                "level": 2,
+                "name": null,
+                "description": "Resistencia al fuego +12.",
+                "id": 328
+            },
+            {
+                "skill": {
+                    "id": 125
+                },
+                "level": 3,
+                "name": null,
+                "description": "Resistencia al fuego +20. Defensa +10.",
+                "id": 329
+            }
+        ],
+        "icon": {
+            "id": 6,
+            "kind": "defense"
+        },
+        "id": 125,
+        "gameId": 1425756032
+    },
+    {
+        "name": "Afilado rápido",
+        "kind": "weapon",
+        "description": "Aumenta la velocidad de afilado del arma al usar una piedra de afilar.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 126
+                },
+                "level": 1,
+                "name": null,
+                "description": "Hace el proceso de afilado un ciclo más corto.",
+                "id": 330
+            },
+            {
+                "skill": {
+                    "id": 126
+                },
+                "level": 2,
+                "name": null,
+                "description": "Hace el proceso de afilado dos ciclos más corto.",
+                "id": 331
+            }
+        ],
+        "icon": {
+            "id": 11,
+            "kind": "item"
+        },
+        "id": 126,
+        "gameId": 1444935552
+    },
+    {
+        "name": "Ataque de rayo",
+        "kind": "weapon",
+        "description": "Potencia los ataques elementales de rayo. (El poder elemental tiene un máximo).",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 127
+                },
+                "level": 1,
+                "name": null,
+                "description": "Ataque de rayo +40.",
+                "id": 332
+            },
+            {
+                "skill": {
+                    "id": 127
+                },
+                "level": 2,
+                "name": null,
+                "description": "Ataque de rayo +10 %. Bonus +50.",
+                "id": 333
+            },
+            {
+                "skill": {
+                    "id": 127
+                },
+                "level": 3,
+                "name": null,
+                "description": "Ataque de rayo +20 %. Bonus +60.",
+                "id": 334
+            }
+        ],
+        "icon": {
+            "id": 3,
+            "kind": "element"
+        },
+        "id": 127,
+        "gameId": 1452140672
+    },
+    {
+        "name": "Antiveneno",
+        "kind": "armor",
+        "description": "Reduce el daño recibido por veneno.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 128
+                },
+                "level": 1,
+                "name": null,
+                "description": "Reduce el número de pulsaciones de daño que sufres por veneno.",
+                "id": 335
+            },
+            {
+                "skill": {
+                    "id": 128
+                },
+                "level": 2,
+                "name": null,
+                "description": "Reduce en gran medida el número de pulsaciones de daño que sufres por veneno.",
+                "id": 336
+            },
+            {
+                "skill": {
+                    "id": 128
+                },
+                "level": 3,
+                "name": null,
+                "description": "Protege contra el veneno.",
+                "id": 337
+            }
+        ],
+        "icon": {
+            "id": 6,
+            "kind": "defense"
+        },
+        "id": 128,
+        "gameId": 1459579264
+    },
+    {
+        "name": "Rompepartes",
+        "kind": "armor",
+        "description": "Hace que sea más fácil romper las partes de monstruos grandes y aumenta el daño infligido al rematar una herida.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 129
+                },
+                "level": 1,
+                "name": null,
+                "description": "Aumenta en un 10 % el daño infligido al atacar partes de los monstruos o cumplir con ciertas condiciones.",
+                "id": 338
+            },
+            {
+                "skill": {
+                    "id": 129
+                },
+                "level": 2,
+                "name": null,
+                "description": "Aumenta en un 20 % el daño infligido al atacar partes de los monstruos o cumplir con ciertas condiciones.",
+                "id": 339
+            },
+            {
+                "skill": {
+                    "id": 129
+                },
+                "level": 3,
+                "name": null,
+                "description": "Aumenta en un 30 % el daño infligido al atacar partes de los monstruos o cumplir con ciertas condiciones.",
+                "id": 340
+            }
+        ],
+        "icon": {
+            "id": 9,
+            "kind": "offense"
+        },
+        "id": 129,
+        "gameId": 1470960256
+    },
+    {
+        "name": "Intimidador",
+        "kind": "armor",
+        "description": "Reduce la probabilidad de que los monstruos pequeños ataquen al verte. (No tiene efecto sobre ciertos monstruos).",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 130
+                },
+                "level": 1,
+                "name": null,
+                "description": "Disuade a los monstruos de atacarte, incluso si te han visto.",
+                "id": 341
+            },
+            {
+                "skill": {
+                    "id": 130
+                },
+                "level": 2,
+                "name": null,
+                "description": "Disuade mucho a los monstruos de atacarte, incluso si te han visto.",
+                "id": 342
+            },
+            {
+                "skill": {
+                    "id": 130
+                },
+                "level": 3,
+                "name": null,
+                "description": "Evita que los monstruos te ataquen, incluso si te han visto.",
+                "id": 343
+            }
+        ],
+        "icon": {
+            "id": 10,
+            "kind": "utility"
+        },
+        "id": 130,
+        "gameId": 1472632704
+    },
+    {
+        "name": "Alma del amo",
+        "kind": "group",
+        "description": null,
+        "ranks": [
+            {
+                "skill": {
+                    "id": 131
+                },
+                "level": 1,
+                "name": "Agallas (tenacidad)",
+                "description": "Aumenta el ataque y reduce la defensa, pero te permite sobrevivir a un golpe letal. Después aumenta la defensa y resistencia.",
+                "id": 344
+            }
+        ],
+        "icon": {
+            "id": 13,
+            "kind": "group"
+        },
+        "id": 131,
+        "gameId": 1484575872
+    },
+    {
+        "name": "Maestría con escamas",
+        "kind": "group",
+        "description": null,
+        "ranks": [
+            {
+                "skill": {
+                    "id": 132
+                },
+                "level": 1,
+                "name": "As de la monta",
+                "description": "Es más sencillo montar monstruos y herirlos mientras estás sobre ellos.",
+                "id": 345
+            }
+        ],
+        "icon": {
+            "id": 13,
+            "kind": "group"
+        },
+        "id": 132,
+        "gameId": 1487598336
+    },
+    {
+        "name": "Absorción elemental",
+        "kind": "armor",
+        "description": "Da propiedades elementales por un tiempo tras recibir daño elemental. (Reactivable solo tras cierto tiempo).",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 133
+                },
+                "level": 1,
+                "name": null,
+                "description": "Mientras esté activo, aumenta un poco el ataque elemental y da resistencia +4 al elemento que ha activado la habilidad.",
+                "id": 346
+            },
+            {
+                "skill": {
+                    "id": 133
+                },
+                "level": 2,
+                "name": null,
+                "description": "Mientras esté activo, aumenta bastante el ataque elemental y da resistencia +6 al elemento que ha activado la habilidad.",
+                "id": 347
+            },
+            {
+                "skill": {
+                    "id": 133
+                },
+                "level": 3,
+                "name": null,
+                "description": "Mientras esté activo, da +8 a las resistencias elementales especificadas y aumenta el ataque elemental.",
+                "id": 348
+            }
+        ],
+        "icon": {
+            "id": 9,
+            "kind": "offense"
+        },
+        "id": 133,
+        "gameId": 1489568384
+    },
+    {
+        "name": "Acabado protector",
+        "kind": "weapon",
+        "description": "El afilado del arma no disminuye durante un tiempo tras afilarla.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 134
+                },
+                "level": 1,
+                "name": null,
+                "description": "No pierdes afilado durante 30 segundos tras activarse.",
+                "id": 349
+            },
+            {
+                "skill": {
+                    "id": 134
+                },
+                "level": 2,
+                "name": null,
+                "description": "No pierdes afilado durante 60 segundos tras activarse.",
+                "id": 350
+            },
+            {
+                "skill": {
+                    "id": 134
+                },
+                "level": 3,
+                "name": null,
+                "description": "No pierdes afilado durante 90 segundos tras activarse.",
+                "id": 351
+            }
+        ],
+        "icon": {
+            "id": 4,
+            "kind": "handicraft"
+        },
+        "id": 134,
+        "gameId": 1500129152
+    },
+    {
+        "name": "Piel de hierro",
+        "kind": "armor",
+        "description": "Protege contra la defensa reducida.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 135
+                },
+                "level": 1,
+                "name": null,
+                "description": "Reduce la duración de defensa reducida un 50 %.",
+                "id": 352
+            },
+            {
+                "skill": {
+                    "id": 135
+                },
+                "level": 2,
+                "name": null,
+                "description": "Reduce la duración de defensa reducida un 75 %.",
+                "id": 353
+            },
+            {
+                "skill": {
+                    "id": 135
+                },
+                "level": 3,
+                "name": null,
+                "description": "Protege contra la defensa reducida.",
+                "id": 354
+            }
+        ],
+        "icon": {
+            "id": 6,
+            "kind": "defense"
+        },
+        "id": 135,
+        "gameId": 1522518528
+    },
+    {
+        "name": "Ojo mental",
+        "kind": "weapon",
+        "description": "Tus ataques se desvían menos y son más potentes contra partes de monstruos más duras.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 136
+                },
+                "level": 1,
+                "name": null,
+                "description": "50 % de probabilidad de evitar que tus ataques reboten. (Potencia +10 % a objetivos duros).",
+                "id": 355
+            },
+            {
+                "skill": {
+                    "id": 136
+                },
+                "level": 2,
+                "name": null,
+                "description": "100 % de probabilidad de evitar que tus ataques reboten. (Potencia +15 % a objetivos duros).",
+                "id": 356
+            },
+            {
+                "skill": {
+                    "id": 136
+                },
+                "level": 3,
+                "name": null,
+                "description": "100 % de probabilidad de evitar que tus ataques reboten. (Potencia +30 % a objetivos duros).",
+                "id": 357
+            }
+        ],
+        "icon": {
+            "id": 4,
+            "kind": "handicraft"
+        },
+        "id": 136,
+        "gameId": 1594792704
+    },
+    {
+        "name": "Disparo tétrada",
+        "kind": "weapon",
+        "description": "Aumenta la afinidad de munición y viales de ballesta desde el cuarto disparo, y el ataque de los disparos cuarto y sexto.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 137
+                },
+                "level": 1,
+                "name": null,
+                "description": "Aumenta un poco la potencia de ataque y la afinidad de la munición si se cumplen ciertas condiciones.",
+                "id": 358
+            },
+            {
+                "skill": {
+                    "id": 137
+                },
+                "level": 2,
+                "name": null,
+                "description": "Aumenta bastante la potencia de ataque y la afinidad de la munición si se cumplen ciertas condiciones.",
+                "id": 359
+            },
+            {
+                "skill": {
+                    "id": 137
+                },
+                "level": 3,
+                "name": null,
+                "description": "Aumenta la potencia de ataque y la afinidad de la munición si se cumplen ciertas condiciones.",
+                "id": 360
+            }
+        ],
+        "icon": {
+            "id": 5,
+            "kind": "ranged"
+        },
+        "id": 137,
+        "gameId": 1613139840
+    },
+    {
+        "name": "Automejora",
+        "kind": "armor",
+        "description": "El ataque y la defensa aumentan de forma gradual desde que empieza una misión. (El máximo se alcanza pasados 30 minutos).",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 138
+                },
+                "level": 1,
+                "name": null,
+                "description": "Activa el efecto de la habilidad del mismo nombre.",
+                "id": 361
+            }
+        ],
+        "icon": {
+            "id": 9,
+            "kind": "offense"
+        },
+        "id": 138,
+        "gameId": 1639440000
+    },
+    {
+        "name": "Camuflaje de neopteron",
+        "kind": "group",
+        "description": null,
+        "ranks": [
+            {
+                "skill": {
+                    "id": 139
+                },
+                "level": 1,
+                "name": "Pies alados",
+                "description": "Aumenta la velocidad de movimiento al agacharte y hace que sea más fácil evitar que los monstruos grandes te detecten.",
+                "id": 362
+            }
+        ],
+        "icon": {
+            "id": 13,
+            "kind": "group"
+        },
+        "id": 139,
+        "gameId": 1685697920
+    },
+    {
+        "name": "Primer disparo",
+        "kind": "weapon",
+        "description": "Aumenta la velocidad de recarga de la ballesta y la potencia de disparo cuando está cargada al máximo.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 140
+                },
+                "level": 1,
+                "name": null,
+                "description": "Aumenta bastante la velocidad de recarga de la ballesta y la potencia de la munición bajo ciertas condiciones.",
+                "id": 363
+            },
+            {
+                "skill": {
+                    "id": 140
+                },
+                "level": 2,
+                "name": null,
+                "description": "Aumenta la velocidad de recarga de la ballesta y la potencia de la munición bajo ciertas condiciones.",
+                "id": 364
+            },
+            {
+                "skill": {
+                    "id": 140
+                },
+                "level": 3,
+                "name": null,
+                "description": "Aumenta mucho la velocidad de recarga de la ballesta y la potencia de la munición bajo ciertas condiciones.",
+                "id": 365
+            }
+        ],
+        "icon": {
+            "id": 5,
+            "kind": "ranged"
+        },
+        "id": 140,
+        "gameId": 1711950720
+    },
+    {
+        "name": "Agotador",
+        "kind": "weapon",
+        "description": "Aumenta la posibilidad de que ciertos ataques agoten a los monstruos.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 141
+                },
+                "level": 1,
+                "name": null,
+                "description": "Posibilidad de agotar +20 %.",
+                "id": 366
+            },
+            {
+                "skill": {
+                    "id": 141
+                },
+                "level": 2,
+                "name": null,
+                "description": "Posibilidad de agotar +30 %.",
+                "id": 367
+            },
+            {
+                "skill": {
+                    "id": 141
+                },
+                "level": 3,
+                "name": null,
+                "description": "Posibilidad de agotar +40 %.",
+                "id": 368
+            }
+        ],
+        "icon": {
+            "id": 9,
+            "kind": "offense"
+        },
+        "id": 141,
+        "gameId": 1758661504
+    },
+    {
+        "name": "Poder latente",
+        "kind": "armor",
+        "description": "Aumenta temporalmente la afinidad y reduce el gasto de resistencia al cumplir con una de las posibles condiciones: 1- Pasado 2 min. en la batalla, 2- Después de haber recibido 130 de daño. Tiene un tiempo de cooldown de 2 min.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 142
+                },
+                "level": 1,
+                "name": null,
+                "description": "Mientras esté activo, da un +10 % a la afinidad y reduce el gasto de resistencia un 30 %.",
+                "id": 369
+            },
+            {
+                "skill": {
+                    "id": 142
+                },
+                "level": 2,
+                "name": null,
+                "description": "Mientras esté activo, da un +20 % a la afinidad y reduce el gasto de resistencia un 30 %.",
+                "id": 370
+            },
+            {
+                "skill": {
+                    "id": 142
+                },
+                "level": 3,
+                "name": null,
+                "description": "Mientras esté activo, da un +30 % a la afinidad y reduce el gasto de resistencia un 50 %.",
+                "id": 371
+            },
+            {
+                "skill": {
+                    "id": 142
+                },
+                "level": 4,
+                "name": null,
+                "description": "Mientras esté activo, da un +40 % a la afinidad y reduce el gasto de resistencia un 50 %.",
+                "id": 372
+            },
+            {
+                "skill": {
+                    "id": 142
+                },
+                "level": 5,
+                "name": null,
+                "description": "Mientras esté activo, da un +50 % a la afinidad y reduce el gasto de resistencia un 50 %.",
+                "id": 373
+            }
+        ],
+        "icon": {
+            "id": 9,
+            "kind": "offense"
+        },
+        "id": 142,
+        "gameId": 1763191040
+    },
+    {
+        "name": "Autosuficiente",
+        "kind": "armor",
+        "description": "Mejora las habilidades de pesca, parrilla y transporte.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 143
+                },
+                "level": 1,
+                "name": null,
+                "description": "Mejora las habilidades de pesca, parrilla y transporte.",
+                "id": 374
+            }
+        ],
+        "icon": {
+            "id": 12,
+            "kind": "gathering"
+        },
+        "id": 143,
+        "gameId": 1845834112
+    },
+    {
+        "name": "Instigación",
+        "kind": "armor",
+        "description": "Aumenta la fuerza de ataque y la afinidad cuando los monstruos grandes se enfurecen.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 144
+                },
+                "level": 1,
+                "name": null,
+                "description": "Ataque +4 y afinidad +3 % mientras esté activo.",
+                "id": 375
+            },
+            {
+                "skill": {
+                    "id": 144
+                },
+                "level": 2,
+                "name": null,
+                "description": "Ataque +8 y afinidad +5 % mientras esté activo.",
+                "id": 376
+            },
+            {
+                "skill": {
+                    "id": 144
+                },
+                "level": 3,
+                "name": null,
+                "description": "Ataque +12 y afinidad +7 % mientras esté activo.",
+                "id": 377
+            },
+            {
+                "skill": {
+                    "id": 144
+                },
+                "level": 4,
+                "name": null,
+                "description": "Ataque +16 y afinidad +10 % mientras esté activo.",
+                "id": 378
+            },
+            {
+                "skill": {
+                    "id": 144
+                },
+                "level": 5,
+                "name": null,
+                "description": "Ataque +20 y afinidad +15 % mientras esté activo.",
+                "id": 379
+            }
+        ],
+        "icon": {
+            "id": 9,
+            "kind": "offense"
+        },
+        "id": 144,
+        "gameId": 1865909632
+    },
+    {
+        "name": "Mejora de camarada",
+        "kind": "armor",
+        "description": "Fortalece a los camaradas.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 145
+                },
+                "level": 1,
+                "name": null,
+                "description": "Aumenta la defensa y el ataque de tu camarada +5 %.",
+                "id": 380
+            },
+            {
+                "skill": {
+                    "id": 145
+                },
+                "level": 2,
+                "name": null,
+                "description": "Aumenta la defensa y el ataque de tu camarada +10 %.",
+                "id": 381
+            },
+            {
+                "skill": {
+                    "id": 145
+                },
+                "level": 3,
+                "name": null,
+                "description": "Aumenta la defensa y el ataque de tu camarada +15 %.",
+                "id": 382
+            },
+            {
+                "skill": {
+                    "id": 145
+                },
+                "level": 4,
+                "name": null,
+                "description": "Aumenta la defensa y el ataque de tu camarada +20 %.",
+                "id": 383
+            },
+            {
+                "skill": {
+                    "id": 145
+                },
+                "level": 5,
+                "name": null,
+                "description": "Aumenta la defensa y el ataque de tu camarada +25 %.",
+                "id": 384
+            }
+        ],
+        "icon": {
+            "id": 9,
+            "kind": "offense"
+        },
+        "id": 145,
+        "gameId": 1934955136
+    },
+    {
+        "name": "Antisangrado",
+        "kind": "armor",
+        "description": "Protege contra los sangrados.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 146
+                },
+                "level": 1,
+                "name": null,
+                "description": "Reduce el daño recibido al sufrir sangrados.",
+                "id": 385
+            },
+            {
+                "skill": {
+                    "id": 146
+                },
+                "level": 2,
+                "name": null,
+                "description": "Reduce mucho el daño recibido al sufrir sangrados.",
+                "id": 386
+            },
+            {
+                "skill": {
+                    "id": 146
+                },
+                "level": 3,
+                "name": null,
+                "description": "Protege contra el sangrado.",
+                "id": 387
+            }
+        ],
+        "icon": {
+            "id": 6,
+            "kind": "defense"
+        },
+        "id": 146,
+        "gameId": 1940820864
+    },
+    {
+        "name": "Antiinmovilización",
+        "kind": "armor",
+        "description": "Protege contra el estado enmarañado y la plaga de escarcha.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 147
+                },
+                "level": 1,
+                "name": null,
+                "description": "Permite que te recuperes rápidamente del estado enmarañado y la plaga de escarcha.",
+                "id": 388
+            },
+            {
+                "skill": {
+                    "id": 147
+                },
+                "level": 2,
+                "name": null,
+                "description": "Permite que te recuperes muy rápidamente del estado enmarañado y la plaga de escarcha.",
+                "id": 389
+            },
+            {
+                "skill": {
+                    "id": 147
+                },
+                "level": 3,
+                "name": null,
+                "description": "Protege contra el estado enmarañado y la plaga de escarcha.",
+                "id": 390
+            }
+        ],
+        "icon": {
+            "id": 6,
+            "kind": "defense"
+        },
+        "id": 147,
+        "gameId": 1966172160
+    },
+    {
+        "name": "Alerta de Neopteron",
+        "kind": "group",
+        "description": null,
+        "ranks": [
+            {
+                "skill": {
+                    "id": 148
+                },
+                "level": 1,
+                "name": "Experto en miel",
+                "description": "Aumenta la cantidad de miel que obtienes de los puntos de recolección.",
+                "id": 391
+            }
+        ],
+        "icon": {
+            "id": 13,
+            "kind": "group"
+        },
+        "id": 148,
+        "gameId": 1968728576
+    },
+    {
+        "name": "Sublevación de Nu Udra",
+        "kind": "set",
+        "description": null,
+        "ranks": [
+            {
+                "skill": {
+                    "id": 149
+                },
+                "level": 1,
+                "name": "Mala sangre I",
+                "description": "Inflige bastante daño adicional mientras esté activa la habilidad \"resentimiento\".",
+                "id": 392
+            },
+            {
+                "skill": {
+                    "id": 149
+                },
+                "level": 2,
+                "name": "Mala sangre II",
+                "description": "Inflige daño adicional mientras esté activa la habilidad \"resentimiento\".",
+                "id": 393
+            }
+        ],
+        "icon": {
+            "id": 14,
+            "kind": "set"
+        },
+        "id": 149,
+        "gameId": 1980404096
+    },
+    {
+        "name": "Pelaje fortalecedor",
+        "kind": "group",
+        "description": null,
+        "ranks": [
+            {
+                "skill": {
+                    "id": 150
+                },
+                "level": 1,
+                "name": "Revitalización",
+                "description": "Aumenta ataque y defensa tras desmayarte en una misión. (Puede usarse dos veces.)",
+                "id": 394
+            }
+        ],
+        "icon": {
+            "id": 13,
+            "kind": "group"
+        },
+        "id": 150,
+        "gameId": 1998066176
+    },
+    {
+        "name": "Antihambre",
+        "kind": "armor",
+        "description": "Reduce el gasto de resistencia máximo a lo largo del tiempo.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 151
+                },
+                "level": 1,
+                "name": null,
+                "description": "Prolonga un 50 % el tiempo que tarda en reducirse el tamaño de la barra de resistencia.",
+                "id": 395
+            },
+            {
+                "skill": {
+                    "id": 151
+                },
+                "level": 2,
+                "name": null,
+                "description": "Prolonga un 100 % el tiempo que tarda en reducirse el tamaño de la barra de resistencia.",
+                "id": 396
+            },
+            {
+                "skill": {
+                    "id": 151
+                },
+                "level": 3,
+                "name": null,
+                "description": "Impide que se reduzca el tamaño de tu barra de resistencia.",
+                "id": 397
+            }
+        ],
+        "icon": {
+            "id": 8,
+            "kind": "stamina"
+        },
+        "id": 151,
+        "gameId": 2045149568
+    },
+    {
+        "name": "Convierte elemento",
+        "kind": "armor",
+        "description": "Al recibir daño elemental, otorga elemento draco de forma temporal. (Necesita recargarse tras su uso).",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 152
+                },
+                "level": 1,
+                "name": null,
+                "description": "Inflige daño adicional por draco si causas suficiente daño mientras esté activo, y potencia un poco los ataques de draco.",
+                "id": 398
+            },
+            {
+                "skill": {
+                    "id": 152
+                },
+                "level": 2,
+                "name": null,
+                "description": "Aumenta el daño de draco adicional y potencia el ataque de draco.",
+                "id": 399
+            },
+            {
+                "skill": {
+                    "id": 152
+                },
+                "level": 3,
+                "name": null,
+                "description": "Aumenta más el daño de draco adicional y potencia mucho el ataque de draco.",
+                "id": 400
+            }
+        ],
+        "icon": {
+            "id": 1,
+            "kind": "attack"
+        },
+        "id": 152,
+        "gameId": 2083363072
+    },
+    {
+        "name": "Cobertura de Uth Duna",
+        "kind": "set",
+        "description": null,
+        "ranks": [
+            {
+                "skill": {
+                    "id": 153
+                },
+                "level": 1,
+                "name": "Velo protector I",
+                "description": "Potencia la defensa durante un tiempo cuando usas una herramienta especializada.",
+                "id": 401
+            },
+            {
+                "skill": {
+                    "id": 153
+                },
+                "level": 2,
+                "name": "Velo protector II",
+                "description": "Potencia mucho la defensa y la resistencia durante un tiempo cuando usas una herramienta especializada.",
+                "id": 402
+            }
+        ],
+        "icon": {
+            "id": 14,
+            "kind": "set"
+        },
+        "id": 153,
+        "gameId": 2104075392
+    },
+    {
+        "name": "Plena forma",
+        "kind": "armor",
+        "description": "Aumenta el ataque cuando la salud está completa.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 154
+                },
+                "level": 1,
+                "name": null,
+                "description": "Ataque +3 mientras esté activo.",
+                "id": 403
+            },
+            {
+                "skill": {
+                    "id": 154
+                },
+                "level": 2,
+                "name": null,
+                "description": "Ataque +6 mientras esté activo.",
+                "id": 404
+            },
+            {
+                "skill": {
+                    "id": 154
+                },
+                "level": 3,
+                "name": null,
+                "description": "Ataque +10 mientras esté activo.",
+                "id": 405
+            },
+            {
+                "skill": {
+                    "id": 154
+                },
+                "level": 4,
+                "name": null,
+                "description": "Ataque +15 mientras esté activo.",
+                "id": 406
+            },
+            {
+                "skill": {
+                    "id": 154
+                },
+                "level": 5,
+                "name": null,
+                "description": "Ataque +20 mientras esté activo.",
+                "id": 407
+            }
+        ],
+        "icon": {
+            "id": 1,
+            "kind": "attack"
+        },
+        "id": 154,
+        "gameId": 2106877312
+    },
+    {
+        "name": "Ira del señor",
+        "kind": "group",
+        "description": null,
+        "ranks": [
+            {
+                "skill": {
+                    "id": 155
+                },
+                "level": 1,
+                "name": "Bonus evasión/resist.",
+                "description": "Potencia el ataque cuando estás bajo el efecto de estados alterados.",
+                "id": 408
+            }
+        ],
+        "icon": {
+            "id": 13,
+            "kind": "group"
+        },
+        "id": 155,
+        "gameId": 2107855744
+    },
+    {
+        "name": "Antirrayo",
+        "kind": "armor",
+        "description": "Aumenta la resistencia al rayo. En niveles más altos también mejora la defensa.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 156
+                },
+                "level": 1,
+                "name": null,
+                "description": "Resistencia al rayo +6.",
+                "id": 409
+            },
+            {
+                "skill": {
+                    "id": 156
+                },
+                "level": 2,
+                "name": null,
+                "description": "Resistencia al rayo +12.",
+                "id": 410
+            },
+            {
+                "skill": {
+                    "id": 156
+                },
+                "level": 3,
+                "name": null,
+                "description": "Resistencia al rayo +20. Defensa +10.",
+                "id": 411
+            }
+        ],
+        "icon": {
+            "id": 6,
+            "kind": "defense"
+        },
+        "id": 156,
+        "gameId": 2143068800
+    },
+    {
+        "name": "Maestro del puño",
+        "kind": "group",
+        "description": null,
+        "ranks": [
+            {
+                "skill": {
+                    "id": 157
+                },
+                "level": 1,
+                "name": "Satsui no Hado",
+                "description": "Aumenta el poder de los ataques especiales: Los Drive Impact lanzan ataques interceptores. Aumenta más el poder de ataques interceptores.",
+                "id": 412
+            }
+        ],
+        "icon": {
+            "id": 13,
+            "kind": "group"
+        },
+        "id": 157,
+        "gameId": 4554
+    },
+    {
+        "name": "Onigiri",
+        "kind": "armor",
+        "description": "Aumenta el poder de ataque de Akuma y el daño por aturdimiento.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 158
+                },
+                "level": 1,
+                "name": null,
+                "description": "Activa el efecto de la habilidad del mismo nombre.",
+                "id": 413
+            }
+        ],
+        "icon": {
+            "id": 9,
+            "kind": "offense"
+        },
+        "id": 158,
+        "gameId": 10503
+    },
+    {
+        "name": "Maicera rebosante",
+        "kind": "weapon",
+        "description": "Aumenta la potencia de proyectiles y disparos si el arma está sobrecalentada.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 159
+                },
+                "level": 1,
+                "name": null,
+                "description": "Activa el efecto de la habilidad del mismo nombre.",
+                "id": 414
+            }
+        ],
+        "icon": {
+            "id": 9,
+            "kind": "offense"
+        },
+        "id": 159,
+        "gameId": 1826
+    },
+    {
+        "name": "Carga de filoescama",
+        "kind": "weapon",
+        "description": "Esquivar por poco el ataque de un monstruo con el arma desenvainada te da munición especial cargada o viales correspondientes.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 160
+                },
+                "level": 1,
+                "name": null,
+                "description": "Activa el efecto de la habilidad del mismo nombre.",
+                "id": 415
+            }
+        ],
+        "icon": {
+            "id": 5,
+            "kind": "ranged"
+        },
+        "id": 160,
+        "gameId": 3504
+    },
+    {
+        "name": "Oración de chisparranda",
+        "kind": "set",
+        "description": null,
+        "ranks": [
+            {
+                "skill": {
+                    "id": 161
+                },
+                "level": 1,
+                "name": "Favor de la chisparranda I",
+                "description": "Durante la chisparranda, añade objetos especiales a las recompensas de misión. (Sin efecto si te unes a media misión).",
+                "id": 416
+            },
+            {
+                "skill": {
+                    "id": 161
+                },
+                "level": 2,
+                "name": "Favor de la chisparranda II",
+                "description": "Durante la chisparranda, añade objetos especiales a las recompensas de misión y aumenta mucho el ataque y la defensa.",
+                "id": 417
+            }
+        ],
+        "icon": {
+            "id": 14,
+            "kind": "set"
+        },
+        "id": 161,
+        "gameId": 8694
+    },
+    {
+        "name": "Furia de leviatán",
+        "kind": "set",
+        "description": null,
+        "ranks": [
+            {
+                "skill": {
+                    "id": 162
+                },
+                "level": 1,
+                "name": "Relámpago Cerúleo I",
+                "description": "Aumenta temporalmente la afinidad e inflige daño por rayo adicional al acumularlo. (Excepto algunos ataques).",
+                "id": 418
+            },
+            {
+                "skill": {
+                    "id": 162
+                },
+                "level": 2,
+                "name": "Relámpago Cerúleo II",
+                "description": "Aumenta aún más el daño por rayo adicional y prolonga bastante el aumento de afinidad.",
+                "id": 419
+            }
+        ],
+        "icon": {
+            "id": 14,
+            "kind": "set"
+        },
+        "id": 162,
+        "gameId": 16835
+    },
+    {
+        "name": "Afilado de filoescama",
+        "kind": "weapon",
+        "description": "Esquivar por poco el ataque de un monstruo con el arma desenfundada da un afilado especial al arma.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 163
+                },
+                "level": 1,
+                "name": null,
+                "description": "Activa el efecto de la habilidad del mismo nombre.",
+                "id": 420
+            }
+        ],
+        "icon": {
+            "id": 4,
+            "kind": "handicraft"
+        },
+        "id": 163,
+        "gameId": 25070
+    },
+    {
+        "name": "Piedra de poder",
+        "kind": "weapon",
+        "description": "Aumenta el ataque temporalmente al extraer minerales.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 164
+                },
+                "level": 1,
+                "name": null,
+                "description": "Extraer minerales especialmente raros aumenta bastante el ataque. (El aumento del ataque tiene un límite máximo).",
+                "id": 421
+            }
+        ],
+        "icon": {
+            "id": 1,
+            "kind": "attack"
+        },
+        "id": 164,
+        "gameId": 28385
+    },
+    {
+        "name": "Convierte antirrayo",
+        "kind": "weapon",
+        "description": "Mejora el ataque elemental de tu arma de forma proporcional a tu resistencia antirrayo.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 165
+                },
+                "level": 1,
+                "name": null,
+                "description": "Activa el efecto de la habilidad del mismo nombre.",
+                "id": 422
+            }
+        ],
+        "icon": {
+            "id": 3,
+            "kind": "element"
+        },
+        "id": 165,
+        "gameId": 30201
+    },
+    {
+        "name": "Recarga en esquiva",
+        "kind": "weapon",
+        "description": "Al esquivar, se carga automáticamente la munición que tengas seleccionada.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 166
+                },
+                "level": 1,
+                "name": null,
+                "description": "Activa el efecto de la habilidad del mismo nombre.",
+                "id": 423
+            }
+        ],
+        "icon": {
+            "id": 5,
+            "kind": "ranged"
+        },
+        "id": 166,
+        "gameId": 30828
+    },
+    {
+        "name": "Tenacidad de Seregios",
+        "kind": "set",
+        "description": null,
+        "ranks": [
+            {
+                "skill": {
+                    "id": 167
+                },
+                "level": 1,
+                "name": "Afilado I",
+                "description": "Prolonga la subida de adrenalina. Si está activa y se activa de nuevo, prolonga el efecto una vez más.",
+                "id": 424
+            },
+            {
+                "skill": {
+                    "id": 167
+                },
+                "level": 2,
+                "name": "Afilado II",
+                "description": "Además, si se activa de nuevo mientras la habilidad está activa, mejora aún más el ataque.",
+                "id": 425
+            }
+        ],
+        "icon": {
+            "id": 14,
+            "kind": "set"
+        },
+        "id": 167,
+        "gameId": 30992
+    },
+    {
+        "name": "Lado oscuro",
+        "kind": "weapon",
+        "description": "Lanzar ciertos tajos cargados de nv. 2 o superior te inflige daño. También aumenta temporalmente el ataque.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 168
+                },
+                "level": 1,
+                "name": null,
+                "description": "Activa la habilidad del mismo nombre. (Activarla requiere enfriamiento, pero puede causar daño a uno mismo).",
+                "id": 426
+            }
+        ],
+        "icon": {
+            "id": 1,
+            "kind": "attack"
+        },
+        "id": 168,
+        "gameId": 3813
+    },
+    {
+        "name": "Escudo sintético",
+        "kind": "weapon",
+        "description": "Aumenta temporalmente tu defensa y la defensa de quien esté cerca de ti tras realizar una guardia perfecta.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 169
+                },
+                "level": 1,
+                "name": null,
+                "description": "Activa el efecto de la habilidad del mismo nombre.",
+                "id": 427
+            }
+        ],
+        "icon": {
+            "id": 6,
+            "kind": "defense"
+        },
+        "id": 169,
+        "gameId": 7506
+    },
+    {
+        "name": "Oración del Sueñiencanto",
+        "kind": "set",
+        "description": null,
+        "ranks": [
+            {
+                "skill": {
+                    "id": 170
+                },
+                "level": 1,
+                "name": "Favor del sueñiencanto I",
+                "description": "Durante el sueñiencanto, añade objetos especiales a las recompensas de misión. (Sin efecto si te unes a mitad de misión).",
+                "id": 428
+            },
+            {
+                "skill": {
+                    "id": 170
+                },
+                "level": 2,
+                "name": "Favor del sueñiencanto II",
+                "description": "Durante el sueñiencanto, añade objetos especiales a las recompensas de misión y mejora mucho el ataque y la defensa.",
+                "id": 429
+            }
+        ],
+        "icon": {
+            "id": 14,
+            "kind": "set"
+        },
+        "id": 170,
+        "gameId": 11709
+    },
+    {
+        "name": "Maestro de la parrilla",
+        "kind": "weapon",
+        "description": "Cocina carne para afilar tu arma y aumentar temporalmente tu ataque. (La duración y el efecto varían según el resultado).",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 171
+                },
+                "level": 1,
+                "name": null,
+                "description": "Activa el efecto de la habilidad del mismo nombre.",
+                "id": 430
+            }
+        ],
+        "icon": {
+            "id": 1,
+            "kind": "attack"
+        },
+        "id": 171,
+        "gameId": 16931
+    },
+    {
+        "name": "Alma del caballero oscuro",
+        "kind": "set",
+        "description": null,
+        "ranks": [
+            {
+                "skill": {
+                    "id": 172
+                },
+                "level": 1,
+                "name": "Artes oscuras",
+                "description": "Tener daño recuperable potencia el ataque elemental y algunos de los tajos cargados de nv. 3 de la gran espada.",
+                "id": 431
+            },
+            {
+                "skill": {
+                    "id": 172
+                },
+                "level": 2,
+                "name": "La noche más oscura",
+                "description": "Te permite realizar la acción especial: la noche más oscura.",
+                "id": 432
+            }
+        ],
+        "icon": {
+            "id": 14,
+            "kind": "set"
+        },
+        "id": 172,
+        "gameId": 24531
+    },
+    {
+        "name": "Resonancia Omega",
+        "kind": "set",
+        "description": null,
+        "ranks": [
+            {
+                "skill": {
+                    "id": 173
+                },
+                "level": 1,
+                "name": "Resonancia I",
+                "description": "(Al inicio de misión) Alterna entre resonancia local/remota. Si cumples los requisitos, mejora el ataque o afinidad.",
+                "id": 433
+            },
+            {
+                "skill": {
+                    "id": 173
+                },
+                "level": 2,
+                "name": "Resonancia II",
+                "description": "Aumenta el efecto de \"resonancia I\" y el efecto de la habilidad de arma \"escudo sintético\", o el efecto de \"sinergia\".",
+                "id": 434
+            }
+        ],
+        "icon": {
+            "id": 14,
+            "kind": "set"
+        },
+        "id": 173,
+        "gameId": 31540
+    },
+    {
+        "name": "Sinergia",
+        "kind": "weapon",
+        "description": "Aumenta temporalmente tu afinidad y la afinidad de quién esté cerca de ti tras usar un tajo espiral ascendente.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 174
+                },
+                "level": 1,
+                "name": null,
+                "description": "Activa el efecto de la habilidad del mismo nombre.",
+                "id": 435
+            }
+        ],
+        "icon": {
+            "id": 2,
+            "kind": "affinity"
+        },
+        "id": 174,
+        "gameId": 31998
+    },
+    {
+        "name": "Gogmapocalipsis",
+        "kind": "set",
+        "description": null,
+        "ranks": [
+            {
+                "skill": {
+                    "id": 178
+                },
+                "level": 1,
+                "name": "Hostilidad mutua I",
+                "description": "Aumenta el ataque elemental cuando los monstruos grandes se enfurecen.",
+                "id": 441
+            },
+            {
+                "skill": {
+                    "id": 178
+                },
+                "level": 2,
+                "name": "Hostilidad mutua II",
+                "description": "El efecto de nivel I aumenta y tú obtienes una barrera de daño temporal. (La barrera se reactiva tras la recarga).",
+                "id": 442
+            }
+        ],
+        "icon": {
+            "id": 14,
+            "kind": "set"
+        },
+        "id": 178,
+        "gameId": 5590
+    },
+    {
+        "name": "Ladrón gato",
+        "kind": "weapon",
+        "description": "Concede una pequeña probabilidad de obtener diversos objetos al realizar golpes críticos.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 179
+                },
+                "level": 1,
+                "name": null,
+                "description": "Activa el efecto de la habilidad.",
+                "id": 443
+            }
+        ],
+        "icon": {
+            "id": 12,
+            "kind": "gathering"
+        },
+        "id": 179,
+        "gameId": 30554
+    },
+    {
+        "name": "Oración de iluminario",
+        "kind": "set",
+        "description": null,
+        "ranks": [
+            {
+                "skill": {
+                    "id": 180
+                },
+                "level": 1,
+                "name": "Favor del iluminario I",
+                "description": "Durante el iluminario, agrega objetos especiales a las recompensas de misión. (Sin efecto si te unes a mitad).",
+                "id": 444
+            },
+            {
+                "skill": {
+                    "id": 180
+                },
+                "level": 2,
+                "name": "Favor del iluminario II",
+                "description": "Durante el iluminario, agrega objetos especiales a las recompensas de misión y mejora mucho el ataque y la defensa.",
+                "id": 445
+            }
+        ],
+        "icon": {
+            "id": 14,
+            "kind": "set"
+        },
+        "id": 180,
+        "gameId": 30815
+    },
+    {
+        "name": "Convertir antiagua",
+        "kind": "weapon",
+        "description": "Mejora el ataque elemental de tu arma de forma proporcional a tu resistencia antiagua.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 181
+                },
+                "level": 1,
+                "name": null,
+                "description": "Activa el efecto de la habilidad.",
+                "id": 446
+            }
+        ],
+        "icon": {
+            "id": 3,
+            "kind": "element"
+        },
+        "id": 181,
+        "gameId": 11481
+    },
+    {
+        "name": "Reflejo destrozado",
+        "kind": "weapon",
+        "description": "Los cortes cargados de nivel 3 infligen daño en el área de efecto al impactar contra el suelo.",
+        "ranks": [
+            {
+                "skill": {
+                    "id": 182
+                },
+                "level": 1,
+                "name": null,
+                "description": "Activa el efecto de la habilidad del mismo nombre.",
+                "id": 447
+            }
+        ],
+        "icon": {
+            "id": 1,
+            "kind": "attack"
+        },
+        "id": 182,
+        "gameId": 12877
+    }
+]

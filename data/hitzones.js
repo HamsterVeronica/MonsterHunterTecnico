@@ -2711,7 +2711,7 @@ const HITZONES = {
       }
     }
   },
-  "guardian-ebony-odoragon": {
+  "guardian-ebony-odogaron": {
     "Head": {
       "normal": {
         "corte": 60,

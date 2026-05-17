@@ -1,0 +1,7 @@
+Traducciones pendientes — tipos de drop
+========================================
+Pon tu traducción después del "="
+
+broken-fragment             = Fragmento roto
+carve-crystallized          = Cuerpo cristalizado (guardianes)
+tempered-wound-destroyed    = Herida Hipercurtida (azul)

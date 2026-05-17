@@ -13,8 +13,10 @@ const TIPO_BADGE_CLASS = {
   colera:       'badge-tipo--colera',
 };
 
-const grid   = document.getElementById('monster-grid');
-const search = document.getElementById('search');
+const grid         = document.getElementById('monster-grid');
+const search       = document.getElementById('search');
+const itemSearch   = document.getElementById('item-search');
+const itemDropdown = document.getElementById('item-search-dropdown');
 
 const tipoBtns  = document.querySelectorAll('#filter-tipo .filter-btn');
 const elemBtns  = document.querySelectorAll('#filter-elem .filter-btn');
@@ -23,20 +25,22 @@ const estadoBtns= document.querySelectorAll('#filter-estado .filter-btn');
 let activeTipo   = '';
 let activeElem   = '';
 let activeEstado = '';
+let activeItem   = '';
 
 // Construir todas las cards de una vez
 const cards = MONSTERS.map(monster => {
   const card = document.createElement('a');
   card.className = 'monster-card';
   card.href = `monster.html?id=${monster.id}`;
-  card.dataset.nombre   = monster.nombre.toLowerCase();
+  card.dataset.nombre    = monster.nombre.toLowerCase();
   card.dataset.elementos = monster.elementos_efectivos.join(',');
-  card.dataset.tipos    = monster.tipo.join(',');
-  // estados con susceptibilidad 3
+  card.dataset.tipos     = monster.tipo.join(',');
   const estadosAltos = Object.entries(monster.estados)
     .filter(([, v]) => v === 3)
     .map(([k]) => k);
   card.dataset.estados = estadosAltos.join(',');
+  const dropNames = (monster.drops || []).map(d => d.nombre.toLowerCase());
+  card.dataset.drops = dropNames.join('|');
 
   const tipoBadge = monster.tipo.length ? `<div class="card-info-tipos">${
     monster.tipo.map(t =>
@@ -66,7 +70,7 @@ const cards = MONSTERS.map(monster => {
     <div class="card-info">
       ${tipoBadge ? `<div class="card-info-row"><span class="card-info-label">Categoría</span>${tipoBadge}</div>` : ''}
       <div class="card-info-row">
-        <span class="card-info-label">Pto. débil</span>
+        <span class="card-info-label">Punto débil</span>
         <span class="card-info-value">${monster.punto_debil}</span>
       </div>
       <div class="card-info-row">
@@ -89,9 +93,85 @@ function applyFilters() {
     const elemMatch   = !activeElem   || card.dataset.elementos.split(',').includes(activeElem);
     const tipoMatch   = !activeTipo   || card.dataset.tipos.split(',').includes(activeTipo);
     const estadoMatch = !activeEstado || card.dataset.estados.split(',').includes(activeEstado);
-    card.style.display = nameMatch && elemMatch && tipoMatch && estadoMatch ? '' : 'none';
+    const itemMatch   = !activeItem   || card.dataset.drops.split('|').some(d => d.includes(activeItem));
+    card.style.display = nameMatch && elemMatch && tipoMatch && estadoMatch && itemMatch ? '' : 'none';
   });
 }
+
+// ── Buscador de objetos ─────────────────────────────────────────────────────
+
+// Índice global: nombre_drop → [monster, ...]
+const dropIndex = new Map();
+MONSTERS.forEach(m => {
+  (m.drops || []).forEach(d => {
+    const key = d.nombre.toLowerCase();
+    if (!dropIndex.has(key)) dropIndex.set(key, []);
+    dropIndex.get(key).push(m);
+  });
+});
+
+function showItemDropdown(query) {
+  itemDropdown.innerHTML = '';
+  if (!query) { itemDropdown.hidden = true; return; }
+
+  const matches = [];
+  for (const [nombre] of dropIndex) {
+    if (nombre.includes(query)) matches.push(nombre);
+  }
+
+  if (!matches.length) { itemDropdown.hidden = true; return; }
+
+  matches.sort((a, b) => {
+    const aStart = a.startsWith(query) ? 0 : 1;
+    const bStart = b.startsWith(query) ? 0 : 1;
+    return aStart - bStart || a.localeCompare(b);
+  });
+
+  matches.forEach(nombre => {
+    const monsters = dropIndex.get(nombre);
+    const li = document.createElement('li');
+    li.className = 'search-option';
+
+    const nameEl = document.createElement('span');
+    nameEl.textContent = monsters[0].drops.find(d => d.nombre.toLowerCase() === nombre).nombre;
+
+    const monEl = document.createElement('span');
+    monEl.className = 'item-drop-monsters';
+    monEl.textContent = monsters.map(m => m.nombre).join(', ');
+
+    li.appendChild(nameEl);
+    li.appendChild(monEl);
+
+    li.addEventListener('mousedown', () => {
+      itemSearch.value = monsters[0].drops.find(d => d.nombre.toLowerCase() === nombre).nombre;
+      activeItem = nombre;
+      itemDropdown.hidden = true;
+      search.value = '';
+      applyFilters();
+    });
+    itemDropdown.appendChild(li);
+  });
+
+  itemDropdown.hidden = false;
+}
+
+itemSearch.addEventListener('input', () => {
+  const q = itemSearch.value.toLowerCase().trim();
+  if (!q) {
+    activeItem = '';
+    itemDropdown.hidden = true;
+    applyFilters();
+    return;
+  }
+  showItemDropdown(q);
+  activeItem = q;
+  applyFilters();
+});
+itemSearch.addEventListener('blur',  () => { itemDropdown.hidden = true; });
+itemSearch.addEventListener('focus', () => {
+  const q = itemSearch.value.toLowerCase().trim();
+  if (q) showItemDropdown(q);
+});
 
 function showDropdown(query) {
   dropdown.innerHTML = '';

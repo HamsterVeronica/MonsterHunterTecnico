@@ -1,16 +1,9 @@
-// scripts/extract-motion-values.js
-// Generates data/motion-values.js from the 14 CSV files in data/mv-data/
-// Run with: node scripts/extract-motion-values.js
-
 const fs   = require('fs');
 const path = require('path');
 
 const MV_DIR  = path.join(__dirname, '..', 'data', 'mv-data');
 const OUT_FILE = path.join(__dirname, '..', 'data', 'motion-values.js');
 
-// Each config: which CSV file, column index for raw MV (always 1),
-// column index for element multiplier (null = skip / not applicable)
-// skipRows = how many header rows to skip
 const WEAPON_CONFIGS = [
   { id: 'great-sword',   file: 'gran-espada-mv.csv',     elemCol: 5,  skipRows: 1 },
   { id: 'long-sword',    file: 'espada-larga-mv.csv',    elemCol: 3,  skipRows: 1 },
@@ -28,9 +21,6 @@ const WEAPON_CONFIGS = [
   { id: 'heavy-bowgun',  file: 'ballesta-pesada-mv.csv',  elemCol: 2,  skipRows: 1 },
 ];
 
-/**
- * Parse a CSV line, handling quoted fields with commas inside.
- */
 function parseCsvLine(line) {
   const result = [];
   let cur = '';
@@ -50,13 +40,8 @@ function parseCsvLine(line) {
   return result;
 }
 
-/**
- * Returns a valid number if the value is numeric (no ?, no -, non-empty).
- * Returns null otherwise.
- */
 function parseNum(val) {
   if (!val || val.includes('?') || val === '-' || val === '') return null;
-  // Handle values like "60 Dragon" — take only the numeric part
   const num = parseFloat(val);
   return isNaN(num) ? null : num;
 }
@@ -92,7 +77,6 @@ for (const cfg of WEAPON_CONFIGS) {
     const mv = parseNum(cols[1]);
     if (mv === null || mv <= 0) continue;
 
-    // Skip obvious non-attack rows (footnote lines starting with * or similar)
     if (name.startsWith('*') || name.startsWith('Kinsect attacks scale')) continue;
 
     const entry = { nombre: name, mv_raw: mv };
@@ -119,7 +103,6 @@ for (const cfg of WEAPON_CONFIGS) {
   console.log(`${cfg.id}: ${attacks.length} ataques, raw avg=${MOTION_VALUES[cfg.id].raw.avg} (min=${MOTION_VALUES[cfg.id].raw.min}, max=${MOTION_VALUES[cfg.id].raw.max})`);
 }
 
-// Write output as a JS global const
 const output = `// Generado automáticamente por scripts/extract-motion-values.js
 // Motion Values por arma — todos los ataques con su MV y estadísticas (avg/min/max)
 // Datos basados en investigación de la comunidad (pueden contener incertidumbre)

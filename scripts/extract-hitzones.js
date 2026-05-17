@@ -7,12 +7,6 @@ const path = require('path');
 const HTML_DIR = path.join(__dirname, '..', 'monstruos-html');
 const OUTPUT   = path.join(__dirname, '..', 'data', 'hitzones.js');
 
-// Mapeo HTML-filename → id en monsters.js (sólo los que difieren)
-const ID_MAP = {
-  'mizutsune':             'mitzutsune',
-  'guardian-ebony-odogaron': 'guardian-ebony-odoragon',
-};
-
 // Monstruos a omitir (no están en monsters.js)
 const SKIP = new Set(['high-purrformance-barrel-puncher']);
 
@@ -33,11 +27,10 @@ function extractTable(content) {
     const cells = [...rowMatch[1].matchAll(/<t[dh][^>]*>([\s\S]*?)<\/t[dh]>/g)];
     const vals  = cells.map(c => c[1].replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim());
 
-    // Fila de encabezado o fila corta → skip
     if (vals.length < 11 || vals[2] === '') continue;
 
     const partName = vals[0];
-    const variant  = vals[1]; // '', 'Wounds', 'Weak Point'
+    const variant  = vals[1];
     if (!partName) continue;
 
     const nums = vals.slice(2, 11).map(Number);

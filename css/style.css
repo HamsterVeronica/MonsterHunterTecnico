@@ -114,6 +114,26 @@ main {
   box-shadow: 0 8px 24px rgba(0,0,0,0.4);
 }
 
+#item-search-dropdown {
+  max-height: 280px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+
+#item-search-dropdown::-webkit-scrollbar {
+  width: 5px;
+}
+
+#item-search-dropdown::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#item-search-dropdown::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+
 .search-dropdown[hidden] { display: none; }
 
 .search-option {
@@ -485,7 +505,8 @@ main {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 10px;
-  padding: 16px;
+  padding: 0;
+  overflow: hidden;
 }
 
 .section.full-width {
@@ -493,12 +514,20 @@ main {
 }
 
 .section h3 {
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 1.5px;
   text-transform: uppercase;
   color: var(--gold);
-  margin-bottom: 6px;
+  padding: 10px 16px;
+  background: rgba(201, 168, 76, 0.07);
+  border-bottom: 1px solid var(--border);
+  border-left: 3px solid var(--gold);
+  margin: 0;
+}
+
+.section-body {
+  padding: 14px 16px;
 }
 
 .section-note {
@@ -946,4 +975,126 @@ main {
   color: var(--text-muted);
   font-size: 0.85rem;
   flex-shrink: 0;
+}
+
+/* ── Badge especie y descripción ─────────────────────────────────────────── */
+
+.badge-especie {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: rgba(255,255,255,0.07);
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  text-transform: uppercase;
+}
+
+.monster-descripcion {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-top: 8px;
+  font-style: italic;
+  max-width: 520px;
+}
+
+/* ── Buscador de objetos (index) ─────────────────────────────────────────── */
+
+.item-drop-monsters {
+  display: block;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  margin-top: 1px;
+}
+
+/* ── Drops / Recompensas ─────────────────────────────────────────────────── */
+
+.drops-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+  margin-top: 4px;
+}
+
+.drop-group {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.drop-group-title {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  padding: 8px 12px;
+  background: rgba(201, 168, 76, 0.08);
+  border-bottom: 1px solid var(--border);
+}
+
+.drop-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+}
+
+.drop-table thead th {
+  padding: 5px 10px;
+  text-align: left;
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 0.75rem;
+  border-bottom: 1px solid var(--border);
+  background: rgba(255,255,255,0.02);
+}
+
+.drop-table tbody tr {
+  border-bottom: 1px solid rgba(42,42,74,0.6);
+}
+
+.drop-table tbody tr:last-child { border-bottom: none; }
+
+.drop-table tbody tr:hover { background: var(--surface-hover); }
+
+.drop-nombre {
+  padding: 6px 10px;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.drop-parte {
+  display: block;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-top: 1px;
+}
+
+.drop-rareza {
+  padding: 6px 8px;
+  text-align: center;
+  white-space: nowrap;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  letter-spacing: -1px;
+}
+
+.drop-r5 { color: #8ab4f8; }
+.drop-r6 { color: var(--gold); }
+.drop-r7 { color: #b87fff; }
+
+.drop-pct {
+  padding: 6px 10px 6px 4px;
+  text-align: right;
+  font-weight: 600;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .drops-grid { grid-template-columns: 1fr; }
 }

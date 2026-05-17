@@ -106,14 +106,13 @@ function buildElementos(monster) {
   });
 
   return el('div', { class: 'section' },
-    el('h3', {}, 'Daño adicional elemental'),
-    el('p', { class: 'section-note' },
-      'El valor indica cuánto daño elemental adicional recibe. Multiplica tu daño elemental por el valor --> luego súmalo al daño elemental.',
-      el('br', {}),
-      el('br', {}),
-      `Ej: (Daño elemental x ${monster.elementos[ELEM_KEYS[0]]}) + Daño elemental`
-    ),
-    el('div', { class: 'elem-table' }, ...rows)
+    el('h3', {}, 'Daño elemental adicional'),
+    el('div', { class: 'section-body' },
+      el('p', { class: 'section-note' },
+        'Multiplicador del daño elemental que recibe. A mayor valor, más efectivo es ese elemento.'
+      ),
+      el('div', { class: 'elem-table' }, ...rows)
+    )
   );
 }
 
@@ -142,18 +141,21 @@ function buildEstados(monster) {
   });
 
   return el('div', { class: 'section' },
-    el('h3', {}, 'Estados'),
-    el('p', { class: 'section-note' }, 'Facilidad con la que se le aplican estados alterados al monstruo.'),
-    el('div', { class: 'estado-table' }, ...rows)
+    el('h3', {}, 'Estados alterados'),
+    el('div', { class: 'section-body' },
+      el('p', { class: 'section-note' }, 'Facilidad con la que se le aplican estados alterados al monstruo.'),
+      el('div', { class: 'estado-table' }, ...rows)
+    )
   );
 }
 
 function buildObjetos(monster) {
   if (monster.inmune_objetos) {
     return el('div', { class: 'section' },
-      el('h3', {}, 'Efectividad de Objetos'),
-      el('p', { class: 'section-note' }, 'Indica si el objeto surte efecto sobre el monstruo.'),
-      el('p', { class: 'objeto-no', style: 'font-size:0.85rem;margin-top:8px' }, 'Inmune a todos los objetos')
+      el('h3', {}, 'Objetos de caza'),
+      el('div', { class: 'section-body' },
+        el('p', { class: 'objeto-no', style: 'font-size:0.85rem' }, 'Inmune a todos los objetos')
+      )
     );
   }
 
@@ -167,9 +169,11 @@ function buildObjetos(monster) {
   });
 
   return el('div', { class: 'section' },
-    el('h3', {}, 'Efectividad de Objetos'),
-    el('p', { class: 'section-note' }, 'Indica si el objeto surte efecto sobre el monstruo.'),
-    el('div', { class: 'objetos-list' }, ...rows)
+    el('h3', {}, 'Objetos de caza'),
+    el('div', { class: 'section-body' },
+      el('p', { class: 'section-note' }, 'Indica si el objeto surte efecto sobre el monstruo.'),
+      el('div', { class: 'objetos-list' }, ...rows)
+    )
   );
 }
 
@@ -219,8 +223,10 @@ function buildAtaques(monster) {
 
   return el('div', { class: 'section' },
     el('h3', {}, 'Ataques especiales'),
-    el('p', { class: 'section-note' }, 'Efectos que el monstruo puede infligir sobre el jugador durante el combate.'),
-    el('div', { class: 'ataques-list' }, ...rows)
+    el('div', { class: 'section-body' },
+      el('p', { class: 'section-note' }, 'Efectos que el monstruo puede infligir sobre el jugador durante el combate.'),
+      el('div', { class: 'ataques-list' }, ...rows)
+    )
   );
 }
 
@@ -251,8 +257,10 @@ function buildHitzoneTable(monsterId) {
 
   if (!data) {
     return el('div', { class: 'section full-width hz-no-data' },
-      el('h3', {}, 'Daño por zona'),
-      el('p', { class: 'section-note' }, 'Los datos de hitzones para este monstruo aún no están disponibles.')
+      el('h3', {}, 'Daño por zona (Hitzones)'),
+      el('div', { class: 'section-body' },
+        el('p', { class: 'section-note' }, 'Los datos de hitzones para este monstruo aún no están disponibles.')
+      )
     );
   }
 
@@ -317,34 +325,27 @@ function buildHitzoneTable(monsterId) {
     });
   }
 
-  function getMaxPerElemCol(variant) {
-    const maxes = {};
-    const ELEM_KEYS = HZ_COLS.filter(c => c.elem).map(c => c.key);
-    ELEM_KEYS.forEach(key => {
-      maxes[key] = Math.max(...parts.map(p => {
-        const d = data[p][variant] || data[p].normal;
-        return d ? (d[key] ?? 0) : 0;
-      }));
-    });
-    return maxes;
-  }
+  const ELEM_KEYS_HZ = HZ_COLS.filter(c => c.elem).map(c => c.key);
 
   function buildRows(variant) {
     const sorted = getSortedParts(variant);
-    const maxElem = getMaxPerElemCol(variant);
 
     return sorted.map(part => {
       const hasVariant = !!data[part][variant];
       const rowData    = hasVariant ? data[part][variant] : data[part].normal;
       const showZero   = variant !== 'normal' && !hasVariant;
 
+      // Máximo elemental de esta fila (mejor elemento para esta parte concreta)
+      const maxElemVal = showZero ? 0 : Math.max(...ELEM_KEYS_HZ.map(k => rowData[k] ?? 0));
+
       return el('tr', {},
         el('td', { class: 'hz-part-cell' }, PARTES[part] || part),
         ...HZ_COLS.map(c => {
-          const val   = showZero ? 0 : (rowData[c.key] ?? 0);
-          const isBest = c.elem && !showZero && val > 0 && val === maxElem[c.key];
-          const cell  = el('td', {
-            class: `hz-cell ${hzClass(val)}${c.elem ? ' hz-elem' : ''}${c.sep ? ' hz-sep' : ''}${isBest ? ' hz-best' : ''}`,
+          const val    = showZero ? 0 : (rowData[c.key] ?? 0);
+          const isBest = c.elem && !showZero && val > 0 && val === maxElemVal;
+          const hzCls  = isBest ? 'hz-max' : hzClass(val);
+          const cell   = el('td', {
+            class: `hz-cell ${hzCls}${c.elem ? ' hz-elem' : ''}${c.sep ? ' hz-sep' : ''}${isBest ? ' hz-best' : ''}`,
           }, String(val));
           if (isBest) cell.appendChild(el('span', { class: 'hz-best-badge' }, '★'));
           return cell;
@@ -393,10 +394,160 @@ function buildHitzoneTable(monsterId) {
   }
 
   return el('div', { class: 'section full-width' },
-    el('h3', {}, 'Daño por zona'),
-    el('p', { class: 'section-note' }, 'Haz clic en el encabezado de una columna para ordenar. ★ indica la mejor zona elemental.'),
-    ...(btnGroup ? [btnGroup] : []),
-    wrap
+    el('h3', {}, 'Daño por zona (Hitzones)'),
+    el('div', { class: 'section-body' },
+      el('p', { class: 'section-note' }, 'Haz clic en el encabezado de una columna para ordenar. ★ indica la mejor zona elemental.'),
+      ...(btnGroup ? [btnGroup] : []),
+      wrap
+    )
+  );
+}
+
+// ── Drops ─────────────────────────────────────────────────────────────────────
+
+const TIPO_DROP_ES = {
+  talla:                    'Despiece',
+  talla_cola:               'Despiece de cola',
+  talla_cuerpo_podrido:     'Despiece (cuerpo podrido)',
+  talla_cola_podrida:       'Despiece de cola (podrido)',
+  recompensa_caceria:       'Recompensa de cacería',
+  parte_rota:               'Parte rota',
+  herida_destruida:         'Herida rota',
+  'broken-fragment':        'Fragmento roto',
+  'carve-crystallized':     'Cuerpo cristalizado (guardianes)',
+  'tempered-wound-destroyed': 'Herida Hipercurtida (azul)',
+};
+
+const TIPO_DROP_ORDER = [
+  'talla', 'talla_cola', 'talla_cuerpo_podrido', 'talla_cola_podrida',
+  'recompensa_caceria', 'parte_rota', 'herida_destruida',
+];
+
+const RANGO_ES = { low: 'Rango Bajo', high: 'Rango Alto' };
+
+const ESPECIE_ES = {
+  'amphibian':     'Anfibio',
+  'flying-wyvern': 'Wyverno Volador',
+  'construct':     'Guardián',
+  'fanged-beast':  'Bestia Colmillada',
+  'temnoceran':    'Temnoceran',
+  'demi-elder':    'Semidragón',
+  'brute-wyvern':  'Wyverno Bruto',
+  'leviathan':     'Leviatán',
+  'bird-wyvern':   'Wyverno Pájaro',
+  'cephalopod':    'Cefalópodo',
+  'machine':       'Máquina',
+  'elder-dragon':  'Dragón Anciano',
+};
+
+function prettifyParte(parte) {
+  const MAP = {
+    'head':               'Cabeza',
+    'head-hide':          'Cabeza',
+    'hide':               'Piel',
+    'back':               'Lomo',
+    'chest':              'Pecho',
+    'stomach':            'Vientre',
+    'tail':               'Cola',
+    'tail-tip':           'Punta de cola',
+    'tail-hair':          'Pelo de cola',
+    'mouth':              'Boca',
+    'antennae':           'Antenas',
+    'petal':              'Pétalos',
+    'dorsal-fin':         'Aleta dorsal',
+    'periscope':          'Periscopio',
+    'front-legs':         'Patas delanteras',
+    'left-wing':          'Ala izquierda',
+    'right-wing':         'Ala derecha',
+    'left-wing-blade':    'Hoja ala izq.',
+    'right-wing-blade':   'Hoja ala der.',
+    'left-wing-arm-hide': 'Ala-brazo izq.',
+    'right-wing-arm-hide':'Ala-brazo der.',
+    'left-wing-legs':     'Patas ala izq.',
+    'right-wing-legs':    'Patas ala der.',
+    'left-front-leg':     'Pata delantera izq.',
+    'right-front-leg':    'Pata delantera der.',
+    'left-hind-leg':      'Pata trasera izq.',
+    'right-hind-leg':     'Pata trasera der.',
+    'left-front-arm':     'Brazo delantero izq.',
+    'right-front-arm':    'Brazo delantero der.',
+    'left-leg':           'Pata izquierda',
+    'right-leg':          'Pata derecha',
+    'left-nail':          'Garra izquierda',
+    'right-nail':         'Garra derecha',
+    'frozen-bigcore-after': 'Núcleo grande (descongelado)',
+    'frozen-core-waist':    'Núcleo de cintura (descongelado)',
+  };
+  return MAP[parte] ?? parte.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+}
+
+function buildDrops(monster) {
+  if (!monster.drops || monster.drops.length === 0) return null;
+
+  // Agrupa condiciones por tipo+rango
+  const groups = {};
+  for (const drop of monster.drops) {
+    for (const cond of drop.condiciones) {
+      const key = `${cond.tipo}|${cond.rango}`;
+      if (!groups[key]) groups[key] = { tipo: cond.tipo, rango: cond.rango, items: [] };
+      groups[key].items.push({
+        nombre:       drop.nombre,
+        rareza:       drop.rareza,
+        probabilidad: cond.probabilidad,
+        parte:        cond.parte ?? null,
+      });
+    }
+  }
+
+  const sortedKeys = Object.keys(groups).sort((a, b) => {
+    const [tipoA, rangoA] = a.split('|');
+    const [tipoB, rangoB] = b.split('|');
+    const iA = TIPO_DROP_ORDER.indexOf(tipoA);
+    const iB = TIPO_DROP_ORDER.indexOf(tipoB);
+    if (iA !== iB) return iA - iB;
+    return rangoA === 'low' ? -1 : 1;
+  });
+
+  const groupEls = sortedKeys.map(key => {
+    const g = groups[key];
+    const sorted = [...g.items].sort((a, b) => b.probabilidad - a.probabilidad);
+
+    const RAREZA_CLASS = { 4: '', 5: 'drop-r5', 6: 'drop-r6', 7: 'drop-r7' };
+
+    const rows = sorted.map(item => {
+      const nameContent = [item.nombre];
+      if (item.parte) {
+        nameContent.push(el('span', { class: 'drop-parte' }, prettifyParte(item.parte)));
+      }
+      return el('tr', {},
+        el('td', { class: 'drop-nombre' }, ...nameContent),
+        el('td', { class: `drop-rareza ${RAREZA_CLASS[item.rareza] ?? ''}` }, '★'.repeat(item.rareza - 3)),
+        el('td', { class: 'drop-pct' }, `${item.probabilidad}%`)
+      );
+    });
+
+    const titulo = `${TIPO_DROP_ES[g.tipo] ?? g.tipo} — ${RANGO_ES[g.rango] ?? g.rango}`;
+    return el('div', { class: 'drop-group' },
+      el('h4', { class: 'drop-group-title' }, titulo),
+      el('table', { class: 'drop-table' },
+        el('thead', {},
+          el('tr', {},
+            el('th', {}, 'Objeto'),
+            el('th', { class: 'drop-rareza' }, 'R'),
+            el('th', { class: 'drop-pct' }, '%')
+          )
+        ),
+        el('tbody', {}, ...rows)
+      )
+    );
+  });
+
+  return el('div', { class: 'section full-width' },
+    el('h3', {}, 'Recompensas'),
+    el('div', { class: 'section-body' },
+      el('p', { class: 'section-note' }, 'Objetos obtenibles al cazar este monstruo. Los rangos dependen del rango de la misión.'),
+      el('div', { class: 'drops-grid' }, ...groupEls)
+    )
   );
 }
 
@@ -443,6 +594,20 @@ function render() {
     class: monster.capturable ? 'badge-captura badge-captura--si' : 'badge-captura badge-captura--no'
   }, monster.capturable ? '✓ Capturable' : '✗ No capturable');
 
+  const especieBadge = monster.especie
+    ? el('span', { class: 'badge-especie' }, ESPECIE_ES[monster.especie] ?? monster.especie)
+    : null;
+
+  const zonaText = monster.zonas && monster.zonas.length
+    ? el('p', { class: 'weakpoint-line', style: 'margin-top:6px' },
+        'Zona: ', el('span', {}, monster.zonas.join(', '))
+      )
+    : null;
+
+  const descripcionEl = monster.descripcion
+    ? el('p', { class: 'monster-descripcion' }, monster.descripcion)
+    : null;
+
   const header = el('div', { class: 'detail-header' },
     el('div', { class: 'detail-header-nav' },
       el('a', { href: 'index.html', class: 'back-link' }, '← Todos los monstruos'),
@@ -452,19 +617,22 @@ function render() {
       img,
       el('div', { class: 'detail-hero-info' },
         el('h2', {}, monster.nombre),
-        el('div', { class: 'detail-hero-badges' }, tipoBadge, capturaBadge),
+        el('div', { class: 'detail-hero-badges' }, tipoBadge, capturaBadge, especieBadge),
+        ...(descripcionEl ? [descripcionEl] : []),
         el('p', { class: 'weakpoint-line', style: 'margin-top:8px' },
-          'Punto débil: ', el('span', {}, monster.punto_debil)
+          'Punto débil principal: ', el('span', {}, monster.punto_debil)
         ),
-        el('div', { class: 'element-badges', style: 'margin-top:10px' },
-          el('span', { class: 'weakpoint-line', style: 'margin-right:6px' }, 'Débil a:'),
+        el('div', { class: 'element-badges', style: 'margin-top:6px' },
+          el('span', { class: 'weakpoint-line', style: 'margin-right:6px' }, 'Debilidad principal:'),
           ...badges
-        )
+        ),
+        ...(zonaText ? [zonaText] : [])
       )
     )
   );
 
   const hitzoneSection = buildHitzoneTable(monster.id);
+  const dropsSection   = buildDrops(monster);
 
   const detail = el('div', { class: 'monster-detail' },
     header,
@@ -473,7 +641,8 @@ function render() {
       buildEstados(monster),
       buildObjetos(monster),
       buildAtaques(monster),
-      hitzoneSection
+      hitzoneSection,
+      ...(dropsSection ? [dropsSection] : [])
     )
   );
 
